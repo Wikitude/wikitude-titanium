@@ -22,6 +22,7 @@ import android.os.Bundle;
 import com.wikitude.architect.ArchitectUrlListener;
 import com.wikitude.architect.ArchitectView;
 import com.wikitude.architect.ArchitectView.ArchitectConfig;
+import com.wikitude.ti.Constants;
 
 /**
  * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
@@ -113,7 +114,6 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 
 		ArchitectConfig config = new ArchitectConfig(licenseKey);
 
-		config.setVuforiaInterface(new VuforiaServiceImplementation());
 		config.setOrigin(ArchitectConfig.ORIGIN_TITANIUM);
 
 		architectView.onCreate(config);
@@ -125,7 +125,10 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 		architectView.onResume();
 
 		locationManager = (LocationManager) proxy.getActivity().getSystemService(Context.LOCATION_SERVICE);
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 15, this); // test values
+		
+		// TODO: implement smart location service if required
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, this);
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 0, this);
 	}
 
 	@Override

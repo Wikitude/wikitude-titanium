@@ -46,9 +46,12 @@ function ArWindow(key, url, data) {
 		var uri = new jsuri.Uri(event.url);
 
 		if (uri.host() == 'documentready') // load data
-			if (data)
+		
+			// you may inject data using this approach
+			/*if (data)
 				arview.js = 'loadData(' + JSON.stringify(data) + ')';
-
+	        */
+	       
 		if (uri.host() == 'detail') { // open detail window
 			var DetailWindow = require('/ui/windows/DetailWindow');
 			new DetailWindow().open();

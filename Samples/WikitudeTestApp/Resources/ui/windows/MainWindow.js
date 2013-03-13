@@ -21,25 +21,22 @@ function MainWindow() {
 	});
 	headView.add(headLabel);
 
-	// var backButton = Ti.UI.createButton({
-		// title : 'Back',
-		// left : 6, top : 6,
-		// height : 36, width : 64
-	// });
-	// headView.add(backButton);
-
 	var mainView = Ti.UI.createView({
 		backgroundColor : '#ffffff',
 		bottom : 0, left : 0, right : 0, top : 48
 	});
 	self.add(mainView);
 
-	var geodata = [], n = 50;
+	
 
 	function randomFromInterval(from, to) {
     	return Math.random() * (to - from) + from;
 	}
 
+	var geodata = [], n = 50;
+
+     // you may create poi data here and inject them later on
+	/* 
 	for (var i = 0; i < n; i++) {
 		geodata.push({
 			'name' : 'POI ' + i,
@@ -47,18 +44,13 @@ function MainWindow() {
 			'longitude' : randomFromInterval(10.92071533203125, 11.31011962890625)
 		});
 	}
-
+	*/
+	 
 	var list = [{
 		title : 'AR sample world',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow('foo', 'ar/geo.html', geodata).open();
-		}
-	}, {
-		title : 'IR sample world',
-		callback : function() {
-			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow('foo', 'ar/vision.html').open();
+			new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
 		}
 	}];
 

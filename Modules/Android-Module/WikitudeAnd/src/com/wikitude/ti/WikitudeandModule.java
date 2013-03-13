@@ -28,23 +28,6 @@ public class WikitudeandModule extends KrollModule
 	// Standard Debugging variables
 	private static final String TAG = "WikitudeandModule";
 
-	static {
-		loadLibrary("QCAR");
-	}
-
-    public static boolean loadLibrary(String libraryName) {
-		try {
-			System.loadLibrary(libraryName);
-			Log.i(TAG, "Native library lib" + libraryName + ".so was loaded.");
-			return true;
-		} catch (UnsatisfiedLinkError e) {
-			Log.w(TAG, "The library lib" + libraryName + ".so could not be loaded.", e);
-		} catch (SecurityException e) {
-			Log.w(TAG, "The library lib" + libraryName + ".so was not allowed to be loaded.", e);
-		}
-		return false;
-    }
-
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
 	
