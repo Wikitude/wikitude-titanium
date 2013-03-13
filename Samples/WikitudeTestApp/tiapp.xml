@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="acs-oauth-secret-production" type="string">l6PZnA3pQcg7GmJo5xVCS7lTlG3ZSkuQ</property>
+    <property name="acs-oauth-key-production" type="string">01wLNTd2UFXzirtp7ovoiaPrS2V1nY5T</property>
+    <property name="acs-api-key-production" type="string">NQLaesa67aRCe9XJi35Fz5w4FYINTU37</property>
+    <property name="acs-oauth-secret-development" type="string">5S4aeTuKloTKa9YuPqvLItwpnmZshsoo</property>
+    <property name="acs-oauth-key-development" type="string">3FfyYQbAvRovrwM4abKNuOAeqBCZDWD8</property>
+    <property name="acs-api-key-development" type="string">srVFM0r6iSKx6n6qKbYZXOcjPMo6fJAI</property>
+    <deployment-targets>
+        <target device="mobileweb">false</target>
+        <target device="iphone">true</target>
+        <target device="ipad">false</target>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+    </deployment-targets>
+    <sdk-version>3.0.2.GA</sdk-version>
+    <id>it.ipsoft.mobile.test.wikitude</id>
+    <name>WikitudeTestApp</name>
+    <version>1.0</version>
+    <publisher>interplay</publisher>
+    <url>http://</url>
+    <description>not specified</description>
+    <copyright>2012 by interplay</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>566c8a1f-896c-4a1c-a994-9ecdb197ba62</guid>
+    <property name="ti.ui.defaultunit">system</property>
+    <ios>
+        <min-ios-ver>4.3</min-ios-ver>
+    </ios>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:installLocation="preferExternal">
+            <supports-screens android:anyDensity="false"/>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="android" version="0.1.1">com.wikitude.ti</module>
+        <module platform="iphone" version="0.1.1">com.wikitude.ti</module>
+    </modules>
+</ti:app>

@@ -1,0 +1,30 @@
+
+Version 0.1
+
+This version provides a very basic implementation of the Wikitude integration module.
+
+KNOWN ISSUES
+
+	-	whenever a Wikitude view which makes use of trackers for image recognition
+		purposes gets destroyed, the process could suddenly crash
+	-	whenever a Wikitude view temporarily loses focus, some resources should to 
+		be released, in order to reduce computation, memory and power consumption
+	-	ARchitect world resources must be put into the module assets folder in order
+		to let the application load them properly
+
+Version 0.1.1
+
+	-	added a cullingDistance property, such that every object off this range is 
+		not visible
+
+	-	added a userLocation property, that is forcedly used in place of the user 
+		location provided by the LocationManager
+
+KNOWN ISSUES
+
+	-	whenever a Wikitude view which makes use of trackers for image recognition
+		purposes gets destroyed, the process could suddenly crash
+	-	whenever a Wikitude view temporarily loses focus, some resources should to 
+		be released, in order to reduce computation, memory and power consumption
+	-	ARchitect world resources must be put into the module assets folder in order
+		to let the application load them properly
