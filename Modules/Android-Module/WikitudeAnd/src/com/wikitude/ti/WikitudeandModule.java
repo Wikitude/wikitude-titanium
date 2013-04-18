@@ -15,9 +15,8 @@ import org.appcelerator.titanium.TiApplication;
  *
  * Version history:
  *
- * @version 0.1 Initial Beta version (2012-12; Interplay Software SRL)
- *
- * @author Alessandro Zolet for Interplay Software SRL
+ * @version 0.1.1 First stable version, tested with Wiktiude SDK 2.1
+ * 			0.1 Initial Beta version (2012-12; Interplay Software SRL)
  *
  */
 
@@ -40,7 +39,6 @@ public class WikitudeandModule extends KrollModule
 	public static void onAppCreate(TiApplication app)
 	{
 		Log.d(TAG, "inside onAppCreate");
-		// put module init code that needs to run when the application is created
 	}
 
 	// Methods

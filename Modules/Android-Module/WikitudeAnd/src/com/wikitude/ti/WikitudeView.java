@@ -34,9 +34,8 @@ import com.wikitude.ti.Constants;
  *
  * Version history:
  *
- * @version 0.1 Initial Beta version (2012-12; Interplay Software SRL)
- *
- * @author Alessandro Zolet for Interplay Software SRL
+ * @version 0.1.1 First stable version, tested with Wiktiude SDK 2.1
+ * 			0.1 Initial Beta version (2012-12; Interplay Software SRL)
  *
  */
 
@@ -44,26 +43,55 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 
 	private final String TAG = "WikitudeView";
 
+	/**
+	 * Wikitude SDK key, please have a look at www.wikitude.com
+	 */
 	public static final String PROPERTY_LICENSE_KEY = "licenseKey";
+	
+	/**
+	 * uri of the world to launch
+	 */
 	public static final String PROPERTY_ARCHITECT_WORLD_URI = "architectWorldUri";
+	
+	/**
+	 * cullingDistance = maxDistance to show POIs
+	 */
 	public static final String PROPERTY_CULLING_DISTANCE = "cullingDistance";
+	
+	/**
+	 * current user lcoation
+	 */
 	public static final String PROPERTY_USER_LOCATION = "userLocation";
+	
 	public static final String PROPERTY_JS = "js";
 
+	/**
+	 * ARchitectView of Wikitude SDK
+	 */
 	private ArchitectView architectView;
+	
+	/**
+	 * LocationManager firing events on position changes
+	 */
 	private LocationManager locationManager;
 
-	private String licenseKey = "foo";
+	/**
+	 * TODO: You must enter a valid license key here, which maches your Android-package-identifier (the "id" defined in your apps tiapp.xml)
+	 */
+	private String licenseKey = "";
+	
+	/**
+	 * url to the ARchitect World html-file, is parsed inside
+	 */
 	private String architectWorldUri;
 
 	public WikitudeView(TiViewProxy proxy) {
 
 		super(proxy);
-
-		Log.d(TAG, "constructor called");
-
+		
 		LayoutArrangement arrangement = LayoutArrangement.DEFAULT;
 
+		/* create full screen layout*/
 		if (proxy.hasProperty(TiC.PROPERTY_LAYOUT)) {
 			String layoutProperty = TiConvert.toString(proxy.getProperty(TiC.PROPERTY_LAYOUT));
 			if (layoutProperty.equals(TiC.LAYOUT_HORIZONTAL)) {
@@ -75,13 +103,18 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 
 		TiCompositeLayout layout = new TiCompositeLayout(proxy.getActivity(), arrangement);
 
+		/* create ARchitectView */
 		architectView = new ArchitectView(proxy.getActivity());
 
+		
 		TiCompositeLayout.LayoutParams layoutParams = new TiCompositeLayout.LayoutParams();
 		layoutParams.autoFillsHeight = true;
 		layoutParams.autoFillsWidth = true;
+		
+		/* add view to layout*/
 		layout.addView(architectView, layoutParams);
 
+		/* set layout */
 		setNativeView(layout);
 	}
 
@@ -116,8 +149,11 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 
 		config.setOrigin(ArchitectConfig.ORIGIN_TITANIUM);
 
+		/* quick & dirty, call all activity life-cycle events in right order at one place. should be in activity states */
 		architectView.onCreate(config);
 		architectView.onPostCreate();
+		
+		/* url listener gets notifications as soon as document.href = "architectsdk://..." is called in JS*/
 		architectView.registerUrlListener(this);
 
 		setArchitectWorldUri(architectWorldUri);
@@ -217,8 +253,6 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 	@Override
 	public boolean urlWasInvoked(String url) 
 	{
-		Log.d(TAG, "urlWasInvoked called");
-
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("url", url);
 		proxy.fireEvent(Constants.URL_WAS_INVOKED, data);
@@ -230,8 +264,14 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 	{
 		Log.d(TAG, "onLocationChanged fired (" + location.getLatitude() + ", " + location.getLongitude() + ")");
 	
-		if (architectView != null) {
-			architectView.setLocation(location.getLatitude(), location.getLongitude(), location.getAccuracy());
+		// inject location to architectView, you may implement a smart location strategy in case you need smoother cam experience
+		if (architectView != null && location!=null) {
+			final float accuracy = location.hasAccuracy()?location.getAccuracy():1000.0f;
+			if (location.hasAltitude()) {
+				architectView.setLocation(location.getLatitude(), location.getLongitude(), location.getAltitude(), accuracy);
+			} else {
+				architectView.setLocation(location.getLatitude(), location.getLongitude(), accuracy);
+			}
 		}
 	}
 

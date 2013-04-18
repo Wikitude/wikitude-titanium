@@ -23,11 +23,10 @@ import android.os.Message;
  *
  * http://www.apache.org/licenses/LICENSE-2.0.html
  *
- * Version history:
+ *Version history:
  *
- * @version 0.1 Initial Beta version (2012-12; Interplay Software SRL)
- *
- * @author Alessandro Zolet for Interplay Software SRL
+ * @version 0.1.1 First stable version, tested with Wiktiude SDK 2.1
+ * 			0.1 Initial Beta version (2012-12; Interplay Software SRL)
  *
  */
 
