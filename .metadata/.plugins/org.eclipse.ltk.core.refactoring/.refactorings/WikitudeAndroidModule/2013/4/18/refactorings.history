@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;com.wikitude.ti.WikitudeandModule&apos; to &apos;WikitudeModule&apos;&#x0A;- Original project: &apos;WikitudeAndroidModule&apos;&#x0A;- Original element: &apos;com.wikitude.ti.WikitudeandModule&apos;&#x0A;- Renamed element: &apos;com.wikitude.ti.WikitudeModule&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;WikitudeandModule&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.wikitude.ti{WikitudeandModule.java[WikitudeandModule" matchStrategy="1" name="WikitudeModule" qualified="false" references="true" similarDeclarations="false" stamp="1367329435623" textual="false" version="1.0"/>
-</session>
