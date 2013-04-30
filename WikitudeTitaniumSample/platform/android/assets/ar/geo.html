@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+
+		<!-- Important: Let the viewport cover the whole screen -->
+		<meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    	<title>ARchitect World: GEO</title>
+
+		<!-- Include the ARchitect library -->
+		<script src="architect://architect.js"></script>
+
+		<!-- Include the ARchitect library for Desktop Environments -->
+		<!-- <script src="libs/ade.jsf"></script> -->
+
+		<!-- Include JavaScript libraries -->
+		<script src="jquery-1.8.2.min.jsf"></script>
+
+		<!-- Build the ARchitect World -->
+		<script>
+
+			var DATA_PATH = 'data/';
+			var DISTANCE_MAX = 50 * 1000; // meters
+
+			var data = null;
+			var icon = new Array();
+			var selectedObject = null;
+
+			function loadArWorld(options) 
+			{
+				if (options.radar)
+					if (options.radar.enabled)
+						setupRadar();
+
+				AR.commons = {
+					radar : {
+						target : new AR.Circle(0.02, {
+							style: {
+								fillColor: "#444444"
+							}
+						}),
+						selectedTarget : new AR.Circle(0.03, {
+							style: {
+								fillColor: "#4444ff"
+							}
+						})
+					}
+				};
+
+				AR.context.onScreenClick = function() {
+					if (selectedObject != null) {
+						selectedObject.AR.animation.stop();
+						selectedObject.AR.label.style.backgroundColor = "#00000080";
+						selectedObject.AR.object.drawables.removeRadarDrawable(AR.commons.radar.selectedTarget);
+						selectedObject.AR.object.drawables.addRadarDrawable(AR.commons.radar.target);
+						selectedObject.AR.marker.scaling = 1.0;
+						selectedObject.AR.object.renderingOrder = 0;
+						selectedObject = null;
+					}
+				};
+
+				AR.context.scene.cullingDistance = DISTANCE_MAX;
+			}
+
+			function stopArWorld() {
+
+				if (data)
+					for (var i in data)
+						data[i].AR.object.destroy();
+
+				AR.radar.enabled = false;
+
+				AR.context.destroyAll();
+
+			}
+
+			function loadData(json) 
+			{
+				data = json;
+
+				if (!data) {
+					return ;
+				}
+
+				for (var i = 0; i < data.length; i++) 
+				{
+					data[i].AR = {
+						// prepare for storing AR stuff
+					};
+
+					// create AR label
+
+					var label = new AR.Label(data[i].name, 1.0, {
+						offsetY : -1.5,
+						triggers: {
+							onClick: createClickTrigger(i)
+						},
+						style : {
+							textColor : "#ffffff",
+							backgroundColor : "#00000080"
+						}
+					});
+					data[i].AR.label = label;
+
+					// create AR marker icon
+
+					var category = data[i].category;
+					if (typeof category == "undefined" || category == null)
+						category = "default";
+					if (typeof icon[category] == "undefined" || icon[category] == null)
+						icon[category] = new AR.ImageResource(DATA_PATH + "/marker-" + category + ".png");
+
+					// create AR marker
+
+					var marker = new AR.ImageDrawable(icon[category], 2.0, {
+						triggers: {
+							onClick: createClickTrigger(i)
+						}
+					});
+					data[i].AR.marker = marker;
+					data[i].AR.animation = createOnClickAnimation(marker);
+
+					// create AR location
+
+					var location = new AR.GeoLocation(data[i].latitude, data[i].longitude); // unknown altitude
+
+					// create AR object
+
+					data[i].AR.object = new AR.GeoObject(location, {
+						drawables: {
+							cam: [ label, marker ],
+							radar: (AR.radar.enabled ? AR.commons.radar.target : null)
+						}
+					});
+
+				}
+
+				// alert(data.length + ' points of interest were loaded');
+			}
+
+			function createClickTrigger(index) 
+			{
+				return function() {
+
+					var item = data[index];
+
+					if (selectedObject != null) {
+						selectedObject.AR.animation.stop();
+						selectedObject.AR.label.style.backgroundColor = "#00000080";
+						selectedObject.AR.object.drawables.removeRadarDrawable(AR.commons.radar.selectedTarget);
+						selectedObject.AR.object.drawables.addRadarDrawable(AR.commons.radar.target);
+						selectedObject.AR.marker.scaling = 1.0;
+						selectedObject.AR.object.renderingOrder = 0;
+						selectedObject = null;
+					}
+
+					selectedObject = item;
+					selectedObject.AR.label.style.backgroundColor = "#0000FF80";
+					selectedObject.AR.object.drawables.removeRadarDrawable(AR.commons.radar.target);
+					selectedObject.AR.object.drawables.addRadarDrawable(AR.commons.radar.selectedTarget);
+					selectedObject.AR.object.renderingOrder = 1;
+					selectedObject.AR.animation.start();
+
+					fire('detail?index=' + index);
+
+					return true;
+				}
+			}
+
+			// creates a property animation
+			function createOnClickAnimation(imageDrawable) 
+			{
+				var line = new AR.EasingCurve(AR.CONST.EASING_CURVE_TYPE.EASE_OUT_ELASTIC, {
+					amplitude : 2.0
+				});
+				var anim = new AR.PropertyAnimation(imageDrawable, 'scaling', 1.0, 1.2, 750, line);
+				return anim;
+			}
+
+			function setupRadar()
+			{
+				// set the radar background image
+				AR.radar.background = new AR.ImageResource(DATA_PATH + "/radar.png");
+				// set the radar position and background width
+				AR.radar.positionX = 0.025;
+				AR.radar.positionY = 0.025;
+				AR.radar.width = 0.2;
+				// set the radar center position and width
+				AR.radar.centerX = 0.5;
+				AR.radar.centerY = 0.5;
+				AR.radar.radius = 1.0; // full
+				// set the North indicator up
+				AR.radar.northIndicator.image = new AR.ImageResource(DATA_PATH + "/north.png");
+				AR.radar.northIndicator.radius = 0.55;
+				// set the maximum covered distance
+				AR.radar.maxDistance = DISTANCE_MAX;
+				// enable the radar
+				AR.radar.enabled = true;
+			}
+
+			function fire(eventName) 
+			{
+				invokeURL("architectsdk://" + eventName);
+			}
+
+			function invokeURL(url)
+			{
+				document.location = url;
+			}
+
+			// initialization of the world, on document ready
+ 
+ 			jQuery(document).ready(function () {
+
+				stopArWorld();
+ 
+ 				loadArWorld({
+					radar : {
+						enabled : true
+					}
+				});
+
+				fire('documentready');
+
+ 			});
+
+		</script>
+
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -45,12 +45,12 @@ Content developed for the AR View is written in JavaScript and HTML. The .html a
 ## SETUP - Sample Project
 
 1. Import the Sample Project and adjust class path and build properties are set properly
-2. Right click Wikitude's Android Module, press publish and apply the module to your sample project.
-3. You now see the generated module files inside your Sample Project.
-4. Modify `Resources/ui/windows/MainWindow.js` to change the AR-Experience's source (have a look at the `ArWindow` sample implementation)
-5. Run Sample Project on Android device (Emulator currently not supported)
-
-6. Visit [Wikitude Developer Site](http://developer.wikitude.com) to find samples and how to [license] (http://www.wikitude.com/store/buy-sdk?pcategory=buysdk) your app to remove the watermark in the camera
+2. Paste latest `wikitudesdk.jar` into the lib folder of the Android-Module project.
+3. Right click Wikitude's Android Module, press publish and apply the module to your sample project (or export to a directory so you can then)
+4. You now see the generated module files inside your Sample Project.
+5. Modify `Resources/ui/windows/MainWindow.js` to change the AR-Experience's source (have a look at the `ArWindow` sample implementation)
+6. Run Sample Project on Android device (Emulator currently not supported)
+7. Visit [Wikitude Developer Site](http://developer.wikitude.com) to find samples and how to [license] (http://www.wikitude.com/store/buy-sdk?pcategory=buysdk) your app to remove the watermark in the camera
 
 
 ## JAVASCRIPT INTERFACE
@@ -68,8 +68,37 @@ and then use
 
 ```arview.architectWorldUri = 'http://yourserver/your-ar-experience.html'```
 
+Interaction between AR-View and Titanium is possible via predefined `document.location` changes. Any `document.location = 'architectsdk://...'` will fire an event in the so called UrlListener. To register as UrlListener use the `addEventListener`-method.
+
+e.g.
+
+	arview.addEventListener('URL_WAS_INVOKED', onUrlWasInvoked);
+
+	var onUrlWasInvoked = function(event) {
+		alert('invoked url: ' + event.url)
+		// TODO handle if used insude your AR experience
+	};
+
+
 to load your AR-World. You can find details on how to create so called 'AR World' on [our website](http://www.wikitude.com/developer/documentation) 
 
+## Watermark
+
+The free trial version of the Wikitude SDK shows a start-up animation and a trial watermark in the camera-view. To get rid of this please register as a developer at the [Wikitude](www.wikitude.com) website and have a look at the store and [pricing plan](http://www.wikitude.com/developer/download-sdk/pricing/).
+
+Enter the SDK-key when creating the WikitudeView:
+
+	arview = wikitude.createWikitudeView({
+			licenseKey: 'YOUR-KEY' , 
+			bottom: 0,
+			left: 0,
+			right: 0,
+			top: 0
+		});
+		
+Please use the id listed in `tiapp.xml` as package-identifier when requesting the license key
+
+	<id>com.wikitude.titaniumsample</id>
 
 ## LICENSE
 
