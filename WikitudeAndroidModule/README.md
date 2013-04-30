@@ -1,104 +1,12 @@
-# Augmented Reality - Wikitude SDK Module
+# Augmented Reality - Wikitude Android Module
 by Wikitude GmbH - [www.wikitude.com](http://www.wikitude.com)
-
-Interested in advanced usage of the module and need assistance? 
-[Register as a Wikitude developer](http://developer.wikitude.com) and get support in our forum.
-
-For further questions visit us on [www.wikitude.com](www.wikitude.com) or contact us via `titanium <at> wikitude.com`
-
-#### Important: This module runs on latest [Titanium 3.0+](http://www.appcelerator.com/platform/titanium-platform) only
-
-
-## DESCRIPTION 
 
 
 The Wikitude Titanium Module enables you to embed an augmented reality view in your Titanium project. One can create a fully featured app with advanced augmented reality features purely using HTML, CSS and Javascript.
 
-###The Wikitude Titanium Module
-
-* Simple and seamless native Titanium integration
-* Fully customizable augmented reality (AR) view
-* Full feature set of the Wikitude SDK
-* AR content is purely written in HTML and JavaScript
-
-![image](http://www.wikitude.com/wp-content/uploads/2012/12/Module_Titanium.png)
-
-###The Augmented Reality View
-From a technical point of view the SDK adds a UI component called **AR View**, similar to a web view. In contrast to a standard web view the AR View can render augmented reality content.
-
-Content developed for the AR View is written in JavaScript and HTML. The .html and .js files for the AR view are different from the Titanium .js and .html files.
-
-###Further developer resources
-* [Full documentation and additional tutorials](http://forum.wikitude.com/documentation)
-* [Developer Forum](http://forum.wikitude.com/home)
-* [Wikitude SDK Download](http://forum.wikitude.com/download)
-* [Google+ Page for News](https://plus.google.com/u/0/103004921345651739447/posts)
-* [Developer Newsletter](http://www.wikitude.com/developer/newsletter)
+**There is no need to modify this project. Copy the content of the `module-files` folder into your project and paste `wikitudesdk.jar` into the lib-directory and have a look at the provided SampleProject**
 
 
-
-##Prerequisites
-* Having set-up [Titanium Studio](http://www.appcelerator.com/platform/titanium-platform/)
-* Download [Wikitude SDK](http://www.wikitude.com/developer/download-sdk)
-* Import the provided Module and ensure class path and all build.properties are set-up properly. Be aware that the Wikitude SDK runs only on Android 2.2+ devices (=Android SDK v8); you must not call the module on devices with a lower Android SDK version.
-
-## SETUP - Sample Project
-
-1. Import the Sample Project and adjust class path and build properties are set properly
-2. Paste latest `wikitudesdk.jar` into the lib folder of the Android-Module project.
-3. Right click Wikitude's Android Module, press publish and apply the module to your sample project (or export to a directory so you can then)
-4. You now see the generated module files inside your Sample Project.
-5. Modify `Resources/ui/windows/MainWindow.js` to change the AR-Experience's source (have a look at the `ArWindow` sample implementation)
-6. Run Sample Project on Android device (Emulator currently not supported)
-7. Visit [Wikitude Developer Site](http://developer.wikitude.com) to find samples and how to [license] (http://www.wikitude.com/store/buy-sdk?pcategory=buysdk) your app to remove the watermark in the camera
-
-
-## JAVASCRIPT INTERFACE
-	
-It is straightforward to use the Wikitude Module within your existing Titanium project.
-
-Have a look at the `ArWindow.js` sample implementation. You can for example create a fullscreen ARView declaring
-
-	arview = wikitude.createWikitudeView({
-			licenseKey : '',
-			bottom : 0, left : 0, right : 0, top : 0
-		});
-		
-and then use
-
-```arview.architectWorldUri = 'http://yourserver/your-ar-experience.html'```
-
-Interaction between AR-View and Titanium is possible via predefined `document.location` changes. Any `document.location = 'architectsdk://...'` will fire an event in the so called UrlListener. To register as UrlListener use the `addEventListener`-method.
-
-e.g.
-
-	arview.addEventListener('URL_WAS_INVOKED', onUrlWasInvoked);
-
-	var onUrlWasInvoked = function(event) {
-		alert('invoked url: ' + event.url)
-		// TODO handle if used insude your AR experience
-	};
-
-
-to load your AR-World. You can find details on how to create so called 'AR World' on [our website](http://www.wikitude.com/developer/documentation) 
-
-## Watermark
-
-The free trial version of the Wikitude SDK shows a start-up animation and a trial watermark in the camera-view. To get rid of this please register as a developer at the [Wikitude](www.wikitude.com) website and have a look at the store and [pricing plan](http://www.wikitude.com/developer/download-sdk/pricing/).
-
-Enter the SDK-key when creating the WikitudeView:
-
-	arview = wikitude.createWikitudeView({
-			licenseKey: 'YOUR-KEY' , 
-			bottom: 0,
-			left: 0,
-			right: 0,
-			top: 0
-		});
-		
-Please use the id listed in `tiapp.xml` as package-identifier when requesting the license key
-
-	<id>com.wikitude.titaniumsample</id>
 
 ## LICENSE
 
