@@ -19,8 +19,8 @@
     <version>1.0</version>
     <publisher>interplay</publisher>
     <url>http://</url>
-    <description>not specified</description>
-    <copyright>2012 by interplay</copyright>
+    <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
+    <copyright>2013 Wikitude</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>

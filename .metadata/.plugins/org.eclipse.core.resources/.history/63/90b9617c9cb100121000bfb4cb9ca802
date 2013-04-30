@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1.1
+apiversion: 2
+description: Wikitude Module for Android
+author: Alessandro Zolet (Interplay Software SRL)
+license: please refer to LICENSE file
+copyright: 
+
+
+# these should not be edited
+name: wikitudeand
+moduleid: com.wikitude.ti
+guid: 0dca70df-e249-4fc3-bd72-0c18d31835f1
+platform: android
+minsdk: 2.1.4.GA

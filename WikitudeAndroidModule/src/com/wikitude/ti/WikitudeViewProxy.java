@@ -30,10 +30,15 @@ import android.os.Message;
  *
  */
 
-@Kroll.proxy(creatableInModule=WikitudeandModule.class)
+@Kroll.proxy(creatableInModule=WikitudeModule.class)
 public class WikitudeViewProxy extends TiViewProxy 
 {
 	private static final String TAG = "WikitudeViewProxy";
+
+	private static final int MSG_SET_ARCHITECT_WORLD_URI = 10000;
+	private static final int MSG_SET_JS = 10001;
+	private static final int MSG_SET_USER_LOCATION = 10002;
+	private static final int MSG_SET_CULLING_DISTANCE = 10003;
 
 	public WikitudeViewProxy()
 	{
@@ -58,11 +63,6 @@ public class WikitudeViewProxy extends TiViewProxy
 		super.handleCreationDict(options);
 		Log.d(TAG, "handleCreationDict called");
 	}
-
-	private static final int MSG_SET_ARCHITECT_WORLD_URI = 10000;
-	private static final int MSG_SET_JS = 10001;
-	private static final int MSG_SET_USER_LOCATION = 10002;
-	private static final int MSG_SET_CULLING_DISTANCE = 10003;
 
 	@Kroll.setProperty(retain=false)
 	public void setArchitectWorldUri(final String uri) 
