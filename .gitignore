@@ -1,2 +1,10 @@
+/.metadata/**
 /WikitudeTitaniumSample/build/
-/.metadata/
+/WikitudeTitaniumSample/build/**
+/.metadata/.plugins/org.eclipse.core.resources/.safetable/com.aptana.webserver.core.7
+/.metadata/.plugins/org.eclipse.core.resources/.safetable/com.aptana.syncing.core.7
+/.metadata/.plugins/org.eclipse.core.resources/.safetable/com.aptana.core.io.7
+/.metadata/.plugins/com.aptana.webserver.core/webservers.7
+/.metadata/.plugins/com.aptana.syncing.core/sites.7
+/.metadata/.plugins/com.aptana.syncing.core/defaultConnection.7
+/.metadata/.plugins/com.aptana.core.io/connections.7

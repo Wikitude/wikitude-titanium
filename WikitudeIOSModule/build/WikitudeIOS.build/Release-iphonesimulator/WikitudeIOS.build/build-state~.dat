@@ -1,0 +1,238 @@
+TWikitudeIOS
+v5
+r1
+cCheck dependencies
+cProcessPCH /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.pth ComWikitudeTi_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/libComWikitudeTi.a normal i386
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk
+c00000000516D02B90000000000000110
+t1366098617
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000005106F69200000000001EB540
+t1359410834
+s2012480
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000005106F69200000000003D4DF0
+t1359410834
+s4017648
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000005106F6920000000000215DB0
+t1359410834
+s2186672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000005106F6920000000000228FE0
+t1359410834
+s2265056
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000005106F692000000000009C590
+t1359410834
+s640400
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+c000000005106F6920000000000085620
+t1359410834
+s546336
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreMotion.framework/CoreMotion
+c000000005106F69200000000000FB1E0
+t1359410834
+s1028576
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000005106F69300000000003DDFA0
+t1359410835
+s4054944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000005106F69200000000000015F7
+t1359410834
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+c000000005106F69400000000002DBA50
+t1359410836
+s2996816
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c000000005106F6940000000000015400
+t1359410836
+s87040
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000005106F69400000000001D5750
+t1359410836
+s1922896
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Security.framework/Security
+c000000005106F694000000000006E360
+t1359410836
+s451424
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000005106F694000000000006CC50
+t1359410836
+s445520
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000005106F6960000000000AB6230
+t1359410838
+s11231792
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libsqlite3.dylib
+c000000005106F69F00000000000D1F20
+t1359410847
+s859936
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libz.dylib
+c000000005106F69F0000000000013500
+t1359410847
+s79104
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m
+c0000000050D2D51F0000000000001040
+t1355994399
+s4160
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m
+c0000000050D2D51700000000000003AB
+t1355994391
+s939
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m
+c0000000050D2D50D0000000000000EE5
+t1355994381
+s3813
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m
+c0000000050D2D51C0000000000000DC2
+t1355994396
+s3522
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/ComWikitudeTi_Prefix.pch
+c0000000050D2CA5D000000000000003E
+t1355991645
+s62
+i<Foundation/Foundation.h>
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/libComWikitudeTi.a
+t2
+s0
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTi.LinkFileList
+c00000000516EA85C00000000000002FB
+t1366206556
+s763
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.o
+t2
+s0
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.o
+t2
+s0
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.o
+t2
+s0
+
+N/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.o
+t2
+s0
+
+N/var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.pth
+t2
+s0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies782521dcdf1eb741^c86134dcdf1eb741^---0#1#0#--18"Check dependencies36"6052841D-AF79-4DAA-99C8-367394699ACF-
+
+CCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s387899356.484998
+e387899356.648520
+r1
+xCompileC
+xbuild/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.o
+x/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Compile /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m0f467cdcdf1eb741^9f04a6dcdf1eb741^---0#0#0#-19%DVTDocumentLocation2@122"file://localhost/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m0000000000000000^4126"CompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.o Classes/ComWikitudeTiModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DTI_VERSION= -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=4.0 -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-generated-files.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-own-target-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-all-target-headers.hmap -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-project-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/include "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include" "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include/TiCore" -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources/i386 -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources -F/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator -DTI_POST_1_2 -include /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch -MMD -MT dependencies -MF /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.d --serialize-diagnostics /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.dia -c /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModule.m -o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModule.o36"3DA92C65-A5E1-43FA-ABB5-9526D9641E13-
+
+CCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s387899356.485008
+e387899356.521651
+r1
+xCompileC
+xbuild/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.o
+x/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m56457cdcdf1eb741^ca8a85dcdf1eb741^---0#0#0#-19%DVTDocumentLocation2@128"file://localhost/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m0000000000000000^4162"CompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.o Classes/ComWikitudeTiModuleAssets.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DTI_VERSION= -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=4.0 -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-generated-files.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-own-target-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-all-target-headers.hmap -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-project-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/include "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include" "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include/TiCore" -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources/i386 -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources -F/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator -DTI_POST_1_2 -include /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch -MMD -MT dependencies -MF /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.d --serialize-diagnostics /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.dia -c /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiModuleAssets.m -o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiModuleAssets.o36"DB0B613B-C2FD-4C9C-AC9C-0648144455F9-
+
+CCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s387899356.485020
+e387899356.686623
+r1
+xCompileC
+xbuild/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.o
+x/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m30467cdcdf1eb741^dfc5afdcdf1eb741^---0#0#0#-19%DVTDocumentLocation2@128"file://localhost/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m0000000000000000^4162"CompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.o Classes/ComWikitudeTiWikitudeView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DTI_VERSION= -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=4.0 -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-generated-files.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-own-target-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-all-target-headers.hmap -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-project-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/include "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include" "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include/TiCore" -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources/i386 -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources -F/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator -DTI_POST_1_2 -include /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch -MMD -MT dependencies -MF /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.d --serialize-diagnostics /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.dia -c /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeView.m -o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeView.o36"ACC35AC8-A84D-4A7A-AAFA-7EE324DE1CA1-
+
+CCompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s387899356.485027
+e387899356.675182
+r1
+xCompileC
+xbuild/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.o
+x/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Compile /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m78457cdcdf1eb741^66d8acdcdf1eb741^---0#0#0#-19%DVTDocumentLocation2@133"file://localhost/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m0000000000000000^4192"CompileC build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.o Classes/ComWikitudeTiWikitudeViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DTI_VERSION= -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=4.0 -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-generated-files.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-own-target-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-all-target-headers.hmap -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-project-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/include "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include" "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include/TiCore" -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources/i386 -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources -F/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator -DTI_POST_1_2 -include /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch -MMD -MT dependencies -MF /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.d --serialize-diagnostics /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.dia -c /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/Classes/ComWikitudeTiWikitudeViewProxy.m -o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTiWikitudeViewProxy.o36"212A1014-42F4-4E85-BCA9-420142E9A334-
+
+CLibtool /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/libComWikitudeTi.a normal i386
+s387899356.692961
+e387899356.705515
+r1
+xLibtool
+x/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/libComWikitudeTi.a
+xnormal
+xi386
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libsqlite3.dylib is a dynamic library, not added to the static library
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libz.dylib is a dynamic library, not added to the static library
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Libtool build/Release-iphonesimulator/libComWikitudeTi.a normal i3864a7db1dcdf1eb741^309fb4dcdf1eb741^-747"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libsqlite3.dylib is a dynamic library, not added to the static library/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libz.dylib is a dynamic library, not added to the static library-0#0#0#--1773"Libtool build/Release-iphonesimulator/libComWikitudeTi.a normal i386    cd /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -L/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator -filelist /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/Objects-normal/i386/ComWikitudeTi.LinkFileList -ObjC -framework AudioToolbox -framework AVFoundation -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework CoreMedia -framework CoreMotion /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libsqlite3.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libz.dylib -framework MediaPlayer -framework OpenGLES -framework QuartzCore -framework Security -framework SystemConfiguration -framework UIKit -framework Foundation -o /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/libComWikitudeTi.a36"DE190C69-61F4-40EB-9E04-DACC0EB6BB8A-
+
+CProcessPCH /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.pth ComWikitudeTi_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s387899356.210622
+e387899356.478007
+r1
+xProcessPCH
+x/var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.pth
+xComWikitudeTi_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Precompile ComWikitudeTi_Prefix.pch491036dcdf1eb741^575e7adcdf1eb741^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/ComWikitudeTi_Prefix.pch0000000000000000^3972"ProcessPCH /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.pth ComWikitudeTi_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DTI_VERSION= -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=4.0 -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-generated-files.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-own-target-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-all-target-headers.hmap -iquote /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/ComWikitudeTi-project-headers.hmap -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator/include "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include" "-I/Users/Andi/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/iphone/include/TiCore" -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources/i386 -I/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/WikitudeIOS.build/Release-iphonesimulator/WikitudeIOS.build/DerivedSources -F/Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/build/Release-iphonesimulator -DTI_POST_1_2 --serialize-diagnostics /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.dia -c /Users/Andi/Development/WikitudeExternal/Titanium/PluginOriginal/WikitudeIOS/ComWikitudeTi_Prefix.pch -o /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/t7/ck7gylvn0vl0hw0_4pszk1qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ComWikitudeTi_Prefix-hcmncbfbnrehyucfantbgkmfdgwo/ComWikitudeTi_Prefix.pch.d36"73012483-37AB-424E-A135-5190BED4E1AF-
+
