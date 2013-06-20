@@ -1,33 +1,92 @@
 function MainWindow() {
 
 	var util = require('util');
+	
+	// http://www.wikitude.com/products/wikitude-sdk/pricing/
+	var WikitudeLicenseKey = "TODO";
 
 	var self = Ti.UI.createWindow({
 		backgroundColor : 'transparent',
-		navBarHidden : true,
-		title : 'MainWindow',
+		navBarHidden : false,
+		title : 'Wikitude SDK Mode Samples',
 		exitOnClose : true
 	});
-
-	var headView = Ti.UI.createView({
-		backgroundColor : '#f2f2f2',
-		left : 0, right : 0, top : 0,
-		height : 48
-	});
-	self.add(headView);
-
-	var headLabel = Ti.UI.createLabel({
-		text : 'Wikitude SDK Samples'
-	});
-	headView.add(headLabel);
-
-	var mainView = Ti.UI.createView({
-		backgroundColor : '#ffffff',
-		bottom : 0, left : 0, right : 0, top : 48
-	});
-	self.add(mainView);
-
 	
+	var list = [{
+		title : 'Image Recognition',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			new ArWindow( WikitudeLicenseKey, '1_ImageRecognition_4_Bonus-Sparkles/index.html', geodata).open();
+		}
+	},
+	{
+		title : '3D and ImageRecognition',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			new ArWindow( WikitudeLicenseKey, '2_3dAndImageRecognition_1_3dModelOnTarget/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Selecting Places',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			new ArWindow( WikitudeLicenseKey, '3_PointOfInterest_4_SelectingPois/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Places from Webservice',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			new ArWindow( WikitudeLicenseKey, '4_ObtainPoiData_1_FromWebservice/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Solar System Demo',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			new ArWindow( WikitudeLicenseKey, '6_Demo_2_SolarSystem(Geo)/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Launch World via Url',
+		callback : function() {
+			alert("open URL enter window");
+		}
+	},
+	
+	
+	 ];
+
+	var listView = Ti.UI.createTableView({
+		data : list
+	});
+
+	listView.addEventListener('click', function(e) {
+		list[e.index].callback();
+	});
+
+	if (util.isAndroid())
+		self.addEventListener('android:back', function() {
+			self.close();
+		});
+
+	self.addEventListener('close', function() {
+		if (util.isAndroid())
+			Titanium.Android.currentActivity.finish();
+	});
+	
+	
+	var view = Ti.UI.createView({
+    	height: '100%',
+    	layout: 'vertical'
+	});
+	
+	view.add(listView);
+	self.add(view);
+	
+	
+	
+
 
 	function randomFromInterval(from, to) {
     	return Math.random() * (to - from) + from;
@@ -46,69 +105,7 @@ function MainWindow() {
 	}
 	*/
 	 
-	var list = [{
-		title : 'Image Recognition',
-		callback : function() {
-			var ArWindow = require('/ui/windows/ArWindow');
-			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
-			new ArWindow('foo', '1_ImageRecognition_4_Bonus-Sparkles/index.html', geodata).open();
-		}
-	},
-	{
-		title : '3D and ImageRecognition',
-		callback : function() {
-			var ArWindow = require('/ui/windows/ArWindow');
-			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
-			new ArWindow('foo', '2_3dAndImageRecognition_1_3dModelOnTarget/index.html', geodata).open();
-		}
-	},
-	{
-		title : 'Selecting Places',
-		callback : function() {
-			var ArWindow = require('/ui/windows/ArWindow');
-			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
-			new ArWindow('foo', '3_PointOfInterest_4_SelectingPois/index.html', geodata).open();
-		}
-	},
-	{
-		title : 'Places from Webservice',
-		callback : function() {
-			var ArWindow = require('/ui/windows/ArWindow');
-			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
-			new ArWindow('foo', '4_ObtainPoiData_1_FromWebservice/index.html', geodata).open();
-		}
-	},
-	{
-		title : 'Solar System Demo',
-		callback : function() {
-			var ArWindow = require('/ui/windows/ArWindow');
-			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
-			new ArWindow('foo', '6_Demo_2_SolarSystem(Geo)/index.html', geodata).open();
-		}
-	}
 	
-	
-	 ];
-
-	var listView = Ti.UI.createTableView({
-		data : list
-	});
-
-	mainView.add(listView);
-
-	listView.addEventListener('click', function(e) {
-		list[e.index].callback();
-	});
-
-	if (util.isAndroid())
-		self.addEventListener('android:back', function() {
-			self.close();
-		});
-
-	self.addEventListener('close', function() {
-		if (util.isAndroid())
-			Titanium.Android.currentActivity.finish();
-	});
 
 	// backButton.addEventListener('click', function() {
 		// self.close();
