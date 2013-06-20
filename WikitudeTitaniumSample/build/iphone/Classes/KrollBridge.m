@@ -34,6 +34,10 @@ NSString * WikitudeTestApp$ModuleRequireFormat = @"(function(exports){"
 		"return exports;})({})";
 
 
+//Defined private method inside TiBindingRunLoop.m (Perhaps to move to .c?)
+void TiBindingRunLoopAnnounceStart(TiBindingRunLoop runLoop);
+
+
 @implementation WikitudeTestAppObject
 
 -(NSDictionary*)modules
@@ -589,12 +593,16 @@ CFMutableSetRef	krollBridgeRegistry = nil;
 				[ti setStaticValue:ko forKey:key purgable:NO];
 			}
 		}
+		//We need to run this before the app.js, which means it has to be here.
+		TiBindingRunLoopAnnounceStart(kroll);
 		[self evalFile:[url path] callback:self selector:@selector(booted)];	
 	}
 	else 
 	{
 		// now load the app.js file and get started
 		NSURL *startURL = [host startURL];
+		//We need to run this before the app.js, which means it has to be here.
+		TiBindingRunLoopAnnounceStart(kroll);
 		[self evalFile:[startURL absoluteString] callback:self selector:@selector(booted)];
 	}
     

@@ -1,6 +1,6 @@
 // Warning: this is generated file. Do not modify!
 
-#define TI_VERSION 3.1.0.GA
+#define TI_VERSION 3.1.1.GA
 #define USE_TI_ANALYTICS
 #define USE_TI_ANDROID
 #define USE_TI_ANDROIDCURRENTACTIVITY

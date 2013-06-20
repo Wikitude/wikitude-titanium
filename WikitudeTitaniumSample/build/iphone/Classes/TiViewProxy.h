@@ -567,8 +567,10 @@ enum
 -(void)relayout;
 
 -(void)reposition;	//Todo: Replace
-
--(BOOL)willBeRelaying;	//Todo: Replace
+/**
+ Tells if the view is enqueued in the LayoutQueue
+ */
+-(BOOL)willBeRelaying;
 
 -(BOOL) widthIsAutoFill;
 -(BOOL) widthIsAutoSize;

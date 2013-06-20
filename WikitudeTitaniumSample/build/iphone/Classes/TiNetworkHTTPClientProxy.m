@@ -20,6 +20,8 @@
 #import "TiFile.h"
 #import "ASIDownloadCache.h"
 
+extern NSString * const TI_APPLICATION_GUID;
+
 int CaselessCompare(const char * firstString, const char * secondString, int size)
 {
 	int index = 0;
@@ -411,6 +413,8 @@ extern NSString * const TI_APPLICATION_DEPLOYTYPE;
 	
 	[request addRequestHeader:@"User-Agent" value:[[TiApp app] userAgent]];
 	
+    [request addRequestHeader:[NSString stringWithFormat:@"%s-%s%s-%s", "X","Tita","nium","Id"] value:TI_APPLICATION_GUID];
+    
 	// twitter specifically disallows X-Requested-With so we only add this normal
 	// XHR header if not going to twitter. however, other services generally expect
 	// this header to indicate an XHR request (such as RoR)

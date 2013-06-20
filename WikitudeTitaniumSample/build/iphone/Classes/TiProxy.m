@@ -187,9 +187,26 @@ void DoProxyDelegateReadValuesWithKeysFromProxy(UIView<TiProxyDelegate> * target
 	}
 }
 
+typedef struct {
+	Class class;
+	SEL selector;
+} TiClassSelectorPair;
 
+void TiClassSelectorFunction(TiBindingRunLoop runloop, void * payload)
+{
+	TiClassSelectorPair * pair = payload;
+	[(Class)(pair->class) performSelector:(SEL)(pair->selector) withObject:runloop];
+}
 
 @implementation TiProxy
+
++(void)performSelectorDuringRunLoopStart:(SEL)selector
+{
+	TiClassSelectorPair * pair = malloc(sizeof(TiClassSelectorPair));
+	pair->class = [self class];
+	pair->selector = selector;
+	TiBindingRunLoopCallOnStart(TiClassSelectorFunction,pair);
+}
 
 @synthesize pageContext, executionContext;
 @synthesize modelDelegate;
@@ -201,7 +218,7 @@ void DoProxyDelegateReadValuesWithKeysFromProxy(UIView<TiProxyDelegate> * target
 {
 	if (self = [super init])
 	{
-		bubbleParent = YES;
+		_bubbleParent = YES;
 #if PROXY_MEMORY_TRACK == 1
 		NSLog(@"[DEBUG] INIT: %@ (%d)",self,[self hash]);
 #endif
@@ -565,8 +582,6 @@ void DoProxyDelegateReadValuesWithKeysFromProxy(UIView<TiProxyDelegate> * target
 
 #pragma mark Public
 
-@synthesize bubbleParent;
-
 -(id<NSFastEnumeration>)allKeys
 {
 	pthread_rwlock_rdlock(&dynpropsLock);
@@ -574,6 +589,16 @@ void DoProxyDelegateReadValuesWithKeysFromProxy(UIView<TiProxyDelegate> * target
 	pthread_rwlock_unlock(&dynpropsLock);
 	
 	return keys;
+}
+
+-(NSNumber*)bubbleParent
+{
+    return NUMBOOL(_bubbleParent);
+}
+
+-(void)setBubbleParent:(id)arg
+{
+    _bubbleParent = [TiUtils boolValue:arg def:YES];
 }
 
 /*

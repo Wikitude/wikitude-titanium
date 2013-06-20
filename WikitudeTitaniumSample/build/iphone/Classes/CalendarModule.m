@@ -27,6 +27,15 @@ enum {
 };
 typedef NSUInteger EKEntityType;
 
+typedef void(^EKEventStoreRequestAccessCompletionHandler)(BOOL granted, NSError *error);
+
+
+@protocol EKEventStoreIOS6Support <NSObject>
+@optional
++ (NSInteger)authorizationStatusForEntityType:(EKEntityType)entityType;
+- (void)requestAccessToEntityType:(EKEntityType)entityType completion:(EKEventStoreRequestAccessCompletionHandler)completion;
+@end
+
 #endif
 
 @implementation CalendarModule
@@ -66,12 +75,9 @@ typedef NSUInteger EKEntityType;
 {
     [super startup];
     store = NULL;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
     if ([EKEventStore respondsToSelector:@selector(authorizationStatusForEntityType:)]) {
          iOS6API = YES;
     }
-#endif
-
 }
 
 -(void) eventStoreChanged:(NSNotification*)notification
@@ -200,7 +206,6 @@ typedef NSUInteger EKEntityType;
 	bool doPrompt = NO;
     
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
     if (iOS6API) {
         
         long int permissions = [EKEventStore authorizationStatusForEntityType:entityType];
@@ -220,7 +225,6 @@ typedef NSUInteger EKEntityType;
 				break;
 		}
 	}
-#endif
     
 	if (!doPrompt) {
 		NSDictionary * propertiesDict = [TiUtils dictionaryWithCode:code message:errorStr];
@@ -230,8 +234,6 @@ typedef NSUInteger EKEntityType;
 		[invocationArray release];
 		return;
 	}
-    
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
 	TiThreadPerformOnMainThread(^(){
 		
         EKEventStore* ourstore = [self store];
@@ -245,7 +247,6 @@ typedef NSUInteger EKEntityType;
                                      
                                  }];
 	}, NO);
-#endif
 }
 
 #pragma mark - Public API
@@ -265,11 +266,9 @@ typedef NSUInteger EKEntityType;
 -(NSNumber*) eventsAuthorization
 {
     long int result = EKAuthorizationStatusAuthorized;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
     if (iOS6API) { //in iOS 5.1 and below: no need to check for authorization.
         result = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
     }
-#endif
     return [NSNumber numberWithLong:result];
 }
 #pragma mark - Properties
