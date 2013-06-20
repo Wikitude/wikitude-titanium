@@ -1,0 +1,52 @@
+<h1>Wikitude iOS Module</h1>
+<h2>Description</h2>
+<p>The module integrates the power of Wikitude's ARchitect tools within a Titanium mobile application.</p>
+<h2>Configuration</h2>
+<p>In order to correctly pack the module, you have to follow these steps:</p>
+<ol>
+<li>
+<p>include the native Wikitude SDK (1.1 or 1.2), Vuforia Extension and QCAR static libraries within your project, for instance by respectively copying them under the local folders:</p>
+<p>Libraries/WikitudeSDK/SDK/SDK/lib/Release-iphoneos
+Libraries/WikitudeSDK/SDK/Extensions/VuforiaExtension/lib
+Libraries/WikitudeSDK/SDK/Extensions/QCAR/Library/lib/arm</p>
+</li>
+<li>
+<p>link to those libraries in the module.xcconfig file.</p>
+</li>
+</ol>
+<p>You may encounter some compilation issues, due to the fact that both armv6 and i386 architectures are not supported; please also take a look at https://github.com/pegli/ti_touchdb/wiki. Note that an armv7 device is required. </p>
+<h2>Testing</h2>
+<p>The module was tested with Wikitude SDK 1.1 and 1.2, Titanium SDK 3.0.0.GA and iOS SDK 5.1 and 6.0.</p>
+<h2>Changelog</h2>
+<h3>Version 0.1</h3>
+<p>This version provides a very basic implementation of the Wikitude integration module.</p>
+<h4>KNOWN ISSUES</h4>
+<ul>
+<li>whenever a Wikitude view which makes use of trackers for image recognition purposes gets destroyed, the process may be freezed for several seconds</li>
+<li>whenever a Wikitude view temporarily loses focus, some resources should to be released, in order to reduce computation, memory and power consumption</li>
+</ul>
+<h2>Accessing the Wikitude Module</h2>
+<p>To access this module from JavaScript, you would do the following:</p>
+<pre><code>var wikitude = require("com.wikitude.ti");
+</code></pre>
+<p>The wikitude variable is a reference to the Module object.<br />
+</p>
+<h2>Functions</h2>
+<h3>com.wikitude.ti.createWikitudeView</h3>
+<p>Creates an instance of the Wikitude view. </p>
+<h2>Properties</h2>
+<p>The following properties can be passed as arguments to the view.</p>
+<h3>licenseKey</h3>
+<p>The Wikitude license key.</p>
+<h3>architectWorldUri</h3>
+<p>The (ARchitect) world file uri.</p>
+<h3>js</h3>
+<p>Runs a piece of Javascript code within the Wikitude view context.</p>
+<h2>Events</h2>
+<h3>URL_WAS_INVOKED</h3>
+<h2>Usage</h2>
+<p>Please refer to the app.js file.</p>
+<h2>Author</h2>
+<p>Alessandro Zolet @ Interplay Software SRL</p>
+<h2>License</h2>
+<p>This module is written under Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html).</p>

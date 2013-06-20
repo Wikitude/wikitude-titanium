@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+provisioning_profiles/development/592E8835-48A8-4A82-B14B-E9B3E392D245/appid=com.mobilizy.wikitudedrive
+provisioning_profiles/development/592E8835-48A8-4A82-B14B-E9B3E392D245/name=Wikitude Drive ProvProfile
+provisioning_profiles/development/592E8835-48A8-4A82-B14B-E9B3E392D245/uuid=592E8835-48A8-4A82-B14B-E9B3E392D245
+provisioning_profiles/development/83B17494-0E15-48A4-9673-FCDAC0B2FAC1/appid=*
+provisioning_profiles/development/83B17494-0E15-48A4-9673-FCDAC0B2FAC1/name=iOS Team Provisioning Profile\: *
+provisioning_profiles/development/83B17494-0E15-48A4-9673-FCDAC0B2FAC1/uuid=83B17494-0E15-48A4-9673-FCDAC0B2FAC1
+provisioning_profiles/development/A147D425-FF70-48A4-A12D-D28007261C25/appid=com.mobilizy.Ludus-3D
+provisioning_profiles/development/A147D425-FF70-48A4-A12D-D28007261C25/name=Ludus3D
+provisioning_profiles/development/A147D425-FF70-48A4-A12D-D28007261C25/uuid=A147D425-FF70-48A4-A12D-D28007261C25
+provisioning_profiles/development/AE9EBC2A-1D42-4E58-8D93-9FDAA551D4E8/appid=com.mobilizy.wikitude
+provisioning_profiles/development/AE9EBC2A-1D42-4E58-8D93-9FDAA551D4E8/name=Wikitude_Dev
+provisioning_profiles/development/AE9EBC2A-1D42-4E58-8D93-9FDAA551D4E8/uuid=AE9EBC2A-1D42-4E58-8D93-9FDAA551D4E8

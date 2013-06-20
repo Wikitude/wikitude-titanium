@@ -1,0 +1,152 @@
+!SESSION 2013-06-20 11:51:40.606 -----------------------------------------------
+eclipse.buildId=3.1.1.201306112235
+java.version=1.6.0_45
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/Andi/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -data /Users/Andi/Development/Wikitude/GitHub/Titanium -keyring /Users/Andi/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-06-20 11:51:48.836
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.008
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_Process_Label in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.008
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_Launching_Error in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.008
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_Launching_Message in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.009
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_modulesProblem in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.009
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_commandLineToolsComment in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.009
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_distributingModuleMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.009
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_distributingModuleTaskName in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.009
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_executingBuildTask in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.010
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_Launching_Message in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.010
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_Process_Label in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.010
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_Launching_Error in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.010
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_missingBuildFileDetails in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.010
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_missingBuildFileMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.010
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_modulesProblem in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.011
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_packagingCompletedMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.011
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_packagingJobName in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.011
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_packagingProcessName in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.011
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_preExecutingMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.012
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_spaceInPathDetails in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:24.012
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_spaceInPathMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:27.086
+!MESSAGE NLS missing message: BasicProjectCreationPage_crossPlatformWarningAndroid in: com.appcelerator.titanium.ui.wizard.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 11:55:27.087
+!MESSAGE NLS missing message: BasicProjectCreationPage_crossPlatformWarningIOS in: com.appcelerator.titanium.ui.wizard.messages
+!SESSION 2013-06-20 11:58:42.161 -----------------------------------------------
+eclipse.buildId=3.1.1.201306112235
+java.version=1.6.0_45
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/Andi/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/Andi/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-06-20 11:58:47.275
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:01:47.010
+!MESSAGE NLS missing message: BasicProjectCreationPage_crossPlatformWarningAndroid in: com.appcelerator.titanium.ui.wizard.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:01:47.011
+!MESSAGE NLS missing message: BasicProjectCreationPage_crossPlatformWarningIOS in: com.appcelerator.titanium.ui.wizard.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.114
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_Process_Label in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.114
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_Launching_Error in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.115
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_Launching_Message in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.115
+!MESSAGE NLS unused message: IOSModulePackageLaunchConfigurationDelegate_modulesProblem in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.115
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_commandLineToolsComment in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.115
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_distributingModuleMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.115
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_distributingModuleTaskName in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.115
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_executingBuildTask in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.116
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_Launching_Message in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.116
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_Process_Label in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.116
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_Launching_Error in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.117
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_missingBuildFileDetails in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.117
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_missingBuildFileMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.117
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_modulesProblem in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.117
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_packagingCompletedMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.117
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_packagingJobName in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.117
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_packagingProcessName in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.118
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_preExecutingMessage in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.118
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_spaceInPathDetails in: com.appcelerator.titanium.mobile.module.launching.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-20 12:57:17.118
+!MESSAGE NLS unused message: AndroidModulePackageLaunchConfigurationDelegate_spaceInPathMessage in: com.appcelerator.titanium.mobile.module.launching.messages
