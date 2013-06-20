@@ -15,7 +15,7 @@
     </deployment-targets>
     <sdk-version>3.0.0.GA</sdk-version>
     <id>it.ipsoft.mobile.test.wikitude</id>
-    <name>WikitudeTestApp</name>
+    <name>Module Examples</name>
     <version>1.0</version>
     <publisher>interplay</publisher>
     <url>http://</url>
