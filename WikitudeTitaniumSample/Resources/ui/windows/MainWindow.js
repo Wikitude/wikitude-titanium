@@ -16,41 +16,43 @@ function MainWindow() {
 		title : 'Image Recognition',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow( WikitudeLicenseKey, '1_ImageRecognition_4_Bonus-Sparkles/index.html', geodata).open();
+			new ArWindow( WikitudeLicenseKey, '1_ImageRecognition_4_Bonus-Sparkles/index.html').open();
 		}
 	},
 	{
 		title : '3D and ImageRecognition',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow( WikitudeLicenseKey, '2_3dAndImageRecognition_1_3dModelOnTarget/index.html', geodata).open();
+			new ArWindow( WikitudeLicenseKey, '2_3dAndImageRecognition_1_3dModelOnTarget/index.html').open();
 		}
 	},
 	{
 		title : 'Selecting Places',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow( WikitudeLicenseKey, '3_PointOfInterest_4_SelectingPois/index.html', geodata).open();
+			new ArWindow( WikitudeLicenseKey, '3_PointOfInterest_4_SelectingPois/index.html').open();
 		}
 	},
 	{
 		title : 'Places from Webservice',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow( WikitudeLicenseKey, '4_ObtainPoiData_1_FromWebservice/index.html', geodata).open();
+			new ArWindow( WikitudeLicenseKey, '4_ObtainPoiData_1_FromWebservice/index.html').open();
 		}
 	},
 	{
 		title : 'Solar System Demo',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow( WikitudeLicenseKey, '6_Demo_2_SolarSystem(Geo)/index.html', geodata).open();
+			new ArWindow( WikitudeLicenseKey, '6_Demo_2_SolarSystem(Geo)/index.html').open();
 		}
 	},
 	{
 		title : 'Launch World via Url',
 		callback : function() {
-			alert("open URL enter window");
+			
+			var LaunchViaUrlWindow = require('/ui/windows/LaunchViaUrlWindow');
+			new LaunchViaUrlWindow( WikitudeLicenseKey ).open();
 		}
 	},
 	
@@ -83,33 +85,6 @@ function MainWindow() {
 	
 	view.add(listView);
 	self.add(view);
-	
-	
-	
-
-
-	function randomFromInterval(from, to) {
-    	return Math.random() * (to - from) + from;
-	}
-
-	var geodata = [], n = 50;
-
-     // you may create poi data here and inject them later on
-	/* 
-	for (var i = 0; i < n; i++) {
-		geodata.push({
-			'name' : 'POI ' + i,
-			'latitude' : randomFromInterval(45.994624840860446, 46.164662875910935),
-			'longitude' : randomFromInterval(10.92071533203125, 11.31011962890625)
-		});
-	}
-	*/
-	 
-	
-
-	// backButton.addEventListener('click', function() {
-		// self.close();
-	// });
 
 	return self;
 }

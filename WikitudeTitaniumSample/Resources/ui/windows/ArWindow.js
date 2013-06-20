@@ -1,4 +1,4 @@
-function ArWindow(key, url, data) {
+function ArWindow(key, url) {
 
 	var jsuri = require('jsuri-1.1.1'),
 		util = require('util'),
