@@ -179,6 +179,11 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 	{
 		try {
 			if (uri != null && architectView != null) {
+				
+				// for loading world from local asset folder (YourProject/Resources/android/assets)
+				if (!uri.contains("://")) {
+					uri = "Resources/assets/" + uri;
+				}
 				architectWorldUri = uri;
 				architectView.load(architectWorldUri);
 			} else {

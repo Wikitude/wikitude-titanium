@@ -1,8 +1,8 @@
 #appname:WikitudeTestApp
-#publisher:interplay
+#publisher:Wikitude GmbH
 #url:http://
 #image:appicon.png
-#appid:it.ipsoft.mobile.test.wikitude
-#desc:not specified
+#appid:com.wikitude.titaniumsample
+#desc:Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript
 #type:mobile
 #guid:566c8a1f-896c-4a1c-a994-9ecdb197ba62

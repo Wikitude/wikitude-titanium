@@ -17,7 +17,7 @@ function MainWindow() {
 	self.add(headView);
 
 	var headLabel = Ti.UI.createLabel({
-		text : 'MAIN'
+		text : 'Wikitude SDK Samples'
 	});
 	headView.add(headLabel);
 
@@ -47,12 +47,48 @@ function MainWindow() {
 	*/
 	 
 	var list = [{
-		title : 'AR sample world',
+		title : 'Image Recognition',
 		callback : function() {
 			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
+			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
+			new ArWindow('foo', '1_ImageRecognition_4_Bonus-Sparkles/index.html', geodata).open();
 		}
-	}];
+	},
+	{
+		title : '3D and ImageRecognition',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
+			new ArWindow('foo', '2_3dAndImageRecognition_1_3dModelOnTarget/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Selecting Places',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
+			new ArWindow('foo', '3_PointOfInterest_4_SelectingPois/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Places from Webservice',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
+			new ArWindow('foo', '4_ObtainPoiData_1_FromWebservice/index.html', geodata).open();
+		}
+	},
+	{
+		title : 'Solar System Demo',
+		callback : function() {
+			var ArWindow = require('/ui/windows/ArWindow');
+			// new ArWindow('foo', 'http://goo.gl/Vs8Oc', geodata).open();
+			new ArWindow('foo', '6_Demo_2_SolarSystem(Geo)/index.html', geodata).open();
+		}
+	}
+	
+	
+	 ];
 
 	var listView = Ti.UI.createTableView({
 		data : list
