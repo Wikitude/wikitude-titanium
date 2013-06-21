@@ -15,7 +15,7 @@
     </deployment-targets>
     <sdk-version>3.1.1.GA</sdk-version>
     <id>com.wikitude.titaniumsample</id>
-    <name>WikitudeTestApp</name>
+    <name>ModuleSamples</name>
     <version>1.0</version>
     <publisher>Wikitude GmbH</publisher>
     <url>http://</url>
@@ -48,7 +48,7 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:installLocation="preferExternal">
+        <manifest android:installLocation="auto">
             <supports-screens android:anyDensity="false"/>
         </manifest>
     </android>
@@ -61,7 +61,7 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android" version="0.1.1">com.wikitude.ti</module>
         <module platform="iphone" version="0.1.1">com.wikitude.ti</module>
+        <module platform="android" version="3.0">com.wikitude.ti</module>
     </modules>
 </ti:app>

@@ -54,10 +54,7 @@ function MainWindow() {
 			var LaunchViaUrlWindow = require('/ui/windows/LaunchViaUrlWindow');
 			new LaunchViaUrlWindow( WikitudeLicenseKey ).open();
 		}
-	},
-	
-	
-	 ];
+	}];
 
 	var listView = Ti.UI.createTableView({
 		data : list
@@ -67,17 +64,6 @@ function MainWindow() {
 		list[e.index].callback();
 	});
 
-	if (util.isAndroid())
-		self.addEventListener('android:back', function() {
-			self.close();
-		});
-
-	self.addEventListener('close', function() {
-		if (util.isAndroid())
-			Titanium.Android.currentActivity.finish();
-	});
-	
-	
 	var view = Ti.UI.createView({
     	height: '100%',
     	layout: 'vertical'
