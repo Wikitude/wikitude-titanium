@@ -124,7 +124,9 @@
     NSLog(@"[VIEW LIFECYCLE EVENT] setUrl_");
 
     if (arview != nil)
-
+        NSLog(@"url: %@", url);
+        NSLog(@"%@", [[NSBundle mainBundle] resourcePath]);
+        NSLog(@"file exists at path: %d", [[NSFileManager defaultManager] fileExistsAtPath:url]);
         [arview loadArchitectWorldFromUrl:[NSURL URLWithString:[TiUtils stringValue:url]]];
 }
 
