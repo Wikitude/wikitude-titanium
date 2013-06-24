@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1.1
+apiversion: 2
+description: Wikitude Module for iOS
+author: Alessandro Zolet (Interplay Software SRL)
+license: please refer to LICENSE file
+copyright: 
+
+
+# these should not be edited
+name: WikitudeIOS
+moduleid: com.wikitude.ti
+guid: e90fcd9a-d817-4c71-b3b8-9bd677ad4d2c
+platform: iphone
+minsdk: 3.0.0.GA
