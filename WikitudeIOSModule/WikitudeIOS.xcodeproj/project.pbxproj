@@ -42,9 +42,9 @@
 		3262C168168304BB005F1EA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3262C159168304BB005F1EA3 /* Security.framework */; };
 		3262C169168304BB005F1EA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3262C15A168304BB005F1EA3 /* SystemConfiguration.framework */; };
 		3262C16A168304BB005F1EA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3262C15B168304BB005F1EA3 /* UIKit.framework */; };
-		A9888ABD172007AE00CCCEF3 /* WikitudeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9888ABC172007AE00CCCEF3 /* WikitudeSDK.framework */; };
 		A9888ABF17200CE900CCCEF3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9888ABE17200CE900CCCEF3 /* AssetsLibrary.framework */; };
 		A9888AC317200D2700CCCEF3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9888AC217200D2700CCCEF3 /* CoreVideo.framework */; };
+		A9DC833F17776B26002BE1F6 /* WikitudeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DC833E17776B26002BE1F6 /* WikitudeSDK.framework */; };
 		AA747D9F0F9514B9006C5449 /* ComWikitudeTi_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComWikitudeTi_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -81,9 +81,9 @@
 		3262C159168304BB005F1EA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3262C15A168304BB005F1EA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3262C15B168304BB005F1EA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A9888ABC172007AE00CCCEF3 /* WikitudeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WikitudeSDK.framework; sourceTree = "<group>"; };
 		A9888ABE17200CE900CCCEF3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A9888AC217200D2700CCCEF3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A9DC833E17776B26002BE1F6 /* WikitudeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WikitudeSDK.framework; path = ../Framework/WikitudeSDK.framework; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ComWikitudeTi_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComWikitudeTi_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComWikitudeTi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComWikitudeTi.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9DC833F17776B26002BE1F6 /* WikitudeSDK.framework in Frameworks */,
 				A9888AC317200D2700CCCEF3 /* CoreVideo.framework in Frameworks */,
 				A9888ABF17200CE900CCCEF3 /* AssetsLibrary.framework in Frameworks */,
 				3262C15D168304BB005F1EA3 /* AVFoundation.framework in Frameworks */,
@@ -109,7 +110,6 @@
 				3262C169168304BB005F1EA3 /* SystemConfiguration.framework in Frameworks */,
 				3262C16A168304BB005F1EA3 /* UIKit.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				A9888ABD172007AE00CCCEF3 /* WikitudeSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 		0867D691FE84028FC02AAC07 /* WikitudeIOS */ = {
 			isa = PBXGroup;
 			children = (
-				A9888ABB172007AE00CCCEF3 /* Frameworks */,
+				A9DC833E17776B26002BE1F6 /* WikitudeSDK.framework */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -180,14 +180,6 @@
 				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
 			);
 			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		A9888ABB172007AE00CCCEF3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A9888ABC172007AE00CCCEF3 /* WikitudeSDK.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,17 +290,14 @@
 					armv6,
 					armv7,
 				);
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
 				"ARCHS[sdk=iphonesimulator*]" = i386;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/ComWikitudeTi.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/../Framework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -350,15 +339,12 @@
 					armv6,
 					armv7,
 				);
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
 				"ARCHS[sdk=iphonesimulator*]" = i386;
 				DSTROOT = /tmp/ComWikitudeTi.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/../Framework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;

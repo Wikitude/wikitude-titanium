@@ -30,9 +30,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2412F467115C296300454E5B /* TiMediaVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412F465115C296300454E5B /* TiMediaVideoPlayer.m */; };
 		242E8E3111BA39FD0046A0D0 /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		A6AF94A5B1724FFAB5A8176E /* libcom.wikitude.ti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0E42D31FEE44648646C5DC /* libcom.wikitude.ti.a */; };
 		242E8E3211BA39FE0046A0D0 /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		3B46C8F3571A41979748736C /* libcom.wikitude.ti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0E42D31FEE44648646C5DC /* libcom.wikitude.ti.a */; };
 		242E967711BAD2F20046A0D0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967411BAD2F20046A0D0 /* AsyncSocket.m */; };
 		242E967811BAD2F20046A0D0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967611BAD2F20046A0D0 /* AsyncUdpSocket.m */; };
 		242E967911BAD2F20046A0D0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967411BAD2F20046A0D0 /* AsyncSocket.m */; };
@@ -505,6 +503,7 @@
 		2BDEA4F31448FFB7004EC750 /* TiUIiOSTabbedBarProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEA4F21448FFB7004EC750 /* TiUIiOSTabbedBarProxy.m */; };
 		2BDEA4F514490546004EC750 /* TiUIiOSTabbedBarProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEA4F21448FFB7004EC750 /* TiUIiOSTabbedBarProxy.m */; };
 		2BDEA4F614490547004EC750 /* TiUIiOSTabbedBarProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEA4F21448FFB7004EC750 /* TiUIiOSTabbedBarProxy.m */; };
+		456980172ED44D9BA6C3892C /* libcom.wikitude.ti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768F0AC289A45F3B274DF63 /* libcom.wikitude.ti.a */; };
 		4688700715E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4688700615E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m */; };
 		4688700815E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4688700615E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m */; };
 		4688700915E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4688700615E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m */; };
@@ -533,6 +532,7 @@
 		5081CEFA15F8100E00C881D8 /* TiExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5081CEF715F8100E00C881D8 /* TiExceptionHandler.m */; };
 		508DB8FC16D431F000F9910E /* libti_ios_profiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 502E9D2316CAFB9D00C1BD26 /* libti_ios_profiler.a */; };
 		508DB8FD16D431F100F9910E /* libti_ios_profiler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 502E9D2316CAFB9D00C1BD26 /* libti_ios_profiler.a */; };
+		7EB9DF70A6CD413D9E62CE78 /* libcom.wikitude.ti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768F0AC289A45F3B274DF63 /* libcom.wikitude.ti.a */; };
 		8406A97616CED43D00EB62FB /* TiMapCustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A9D4816CEBF24003AA591 /* TiMapCustomAnnotationView.m */; };
 		8406A97716CED45400EB62FB /* TiMapCustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A9D4816CEBF24003AA591 /* TiMapCustomAnnotationView.m */; };
 		840A9D4916CEBF24003AA591 /* TiMapCustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A9D4816CEBF24003AA591 /* TiMapCustomAnnotationView.m */; };
@@ -563,6 +563,7 @@
 		84D541AD1460B3EE005338D1 /* TiDOMEntityRefProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D541AC1460B3ED005338D1 /* TiDOMEntityRefProxy.m */; };
 		84D541AE1460B3EE005338D1 /* TiDOMEntityRefProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D541AC1460B3ED005338D1 /* TiDOMEntityRefProxy.m */; };
 		84D541AF1460B3EE005338D1 /* TiDOMEntityRefProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D541AC1460B3ED005338D1 /* TiDOMEntityRefProxy.m */; };
+		A4AE3F71E6BC4DA287C06DBD /* libcom.wikitude.ti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768F0AC289A45F3B274DF63 /* libcom.wikitude.ti.a */; };
 		ABD472F413BB73BF00502912 /* KrollCoverage.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD472F313BB73BF00502912 /* KrollCoverage.m */; };
 		ABD472F513BB73BF00502912 /* KrollCoverage.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD472F313BB73BF00502912 /* KrollCoverage.m */; };
 		ABD472F613BB73BF00502912 /* KrollCoverage.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD472F313BB73BF00502912 /* KrollCoverage.m */; };
@@ -881,7 +882,6 @@
 		DABB37B412E8CB280026A6EA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EB0A57111E1BAE001DC2D1 /* libxml2.dylib */; };
 		DABB37B512E8CB280026A6EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24597034118FF66300519F79 /* StoreKit.framework */; };
 		DABB37B612E8CB280026A6EA /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		168D3854273D409F9AE74D30 /* libcom.wikitude.ti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0E42D31FEE44648646C5DC /* libcom.wikitude.ti.a */; };
 		DABB37B712E8CB280026A6EA /* libtiverify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D5C75811E6364F00F097E2 /* libtiverify.a */; };
 		DABDEB08128B5A8F00C85FEA /* AudioStreamerCUR.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9FF582128A1F3600457759 /* AudioStreamerCUR.m */; };
 		DABF3ECF134D210400836137 /* TiBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF3ECE134D210400836137 /* TiBuffer.m */; };
@@ -923,6 +923,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0768F0AC289A45F3B274DF63 /* libcom.wikitude.ti.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcom.wikitude.ti.a; path = /Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1/libcom.wikitude.ti.a; sourceTree = "<absolute>"; };
 		1D0061BF160283820016BBEE /* TiBindingRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiBindingRunLoop.h; sourceTree = "<group>"; };
 		1D0061C0160283820016BBEE /* TiBindingRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiBindingRunLoop.m; sourceTree = "<group>"; };
 		1D1029A615F9769100372EC0 /* TiBindingEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TiBindingEvent.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -932,7 +933,7 @@
 		1D19459913FF3BE500E2B4D0 /* TIDOMDocumentTypeProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIDOMDocumentTypeProxy.h; sourceTree = "<group>"; };
 		1D19459A13FF3BE500E2B4D0 /* TIDOMDocumentTypeProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIDOMDocumentTypeProxy.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* WikitudeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WikitudeTestApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* WikitudeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikitudeTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCC542D13FF0B0700DF3EE5 /* TIDOMCharacterDataProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIDOMCharacterDataProxy.h; sourceTree = "<group>"; };
 		1DCC542E13FF0B0800DF3EE5 /* TIDOMCharacterDataProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIDOMCharacterDataProxy.m; sourceTree = "<group>"; };
 		1DD9388A1609230900091777 /* TiBindingTiValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiBindingTiValue.h; sourceTree = "<group>"; };
@@ -943,7 +944,6 @@
 		241EAA21118AB3BB0081A5BE /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = Classes/defines.h; sourceTree = SOURCE_ROOT; };
 		241EAEC5118E2BA90081A5BE /* project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
 		242E8E3011BA39FD0046A0D0 /* libTiCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTiCore.a; path = lib/libTiCore.a; sourceTree = SOURCE_ROOT; };
-		0E0E42D31FEE44648646C5DC /* libcom.wikitude.ti.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcom.wikitude.ti.a; path = "/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1/libcom.wikitude.ti.a"; sourceTree = "<absolute>"; };
 		242E95C811BAC8B40046A0D0 /* TiDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiDebugger.h; path = Classes/TiDebugger.h; sourceTree = SOURCE_ROOT; };
 		242E967311BAD2F20046A0D0 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = Classes/AsyncSocket.h; sourceTree = SOURCE_ROOT; };
 		242E967411BAD2F20046A0D0 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = Classes/AsyncSocket.m; sourceTree = SOURCE_ROOT; };
@@ -1308,7 +1308,7 @@
 		24D0700411D0253D00F615D8 /* TiUIiOSProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TiUIiOSProxy.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		24D0700511D0253D00F615D8 /* TiUIiOSProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TiUIiOSProxy.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		24D5C75811E6364F00F097E2 /* libtiverify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiverify.a; path = lib/libtiverify.a; sourceTree = SOURCE_ROOT; };
-		24D8E4B1119B9D8A00F8CAA6 /* WikitudeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WikitudeTestApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24D8E4B1119B9D8A00F8CAA6 /* WikitudeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikitudeTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DD042A116A6C58006FD6E1 /* TiToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiToolbar.h; sourceTree = "<group>"; };
 		24DD0455116A6F02006FD6E1 /* TiTabGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiTabGroup.h; sourceTree = "<group>"; };
 		24DD0977116D8E07006FD6E1 /* TiToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiToolbarButton.h; sourceTree = "<group>"; };
@@ -1412,7 +1412,7 @@
 		2BCD59C41429561D00DEC2E8 /* TiUIiOSToolbarProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiUIiOSToolbarProxy.m; sourceTree = "<group>"; };
 		2BDEA4F11448FFB7004EC750 /* TiUIiOSTabbedBarProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiUIiOSTabbedBarProxy.h; sourceTree = "<group>"; };
 		2BDEA4F21448FFB7004EC750 /* TiUIiOSTabbedBarProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiUIiOSTabbedBarProxy.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* WikitudeTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WikitudeTestApp_Prefix.pch"; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* WikitudeTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikitudeTestApp_Prefix.pch; sourceTree = "<group>"; };
 		4688700515E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiUIiPhoneAlertDialogStyleProxy.h; sourceTree = "<group>"; };
 		4688700615E39A9D008FA326 /* TiUIiPhoneAlertDialogStyleProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiUIiPhoneAlertDialogStyleProxy.m; sourceTree = "<group>"; };
 		4D3033A1136239B30034640F /* TiFilesystemFileStreamProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TiFilesystemFileStreamProxy.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -1519,7 +1519,7 @@
 		DAA72342156D642400757987 /* TiConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiConsole.m; sourceTree = "<group>"; };
 		DAA905CC11A359F10030B119 /* TiMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMediaItem.h; sourceTree = "<group>"; };
 		DAA905CD11A359F10030B119 /* TiMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiMediaItem.m; sourceTree = "<group>"; };
-		DABB37BC12E8CB280026A6EA /* WikitudeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WikitudeTestApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DABB37BC12E8CB280026A6EA /* WikitudeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikitudeTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABF3ECD134D210400836137 /* TiBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiBuffer.h; sourceTree = "<group>"; };
 		DABF3ECE134D210400836137 /* TiBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiBuffer.m; sourceTree = "<group>"; };
 		DABF3ED5134D2CA100836137 /* StreamModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamModule.h; sourceTree = "<group>"; };
@@ -1573,7 +1573,7 @@
 				24EB0A58111E1BAE001DC2D1 /* libxml2.dylib in Frameworks */,
 				24597035118FF66300519F79 /* StoreKit.framework in Frameworks */,
 				242E8E3111BA39FD0046A0D0 /* libTiCore.a in Frameworks */,
-				A6AF94A5B1724FFAB5A8176E /* libcom.wikitude.ti.a in Frameworks */,
+				7EB9DF70A6CD413D9E62CE78 /* libcom.wikitude.ti.a in Frameworks */,
 				242EA11611BD956F0046A0D0 /* ExternalAccessory.framework in Frameworks */,
 				24D5C75911E6364F00F097E2 /* libtiverify.a in Frameworks */,
 				DAA4B2AE134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
@@ -1609,7 +1609,7 @@
 				24D8E4AB119B9D8A00F8CAA6 /* libxml2.dylib in Frameworks */,
 				24D8E4AC119B9D8A00F8CAA6 /* StoreKit.framework in Frameworks */,
 				242E8E3211BA39FE0046A0D0 /* libTiCore.a in Frameworks */,
-				3B46C8F3571A41979748736C /* libcom.wikitude.ti.a in Frameworks */,
+				A4AE3F71E6BC4DA287C06DBD /* libcom.wikitude.ti.a in Frameworks */,
 				24D5C75A11E6364F00F097E2 /* libtiverify.a in Frameworks */,
 				DAA4B2AF134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
 				DADE76D613D65C6F0079FC75 /* libicucore.dylib in Frameworks */,
@@ -1646,7 +1646,7 @@
 				DABB37B412E8CB280026A6EA /* libxml2.dylib in Frameworks */,
 				DABB37B512E8CB280026A6EA /* StoreKit.framework in Frameworks */,
 				DABB37B612E8CB280026A6EA /* libTiCore.a in Frameworks */,
-				168D3854273D409F9AE74D30 /* libcom.wikitude.ti.a in Frameworks */,
+				456980172ED44D9BA6C3892C /* libcom.wikitude.ti.a in Frameworks */,
 				DABB37B712E8CB280026A6EA /* libtiverify.a in Frameworks */,
 				DAA4B2B0134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
 				DADE76D713D65C7D0079FC75 /* libicucore.dylib in Frameworks */,
@@ -1739,7 +1739,6 @@
 				24CA8A0A111161DC0084E2DE /* Utils */,
 				24CA8A0B111161E10084E2DE /* API */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -2788,7 +2787,7 @@
 				DAA4B2AD134E3DBD00AB6011 /* libti_ios_debugger.a */,
 				24D5C75811E6364F00F097E2 /* libtiverify.a */,
 				242E8E3011BA39FD0046A0D0 /* libTiCore.a */,
-				0E0E42D31FEE44648646C5DC /* libcom.wikitude.ti.a */,
+				0768F0AC289A45F3B274DF63 /* libcom.wikitude.ti.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -2993,7 +2992,7 @@
 			);
 			dependencies = (
 			);
-			name = "WikitudeTestApp";
+			name = WikitudeTestApp;
 			productName = WikitudeTestApp;
 			productReference = 1D6058910D05DD3D006BFB54 /* WikitudeTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -4031,19 +4030,21 @@
 			baseConfigurationReference = 241EAEC5118E2BA90081A5BE /* project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
@@ -4063,7 +4064,7 @@
 					"-weak_framework",
 					iAd,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4074,16 +4075,18 @@
 			baseConfigurationReference = 241EAEC5118E2BA90081A5BE /* project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
 					"$(inherited)",
@@ -4094,7 +4097,7 @@
 					"-weak_framework",
 					CoreVideo,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -4109,13 +4112,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DIPAD",
@@ -4131,7 +4134,7 @@
 					"-weak_framework",
 					CoreVideo,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -4143,13 +4146,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DIPAD",
@@ -4164,7 +4167,7 @@
 					"-weak_framework",
 					CoreVideo,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -4174,8 +4177,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 241EAEC5118E2BA90081A5BE /* project.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
-				"ARCHS[sdk=iphoneos*]" = armv7;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
 				"ARCHS[sdk=iphonesimulator*]" = i386;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -4197,6 +4200,7 @@
 					headers,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
@@ -4237,6 +4241,7 @@
 					headers,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -4274,6 +4279,7 @@
 					headers,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
@@ -4293,19 +4299,21 @@
 			baseConfigurationReference = 241EAEC5118E2BA90081A5BE /* project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
@@ -4325,7 +4333,7 @@
 					"-weak_framework",
 					iAd,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4340,13 +4348,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DIPAD",
@@ -4362,7 +4370,7 @@
 					"-weak_framework",
 					CoreVideo,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Developer;
@@ -4376,13 +4384,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DIPAD",
@@ -4403,7 +4411,7 @@
 					"-weak_framework",
 					CoreMedia,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4418,13 +4426,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DIPAD",
@@ -4445,7 +4453,7 @@
 					"-weak_framework",
 					CoreMedia,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4458,13 +4466,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WikitudeTestApp_Prefix.pch";
+				GCC_PREFIX_HEADER = WikitudeTestApp_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
-                                        "\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
+					"\"/Users/Andi/Development/Wikitude/GitHub/Titanium/WikitudeTitaniumSample/modules/iphone/com.wikitude.ti/0.1.1\"",
 				);
 				OTHER_CFLAGS = (
 					"-DIPAD",
@@ -4479,7 +4487,7 @@
 					"-weak_framework",
 					CoreMedia,
 				);
-				PRODUCT_NAME = "WikitudeTestApp";
+				PRODUCT_NAME = WikitudeTestApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

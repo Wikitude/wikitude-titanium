@@ -17,11 +17,8 @@
 #import "TiUIView.h"
 #import <WikitudeSDK/WTArchitectView.h>
 
-@interface ComWikitudeTiWikitudeView : TiUIView <WTArchitectViewDelegate> {
-    
-@private
-    WTArchitectView* arview;
+@interface ComWikitudeTiWikitudeView : TiUIView <WTArchitectViewDelegate>
 
-}
+- (void)stopAR;
 
 @end
