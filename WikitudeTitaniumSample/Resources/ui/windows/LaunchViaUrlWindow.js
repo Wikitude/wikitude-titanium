@@ -1,7 +1,6 @@
 function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'transparent',
 		navBarHidden : false,
 		title : windowTitle
 	});
@@ -35,13 +34,24 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	
 	var textField = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	  top: 30, left: 10, right: 10,
+	  top: 60, left: 10, right: 10,
 	  width: '90%', height: 50,
 	  hintText:'http://',
 	  value: 'http://',
 	  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	  verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
 	});
+	
+	var backButton = Ti.UI.createButton({
+		title : 'Back',
+		left : 6, top : 6,
+		height : 36, width : 64
+	});
+	backButton.addEventListener('click', function() {
+		self.close();
+	});
+
+	view.add(backButton);
 	
 	view.add(textField);
 	view.add(buttonLaunch);

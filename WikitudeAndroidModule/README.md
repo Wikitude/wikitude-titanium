@@ -2,9 +2,11 @@
 by Wikitude GmbH - [www.wikitude.com](http://www.wikitude.com)
 
 
-The Wikitude Titanium Module enables you to embed an augmented reality view in your Titanium project. One can create a fully featured app with advanced augmented reality features purely using HTML, CSS and Javascript.
 
-**There is no need to modify this project. Copy the content of the `module-files` folder into your project and paste `wikitudesdk.jar` into the lib-directory and have a look at the provided SampleProject**
+Please have a look at github and Wikitude's website for latest documentation and samples
+
+	- https://github.com/Wikitude/wikitude-titanium
+	- http://www.wikitude.com
 
 
 

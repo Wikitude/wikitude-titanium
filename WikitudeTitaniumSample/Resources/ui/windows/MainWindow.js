@@ -16,7 +16,6 @@ function MainWindow() {
 	var windowTitle = 'Wikitude Module Samples';
 
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'transparent',
 		navBarHidden : false,
 		title : windowTitle,
 		exitOnClose : true
