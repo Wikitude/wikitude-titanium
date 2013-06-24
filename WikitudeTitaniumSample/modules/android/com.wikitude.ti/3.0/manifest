@@ -1,0 +1,14 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 3.0
+apiversion: 2
+description: Wikitude Module for Android
+license: please refer to LICENSE file 
+
+name: wikitudeand
+moduleid: com.wikitude.ti
+guid: 0dca70df-e249-4fc3-bd72-0c18d31835f1
+platform: android
+minsdk: 3.0.2.GA

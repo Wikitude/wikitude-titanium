@@ -1,9 +1,9 @@
-function LaunchViaUrlWindow(WikitudeLicenseKey) {
+function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	
 	var self = Ti.UI.createWindow({
 		backgroundColor : 'transparent',
 		navBarHidden : false,
-		title : 'Launch World via Url'
+		title : windowTitle
 	});
 	
 	var view = Ti.UI.createView({
