@@ -1,4 +1,0 @@
-// this is a generated file - DO NOT EDIT
-
-COM_WIKITUDE_TI_OTHER_LDFLAGS=$(inherited) -F$(SRCROOT)/../../../WikitudeIOSModule/Framework -lc++ -lsqlite3 -lz -ObjC -framework AssetsLibrary -framework CoreMedia -framework CoreMotion -framework CoreVideo -framework Security -framework WikitudeSDK
-OTHER_LDFLAGS=$(inherited) $(COM_WIKITUDE_TI_OTHER_LDFLAGS) 
