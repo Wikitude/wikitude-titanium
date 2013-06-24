@@ -1,4 +1,4 @@
-function ArWindow(WikitudeLicenseKey, url) {
+function ARchitectWindow(WikitudeLicenseKey, url) {
 
 	var _this = this;
 	
@@ -17,7 +17,7 @@ function ArWindow(WikitudeLicenseKey, url) {
 	var self = Ti.UI.createWindow({
 		backgroundColor : 'transparent',
 		navBarHidden : true,
-		title : 'ArWindow'
+		title : 'ARchitectWindow'
 	});
 
 	var headView = Ti.UI.createView({
@@ -147,4 +147,4 @@ function ArWindow(WikitudeLicenseKey, url) {
 	return self;
 }
 
-module.exports = ArWindow;
+module.exports = ARchitectWindow;

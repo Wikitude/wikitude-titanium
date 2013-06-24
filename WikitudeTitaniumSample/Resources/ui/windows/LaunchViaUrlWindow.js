@@ -27,8 +27,8 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 		if (url2launch.indexOf("://") == -1) {
 			alert("Please enter valid url");
 		} else {
-			var ArWindow = require('/ui/windows/ArWindow');
-			new ArWindow( WikitudeLicenseKey, url2launch).open();	
+			var ARchitectWindow = require('/ui/windows/ARchitectWindow');
+			new ARchitectWindow( WikitudeLicenseKey, url2launch).open();	
 		}
 			
 	});	

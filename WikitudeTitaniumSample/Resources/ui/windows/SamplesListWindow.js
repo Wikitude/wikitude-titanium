@@ -16,8 +16,8 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 		list.push( 
 			{ 	title: _this.samples[i].title, 
 				callback : function(index) {
-					var ArWindow = require('/ui/windows/ArWindow');
-					new ArWindow( WikitudeLicenseKey, _this.samples[index].file).open();
+					var ARchitectWindow = require('/ui/windows/ARchitectWindow');
+					new ARchitectWindow( WikitudeLicenseKey, _this.samples[index].file).open();
 				}
 			}
 		);
