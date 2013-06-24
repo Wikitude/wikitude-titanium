@@ -66,8 +66,6 @@ function ArWindow(WikitudeLicenseKey, url) {
 			_this.arview.userLocation = locationInformation;	
 		}
 		
-		alert("received location " + locationInformation.longitude);
-		
 	};
 
 
@@ -141,7 +139,7 @@ function ArWindow(WikitudeLicenseKey, url) {
 	/* handles document.location = "architectsdk://yourvalues" calls within architect html */
 	var onUrlWasInvoked = function(event) {
 		var uri = new jsuri.Uri(event.url);
-		alert("url was invoked")
+		alert("url was invoked");
 	};
 	
 	return self;

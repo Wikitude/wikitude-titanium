@@ -3,7 +3,6 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 	var _this = this;
 
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'transparent',
 		navBarHidden : false,
 		title : windowTitle,
 	});
@@ -35,6 +34,17 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
     	height: '100%',
     	layout: 'vertical'
 	});
+	
+	var backButton = Ti.UI.createButton({
+		title : 'Back',
+		left : 6, top : 6,
+		height : 36, width : 64
+	});
+	backButton.addEventListener('click', function() {
+		self.close();
+	});
+
+	view.add(backButton);
 	
 	view.add(listView);
 	self.add(view);
