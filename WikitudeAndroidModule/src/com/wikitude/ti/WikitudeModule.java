@@ -13,11 +13,6 @@ import org.appcelerator.titanium.TiApplication;
  *
  * http://www.apache.org/licenses/LICENSE-2.0.html
  *
- * Version history:
- *
- * @version 0.1.1 First stable version, tested with Wiktiude SDK 2.1
- * 			0.1 Initial Beta version (2012-12; Interplay Software SRL)
- *
  */
 
 @Kroll.module(name="Wikitudeand", id="com.wikitude.ti")
@@ -27,9 +22,6 @@ public class WikitudeModule extends KrollModule
 	// Standard Debugging variables
 	private static final String TAG = "WikitudeandModule";
 
-	// You can define constants with @Kroll.constant, for example:
-	// @Kroll.constant public static final String EXTERNAL_NAME = value;
-	
 	public WikitudeModule()
 	{
 		super();

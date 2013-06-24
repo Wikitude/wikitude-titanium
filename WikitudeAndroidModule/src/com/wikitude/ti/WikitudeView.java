@@ -18,6 +18,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.wikitude.architect.ArchitectUrlListener;
 import com.wikitude.architect.ArchitectView;
@@ -32,14 +33,9 @@ import com.wikitude.ti.Constants;
  *
  * http://www.apache.org/licenses/LICENSE-2.0.html
  *
- * Version history:
- *
- * @version 0.1.1 First stable version, tested with Wiktiude SDK 2.1
- * 			0.1 Initial Beta version (2012-12; Interplay Software SRL)
- *
  */
 
-public class WikitudeView extends TiUIView implements ArchitectUrlListener, LocationListener {
+public class WikitudeView extends TiUIView implements ArchitectUrlListener {
 
 	private final String TAG = "WikitudeView";
 
@@ -69,11 +65,6 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 	 * ARchitectView of Wikitude SDK
 	 */
 	private ArchitectView architectView;
-	
-	/**
-	 * LocationManager firing events on position changes
-	 */
-	private LocationManager locationManager;
 
 	/**
 	 * TODO: You must enter a valid license key here, which maches your Android-package-identifier (the "id" defined in your apps tiapp.xml)
@@ -159,12 +150,6 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 		setArchitectWorldUri(architectWorldUri);
 
 		architectView.onResume();
-
-		locationManager = (LocationManager) proxy.getActivity().getSystemService(Context.LOCATION_SERVICE);
-		
-		// TODO: implement smart location service if required
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, this);
-		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 0, this);
 	}
 
 	@Override
@@ -203,11 +188,18 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 	public void setUserLocation(HashMap<String, Object> location) 
 	{
 		if (architectView != null) {
-			KrollDict args = new KrollDict(location);
-			double lat = args.getDouble("latitude");
-			double lng = args.getDouble("longitude");
-			locationManager.removeUpdates(this);
-			architectView.setLocation(lat, lng, 0.0f);
+			final KrollDict args = new KrollDict(location);
+			final double lat = args.getDouble("latitude");
+			final double lng = args.getDouble("longitude");
+			final boolean hasAltitude = args.get("altitude")!=null;
+			final boolean hasAccuracy = (args.get("accuracy")!=null);
+			final float fallbackAccuracy = 1000f;
+			
+			if (hasAltitude) {
+				architectView.setLocation(lat, lng, args.getDouble("altitude"), hasAccuracy ? (args.getDouble("accuracy")).floatValue() : fallbackAccuracy);
+			} else {
+				architectView.setLocation(lat, lng, hasAccuracy ? (args.getDouble("accuracy")).floatValue() : fallbackAccuracy);
+			}
 		}
 	}
 
@@ -247,8 +239,6 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 		super.release();
 		Log.d(TAG, "release called");
 
-		locationManager.removeUpdates(this);
-
 		if (architectView != null) {
 			architectView.onPause();
 			architectView.onDestroy();
@@ -262,37 +252,6 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener, Loca
 		data.put("url", url);
 		proxy.fireEvent(Constants.URL_WAS_INVOKED, data);
 		return true;
-	}
-
-	@Override
-	public void onLocationChanged(Location location) 
-	{
-		Log.d(TAG, "onLocationChanged fired (" + location.getLatitude() + ", " + location.getLongitude() + ")");
-	
-		// inject location to architectView, you may implement a smart location strategy in case you need smoother cam experience
-		if (architectView != null && location!=null) {
-			final float accuracy = location.hasAccuracy()?location.getAccuracy():1000.0f;
-			if (location.hasAltitude()) {
-				architectView.setLocation(location.getLatitude(), location.getLongitude(), location.getAltitude(), accuracy);
-			} else {
-				architectView.setLocation(location.getLatitude(), location.getLongitude(), accuracy);
-			}
-		}
-	}
-
-	@Override
-	public void onProviderDisabled(String provider) {
-		// do nothing
-	}
-
-	@Override
-	public void onProviderEnabled(String provider) {
-		// do nothing
-	}
-
-	@Override
-	public void onStatusChanged(String provider, int status, Bundle extras) {
-		// do nothing
 	}
 
 }
