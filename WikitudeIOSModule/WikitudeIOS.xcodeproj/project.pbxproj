@@ -83,7 +83,7 @@
 		3262C15B168304BB005F1EA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9888ABE17200CE900CCCEF3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A9888AC217200D2700CCCEF3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		A9DC833E17776B26002BE1F6 /* WikitudeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WikitudeSDK.framework; path = ../Framework/WikitudeSDK.framework; sourceTree = "<group>"; };
+		A9DC833E17776B26002BE1F6 /* WikitudeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WikitudeSDK.framework; path = Framework/WikitudeSDK.framework; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ComWikitudeTi_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComWikitudeTi_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComWikitudeTi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComWikitudeTi.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,7 +297,7 @@
 				DSTROOT = /tmp/ComWikitudeTi.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../Framework\"",
+					"\"$(SRCROOT)/Framework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -344,7 +344,7 @@
 				DSTROOT = /tmp/ComWikitudeTi.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../Framework\"",
+					"\"$(SRCROOT)/Framework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
