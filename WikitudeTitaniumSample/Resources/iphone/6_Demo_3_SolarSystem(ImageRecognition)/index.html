@@ -2,21 +2,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My ARchitect World</title>
+<title>Solar System (Image Recognition)</title>
 
-<!-- Important: Let the viewport cover the whole screen -->
 <meta name="viewport" content="target-densitydpi=device-dpi, width = 540, user-scalable = 0" />
 
-<!-- Include the ARchitect library -->
 <script src="architect://architect.js"></script>
 <script src="../ade.js"></script>
 
 <link rel="stylesheet" href="css/default.css">
+
 </head>
 
 <body>
 
 <div id="err"></div>
+<div>
+<div class="toggleAnimationBtn" onClick="World.toggleAnimatePlanets();">
+	Animate
+</div>
+</div>
 
 <div id = "info" class = "info">
 	<table>
@@ -26,8 +30,7 @@
 	</table>
 </div>
 
-
-<script src="js/solarsystem.jsl"></script>
+<script src="js/solarsystemir.jsl"></script>
 
 </body>
 
