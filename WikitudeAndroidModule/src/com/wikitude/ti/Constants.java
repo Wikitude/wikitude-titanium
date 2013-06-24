@@ -10,9 +10,6 @@ package com.wikitude.ti;
  *
  * Version history:
  *
- * @version 0.1.1 First stable version, tested with Wiktiude SDK 2.1
- * 			0.1 Initial Beta version (2012-12; Interplay Software SRL)
- *
  */
 
 public class Constants {

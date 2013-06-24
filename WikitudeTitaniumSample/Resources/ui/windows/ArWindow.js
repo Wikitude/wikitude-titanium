@@ -1,10 +1,13 @@
-function ArWindow(key, url) {
+function ArWindow(WikitudeLicenseKey, url) {
 
+	var _this = this;
+	
+	this.LOCATION_LISTENER_ADDED = false;
+	
 	/* Member Variables */
-	var licenseKey = key;
 	var worldUrl = url;
-	var arview = null;
-
+	this.arview = null;
+	
 
 	/* initial view setup */
 	var jsuri = require('jsuri-1.1.1'),
@@ -48,32 +51,79 @@ function ArWindow(key, url) {
 	});
 
 	self.add(mainView);
+	
+	var _this = this;
+	
+	this.locationListener = function(location) {
+		var locationInformation = { latitude: location.coords.latitude, longitude: location.coords.longitude, accuracy: location.coords.accuracy, timestamp: location.coords.timestamp, altitudeAccuracy : location.coords.altitudeAccuracy  };
+		
+		// has altitude?
+		if (location.coords.altitude != 0) {
+			locationInformation.altitude = location.coords.altitude; 
+		}
+		
+		if ( ( _this.arview!==null ) ) {
+			_this.arview.userLocation = locationInformation;	
+		}
+		
+		alert("received location " + locationInformation.longitude);
+		
+	};
 
 
 	/* lifecycle handling */
 	self.addEventListener('open', function() {
 
-		arview = wikitude.createWikitudeView({
-			licenseKey : licenseKey,
+		_this.arview = wikitude.createWikitudeView({
+			licenseKey : WikitudeLicenseKey,
 			bottom : 0, left : 0, right : 0, top : 0
 		});
 
-		mainView.add(arview);
+		mainView.add(_this.arview);
+		
+		if (Titanium.Platform.name == 'android') {
 
-		arview.addEventListener('URL_WAS_INVOKED', onUrlWasInvoked); // setup event listener
+			// Titanium.Geolocation.distanceFilter = 1;
+				
+            self.activity.addEventListener('resume', function() {
+		      if (!_this.LOCATION_LISTENER_ADDED) {
+		            Titanium.Geolocation.addEventListener('location', _this.locationListener);
+		            _this.LOCATION_LISTENER_ADDED = true;
+		        }
+		    });
+            
+            self.activity.addEventListener('pause', function() {
+                if (_this.LOCATION_LISTENER_ADDED) {
+	                Titanium.Geolocation.removeEventListener('location', _this.locationListener);
+	                _this.LOCATION_LISTENER_ADDED = false;
+	            }
+            });
+            
+            self.activity.addEventListener('destroy', function(e) {
+		        if (_this.LOCATION_LISTENER_ADDED) {
+		            Titanium.Geolocation.removeEventListener('location', _this.locationListener);
+		            _this.LOCATION_LISTENER_ADDED = false;
+		        }
+		    });
+            
+         	self.activityListenerLoaded = true;	   
+         };
+         
+        _this.arview.addEventListener('URL_WAS_INVOKED', onUrlWasInvoked); // setup event listener
 
-		arview.architectWorldUri = url; // load ARchitect world
-
-	});
+		_this.arview.architectWorldUri = url; // load ARchitect world
+         
+         
+       });
 
 	self.addEventListener('close', function() {
 
-		if (arview !== null) {
+		if (_this.arview !== null) {
 
-			arview.removeEventListener('URL_WAS_INVOKED', onUrlWasInvoked); // useless, since arview is then destroyed
+			_this.arview.removeEventListener('URL_WAS_INVOKED', onUrlWasInvoked); // useless, since arview is then destroyed
 
-			mainView.remove(arview);
-			arview = null;
+			mainView.remove(_this.arview);
+			_this.arview = null;
 		}
 	});
 
@@ -91,10 +141,9 @@ function ArWindow(key, url) {
 	/* handles document.location = "architectsdk://yourvalues" calls within architect html */
 	var onUrlWasInvoked = function(event) {
 		var uri = new jsuri.Uri(event.url);
-		// TODO handle if used insude your AR experience
+		alert("url was invoked")
 	};
-
-
+	
 	return self;
 }
 
