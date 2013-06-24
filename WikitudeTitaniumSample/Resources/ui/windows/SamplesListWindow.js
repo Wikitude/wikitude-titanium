@@ -5,6 +5,7 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 	var self = Ti.UI.createWindow({
 		navBarHidden : false,
 		title : windowTitle,
+		backgroundColor : 'white'
 	});
 	
 	this.samples = samples;

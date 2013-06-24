@@ -7,7 +7,8 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	
 	var view = Ti.UI.createView({
     	height: '100%',
-    	layout: 'vertical'
+    	layout: 'vertical',
+    	backgroundColor : 'white'
 	});
 	
 	var buttonLaunch = Titanium.UI.createButton({
