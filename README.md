@@ -1,5 +1,4 @@
 
-
 # Augmented Reality - Wikitude SDK Module
 by Wikitude GmbH - [www.wikitude.com](http://www.wikitude.com)
 
@@ -39,9 +38,9 @@ From a technical point of view the SDK adds a UI component called **AR View**, s
 Content developed for the AR View is written in JavaScript and HTML. The .html and .js files for the AR view are different from the Titanium .js and .html files.
 
 ###Further developer resources
-* [Full documentation and additional tutorials](http://forum.wikitude.com/documentation)
-* [Developer Forum](http://forum.wikitude.com/home)
-* [Wikitude SDK Download](http://forum.wikitude.com/download)
+* [Full documentation and additional tutorials](http://developer.wikitude.com/documentation)
+* [Developer Forum](http://developer.wikitude.com/developer-forum)
+* [Wikitude SDK Download](http://developer.wikitude.com/download)
 * [Google+ Page for News](https://plus.google.com/u/0/103004921345651739447/posts)
 * [Developer Newsletter](http://www.wikitude.com/developer/newsletter)
 
@@ -49,7 +48,7 @@ Content developed for the AR View is written in JavaScript and HTML. The .html a
 
 ##PREREQUISITES
 * Having set-up [Titanium Studio](http://www.appcelerator.com/platform/titanium-platform/)
-* Download [Wikitude SDK](http://www.wikitude.com/developer/download-sdk)
+* Download [Wikitude SDK](http://developer.wikitude.com/download)
 * Import the provided Module and ensure class path and all build.properties are set-up properly. Be aware that the Wikitude SDK runs only on Android 2.2+ devices (=Android SDK v8); you must not call the module on devices with a lower Android SDK version.
 
 
@@ -80,7 +79,7 @@ e.g.
 	};
 
 
-to load your AR-World. You can find details on how to create so called 'AR World' on [our website](http://www.wikitude.com/developer/documentation) 
+to load your AR-World. You can find details on how to create so called 'AR World' on [our website](http://developer.wikitude.com/download) 
 
 ## WATERMARK
 
@@ -118,7 +117,7 @@ Please use the id listed in `tiapp.xml` as package-identifier when requesting th
    
 ## Need help?
 Interested in advanced usage of the module and need assistance? 
-[Register as a Wikitude developer](http://developer.wikitude.com) and get support in our [forum](http://forum.wikitude.com).
+[Register as a Wikitude developer](http://developer.wikitude.com) and get support in our [forum](http://developer.wikitude.com/developer-forum).
 
 For further questions visit us on [www.wikitude.com](www.wikitude.com) or contact us via `titanium <at> wikitude.com`
 
