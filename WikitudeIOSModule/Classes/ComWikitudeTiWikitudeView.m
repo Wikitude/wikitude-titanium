@@ -82,6 +82,10 @@
 {
     NSLog(@"[VIEW LIFECYCLE EVENT] startAR");
     
+    if ([self.architectView respondsToSelector:@selector(setSDKOrigin:)]) {
+        [self.architectView performSelector:@selector(setSDKOrigin:) withObject:@"ORIGIN_TITANIUM"];
+    }
+    
     if (key) {
         [_architectView initializeWithKey:key motionManager:nil];
     }
