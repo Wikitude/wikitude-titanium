@@ -1,0 +1,11 @@
+
+Version 0.1
+
+This version provides a very basic implementation of the Wikitude integration module.
+
+KNOWN ISSUES
+
+	-	whenever a Wikitude view which makes use of trackers for image recognition
+		purposes gets destroyed, the process is "freezed" for several seconds
+	-	whenever a Wikitude view temporarily loses focus, some resources should to 
+		be released, in order to reduce computation, memory and power consumption
