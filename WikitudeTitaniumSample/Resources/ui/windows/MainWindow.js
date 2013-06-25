@@ -15,11 +15,24 @@ function MainWindow() {
 	
 	var windowTitle = 'Wikitude Module Samples';
 
-	var self = Ti.UI.createWindow({
-		navBarHidden : false,
-		title : windowTitle,
-		exitOnClose : true
-	});
+	var self = null;
+	
+	if (Ti.Platform.name === 'android') {
+		self = Ti.UI.createWindow({
+			navBarHidden : false,
+			title : windowTitle,
+			exitOnClose : true
+		});
+	}
+	else {
+		self = Ti.UI.createWindow({
+			navBarHidden : false,
+			title : windowTitle,
+			backgroundColor : 'white',
+			color: 'black',
+			exitOnClose : true
+		});
+	}
 	
 	// sample meta-information
 	this.samples = [
@@ -48,8 +61,8 @@ function MainWindow() {
 					{
 						windowTitle : 'Point Of Interest',
 						samples: [ 
-							{ title: '1. POI at lcoation', 		file: '3_PointOfInterest_1_PoiAtLocation/index.html' },
-							{ title: '2. POI with Label', 		file: '3_PointOfInterest_2_PoiWithLabel/index.html' },
+							{ title: '1. POI at location', 		file: '3_PointOfInterest_1_PoiAtLocation/index.html' },
+							{ title: '2. POI with label', 		file: '3_PointOfInterest_2_PoiWithLabel/index.html' },
 							{ title: '3. Multiple POIs', 		file: '3_PointOfInterest_3_MultiplePois/index.html'},
 							{ title: '4. Selecting POIs', 		file: '3_PointOfInterest_4_SelectingPois/index.html'}
 							
@@ -60,8 +73,8 @@ function MainWindow() {
 					{
 						windowTitle : 'Obtain POI data',
 						samples: [ 
-							{ title: '1. Load from webservice', 		file: '4_ObtainPoiData_1_FromWebservice/index.html' },
-							{ title: '2. Load from local resource', 	file: '4_ObtainPoiData_2_FromLocalResource/index.html' }
+							{ title: '1. From webservice', 		file: '4_ObtainPoiData_1_FromWebservice/index.html' },
+							{ title: '2. From local resource', 	file: '4_ObtainPoiData_2_FromLocalResource/index.html' }
 						]
 					},
 
@@ -69,9 +82,9 @@ function MainWindow() {
 					{
 						windowTitle : 'Demos',
 						samples: [ 
-							{ title: '1. Image Recognition and Geo', 		file: '6_Demo_1_ImageRecognitionAndGeo/index.html' },
+							{ title: '1. IR and Geo', 						file: '6_Demo_1_ImageRecognitionAndGeo/index.html' },
 							{ title: '2. Solar System (Geo)', 				file: '6_Demo_2_SolarSystem(Geo)/index.html' },
-							{ title: '3. Solar System (Image Recognition)', file: '6_Demo_3_SolarSystem(ImageRecognition)/index.html'}
+							{ title: '3. Solar System (IR)', file: '6_Demo_3_SolarSystem(ImageRecognition)/index.html'}
 						]
 					}
 				]
@@ -80,8 +93,37 @@ function MainWindow() {
 	
 	var list = [];
 	
+	var defaultFontSize =  Ti.Platform.name === 'android' ? 24 : 18;
+	
+	var i=0
+	
 	// add samples to list
-	for (var i=0; i<this.samples.length; i++) {
+	for (i=0; i<this.samples.length; i++) {
+		
+		var row = Ti.UI.createTableViewRow({
+		    className:'forumEvent', // used to improve table performance
+		    rowIndex:i, // custom property, useful for determining the row during events
+		    height:defaultFontSize*3,
+		    verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+		  });
+  
+  		var labelSample = Ti.UI.createLabel({
+		    font:{fontFamily:'Arial', fontSize:defaultFontSize+3},
+		    text:_this.samples[i].windowTitle,
+		    left:10, top: 6,
+		    // height: defaultFontSize+10
+		  });
+		
+		row.add(labelSample);
+		  
+		row.callback = function(index) {
+			var SamplesListWindow = require('/ui/windows/SamplesListWindow');
+			new SamplesListWindow( WikitudeLicenseKey, _this.samples[index].windowTitle, _this.samples[index].samples ).open();
+		};
+  		
+  		list.push(row);
+		
+		/*
 		list.push( 
 			{ 	title: _this.samples[i].windowTitle, 
 				callback : function(index) {
@@ -89,9 +131,11 @@ function MainWindow() {
 					new SamplesListWindow( WikitudeLicenseKey, _this.samples[index].windowTitle, _this.samples[index].samples ).open();
 				} 
 			});
+		*/
 	}
 	
 	// add 'Launch World via URL' to list
+	/*
 	list.push(
 		{ 	title: "Launch World via Url", 
 			callback : function(index) {
@@ -100,8 +144,33 @@ function MainWindow() {
 			} 
 		}
 	);
-
-	// create listview
+	*/
+	
+	
+	var row = Ti.UI.createTableViewRow({
+		    className:'forumEvent', // used to improve table performance
+		    rowIndex:i, // custom property, useful for determining the row during events
+		    height:defaultFontSize*3,
+		    verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+		  });
+  
+	var labelSample = Ti.UI.createLabel({
+	    font:{fontFamily:'Arial', fontSize:defaultFontSize+3},
+	    text:'Launch World via Url',
+	    left:10, top: 6,
+	    // height: defaultFontSize+10
+	  });
+	
+	row.add(labelSample);
+	  
+	row.callback = function(index) {
+		var LaunchViaUrlWindow = require('/ui/windows/LaunchViaUrlWindow');
+		new LaunchViaUrlWindow( WikitudeLicenseKey, 'Launch World via Url' ).open();
+	};
+	
+	list.push(row);
+	
+		// create listview
 	var listView = Ti.UI.createTableView({
 		data : list
 	});
@@ -110,6 +179,7 @@ function MainWindow() {
 	listView.addEventListener('click', function(e) {
 		list[e.index].callback(e.index);
 	});
+	
 
 	var view = Ti.UI.createView({
     	height: '100%',

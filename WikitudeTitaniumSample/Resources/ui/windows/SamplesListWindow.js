@@ -2,25 +2,53 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 
 	var _this = this;
 
-	var self = Ti.UI.createWindow({
-		navBarHidden : false,
-		title : windowTitle,
-		backgroundColor : 'white'
-	});
+	var self = null;
+	
+	if (Ti.Platform.name === 'android') {
+		self = Ti.UI.createWindow({
+			navBarHidden : false,
+			title : windowTitle,
+		});
+	}
+	else {
+		self = Ti.UI.createWindow({
+			navBarHidden : false,
+			title : windowTitle,
+			backgroundColor : 'white',
+			color: 'black'
+		});
+	}
 	
 	this.samples = samples;
 
 	var list = [];
+	
+	var defaultFontSize =  Ti.Platform.name === 'android' ? 24 : 18;
 
 	for (var i=0; i<this.samples.length; i++) {
-		list.push( 
-			{ 	title: _this.samples[i].title, 
-				callback : function(index) {
-					var ARchitectWindow = require('/ui/windows/ARchitectWindow');
-					new ARchitectWindow( WikitudeLicenseKey, _this.samples[index].file).open();
-				}
-			}
-		);
+		
+		var row = Ti.UI.createTableViewRow({
+		    className:'forumEvent', // used to improve table performance
+		    rowIndex:i, // custom property, useful for determining the row during events
+		    height:defaultFontSize*3,
+		    verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+		  });
+  
+  		var labelSample = Ti.UI.createLabel({
+		    font:{fontFamily:'Arial', fontSize:defaultFontSize+3},
+		    text:_this.samples[i].title,
+		    left:10, top: 6,
+		    // height: defaultFontSize+10
+		  });
+		
+		row.add(labelSample);
+		  
+		row.callback = function(index) {
+			var ARchitectWindow = require('/ui/windows/ARchitectWindow');
+			new ARchitectWindow( WikitudeLicenseKey, _this.samples[index].file).open();
+		};
+  		
+  		list.push(row);
 	}
 	
 	var listView = Ti.UI.createTableView({
@@ -38,8 +66,9 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 	
 	var backButton = Ti.UI.createButton({
 		title : 'Back',
+		font:{fontFamily:'Arial', fontSize:defaultFontSize},
 		left : 6, top : 6,
-		height : 36, width : 64
+		height : defaultFontSize  * 3, width : defaultFontSize * 6
 	});
 	backButton.addEventListener('click', function() {
 		self.close();
