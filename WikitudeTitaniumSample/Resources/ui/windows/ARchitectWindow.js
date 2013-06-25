@@ -16,38 +16,46 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
 	var self = Ti.UI.createWindow({
 		backgroundColor : 'transparent',
-		navBarHidden : true,
-		title : 'ARchitectWindow'
+		navBarHidden : false,
+		title : 'ARchitect Window'
 	});
 
-	var headView = Ti.UI.createView({
-		backgroundColor : '#f2f2f2',
-		left : 0, right : 0, top : 0,
-		height : 48
-	});
+	var headView = null;
+	var topPadding = 0;
 
-	self.add(headView);
-
-	var headLabel = Ti.UI.createLabel({
-		text : 'AR'
-	});
-
-	headView.add(headLabel);
-
-	var backButton = Ti.UI.createButton({
-		title : 'Back',
-		left : 6, top : 6
-		// ,height : 36, width : 64
-	});
-	backButton.addEventListener('click', function() {
-		self.close();
-	});
-
-	headView.add(backButton);
+	if (Ti.Platform.name !== 'android') {
+		
+		headView = Ti.UI.createView({
+			backgroundColor : '#f2f2f2',
+			left : 0, right : 0, top : 0,
+			height : 48
+		});
+		
+		var headLabel = Ti.UI.createLabel({
+			text : 'AR'
+		});
+	
+		headView.add(headLabel);
+		
+		var backButton = Ti.UI.createButton({
+			title : 'Back',
+			left : 6, top : 6
+			// ,height : 36, width : 64
+		});
+		backButton.addEventListener('click', function() {
+			self.close();
+		});
+		
+		headView.add(backButton);
+	
+		self.add(headView);
+		
+		topPadding = 48;
+	}
 
 	var mainView = Ti.UI.createView({
 		backgroundColor : '#ffffff',
-		bottom : 0, left : 0, right : 0, top : 48
+		bottom : 0, left : 0, right : 0, top : topPadding
 	});
 
 	self.add(mainView);
