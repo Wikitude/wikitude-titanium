@@ -28,4 +28,6 @@
 // Note: please change the {...} place-holders with the physical location of your native static libraries.
 //
 
-OTHER_LDFLAGS=$(inherited) -F$(SRCROOT)/../../../WikitudeIOSModule/Framework -lc++ -lsqlite3 -lz -ObjC -framework AssetsLibrary -framework CoreMedia -framework CoreMotion -framework CoreVideo -framework Security -framework WikitudeSDK
+OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -F$(SRCROOT)/../../../WikitudeIOSModule/Framework -lc++ -lsqlite3 -lz -ObjC -framework AssetsLibrary -framework CoreMedia -framework CoreMotion -framework CoreVideo -framework Security -framework WikitudeSDK
+
+OTHER_LDFLAGS[sdk=iphonesimulator*]=$(inherited) -F$(SRCROOT)/../../../WikitudeIOSModule/Framework -lc++ -lsqlite3 -lz -ObjC -framework AssetsLibrary -framework CoreMedia -framework CoreMotion -framework CoreVideo -framework Security -framework WikitudeSDK
