@@ -1,6 +1,6 @@
 /.metadata/
 /WikitudeTitaniumSample/build
-/WikitudeIOSModule/build/
+/WikitudeIOSModule/Project/build/*
 /WikitudeTitaniumSample/com.wikitude.ti-iphone-0.1.1.zip
 WorkspaceSettings.xcsettings
 /WikitudeTitaniumSample/build/iphone/assets/ui/windows/LaunchViaUrlWindow_js
