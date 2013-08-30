@@ -44,6 +44,23 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 	});
 
 	headView.add(backButton);
+	
+	var captureButton = Ti.UI.createButton({
+		title: 'Capture',
+		right: 6, top: 6
+	});
+	var onCaptureSuccess = function(path){
+		alert('success: ' + path);
+	};
+	var onCaptureError = function(errorDescription){
+		alert('error: ' + errorDescription);
+	};
+	captureButton.addEventListener('click', function() {
+		var includeWebView = true;
+		_this.arview.captureScreen(includeWebView, "Path/In/Bundle/toImage.png", {OnSuccess: onCaptureSuccess, OnError: onCaptureError});
+	});
+	headView.add(captureButton);
+	
 
 	var mainView = Ti.UI.createView({
 		backgroundColor : '#ffffff',
@@ -141,7 +158,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 		var uri = new jsuri.Uri(event.url);
 		alert("url was invoked");
 	};
-	
+		
 	return self;
 }
 

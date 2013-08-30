@@ -22,4 +22,6 @@
     
 }
 
+- (void)captureScreen:(id)args;
+
 @end

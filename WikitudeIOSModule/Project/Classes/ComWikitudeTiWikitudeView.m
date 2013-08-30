@@ -21,6 +21,9 @@
 
 @property (nonatomic, strong) WTArchitectView           *architectView;
 
+@property (nonatomic, strong) KrollCallback             *screenshotSuccessCallback;
+@property (nonatomic, strong) KrollCallback             *screenshotErrorCallback;
+
 @end
 
 @implementation ComWikitudeTiWikitudeView
@@ -223,15 +226,95 @@
         [_architectView setCullingDistance:[TiUtils floatValue:value]];
 }
 
+- (void)captureScreen:(id)args
+{    
+    if ( _architectView != nil && [args isKindOfClass:[NSArray class]]) {
+        
+        NSArray *screenshotArgs = args;
+        
+        if ( 3 == screenshotArgs.count) {
+        
+            // check capture mode setting (cam - camAndWebView)
+            WTScreenshotCaptureMode captureMode = WTScreenshotCaptureMode_Cam;
+            if ([[screenshotArgs objectAtIndex:0] boolValue]) {
+                captureMode = WTScreenshotCaptureMode_CamAndWebView;
+            }
+            
+            // check bundle path => CaptureMode
+            WTScreenshotSaveOptions options = WTScreenshotSaveOption_SavingWithoutOverwriting;
+            WTScreenshotSaveMode saveMode;
+            NSDictionary *context = nil;
+            if ([[screenshotArgs objectAtIndex:1] isKindOfClass:[NSString class]]) {
+                
+                saveMode = WTScreenshotSaveMode_BundleDirectory;
+                NSString *screenshotBundlePath = [screenshotArgs objectAtIndex:1];
+                context = @{kWTScreenshotBundleDirectoryKey: [screenshotBundlePath copy]};
+            } else {
+                saveMode = WTScreenshotSaveMode_PhotoLibrary;
+            }
+
+            
+            // extract sucess/error callback
+            if ([[screenshotArgs objectAtIndex:2] isKindOfClass:[NSDictionary class]]) {
+                
+                NSDictionary *callbacks = [screenshotArgs objectAtIndex:2];
+                KrollCallback *successCallback = [callbacks objectForKey:@"OnSuccess"];
+                
+                if (successCallback) {
+                    self.screenshotSuccessCallback = successCallback;
+                    options |= WTScreenshotSaveOption_CallDelegateOnSuccess;
+                } else {
+                    self.screenshotSuccessCallback = nil;
+                }
+                
+                
+                KrollCallback *errorCallback = [callbacks objectForKey:@"OnError"];
+                if (errorCallback) {
+                    self.screenshotErrorCallback = errorCallback;
+                } else {
+                    self.screenshotErrorCallback = nil;
+                }
+                
+                NSLog(@"[WIKITUDE EVENT] capture screen");
+                [_architectView captureScreenWithMode:captureMode usingSaveMode:saveMode saveOptions:options context:context];
+            }
+        }
+    }
+}
+
 #pragma mark - WTArchitectView delegate methods
 
-- (void)urlWasInvoked:(NSString*)url
+- (void)architectView:(WTArchitectView *)architectView invokedURL:(NSURL *)url
 {
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
-    [data setValue:url forKey:@"url"];
-
+    [data setValue:[url absoluteString] forKey:@"url"];
+    
     if ([self.proxy _hasListeners:@"URL_WAS_INVOKED"])
         [self.proxy fireEvent:@"URL_WAS_INVOKED" withObject:data];
+
+}
+
+- (void)architectView:(WTArchitectView *)architectView didCaptureScreenWithContext:(NSDictionary *)context
+{
+    NSLog(@"[WIKITUDE EVENT] did capture screen with context: %@", context);
+    if (context && self.screenshotSuccessCallback) {
+        
+        NSArray *result = nil;
+        if ( WTScreenshotSaveMode_BundleDirectory == [[context objectForKey:kWTScreenshotSaveModeKey] integerValue] ) {
+            result = @[[context objectForKey:kWTScreenshotBundleDirectoryKey]];
+        }
+    
+        [self.screenshotSuccessCallback call:result thisObject:nil];
+    }
+}
+
+- (void)architectView:(WTArchitectView *)architectView didFailCaptureScreenWithError:(NSError *)error
+{
+    NSLog(@"[WIKITUDE EVENT] did fail to capture screen with error: %@", [error localizedDescription]);
+    if (self.screenshotErrorCallback) {
+        
+        [self.screenshotErrorCallback call:@[[error localizedDescription]] thisObject:nil];
+    }
 }
 
 @end
