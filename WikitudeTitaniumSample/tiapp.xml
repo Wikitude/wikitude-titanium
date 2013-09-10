@@ -62,7 +62,7 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="iphone" version="3.0">com.wikitude.ti</module>
+        <module platform="iphone">com.wikitude.ti</module>
         <module platform="android" version="3.0">com.wikitude.ti</module>
     </modules>
 </ti:app>
