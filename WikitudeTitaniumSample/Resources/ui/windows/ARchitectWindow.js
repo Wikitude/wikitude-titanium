@@ -16,46 +16,55 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
 	var self = Ti.UI.createWindow({
 		backgroundColor : 'transparent',
-		navBarHidden : false,
-		title : 'ARchitect Window'
+		navBarHidden : true,
+		title : 'ARchitectWindow'
 	});
 
-	var headView = null;
-	var topPadding = 0;
+	var headView = Ti.UI.createView({
+		backgroundColor : '#f2f2f2',
+		left : 0, right : 0, top : 0,
+		height : 48
+	});
 
-	if (Ti.Platform.name !== 'android') {
-		
-		headView = Ti.UI.createView({
-			backgroundColor : '#f2f2f2',
-			left : 0, right : 0, top : 0,
-			height : 48
-		});
-		
-		var headLabel = Ti.UI.createLabel({
-			text : 'AR'
-		});
+	self.add(headView);
+
+	var headLabel = Ti.UI.createLabel({
+		text : 'AR'
+	});
+
+	headView.add(headLabel);
+
+	var backButton = Ti.UI.createButton({
+		title : 'Back',
+		left : 6, top : 6
+		// ,height : 36, width : 64
+	});
+	backButton.addEventListener('click', function() {
+		self.close();
+	});
+
+	headView.add(backButton);
 	
-		headView.add(headLabel);
-		
-		var backButton = Ti.UI.createButton({
-			title : 'Back',
-			left : 6, top : 6
-			// ,height : 36, width : 64
-		});
-		backButton.addEventListener('click', function() {
-			self.close();
-		});
-		
-		headView.add(backButton);
+	var captureButton = Ti.UI.createButton({
+		title: 'Capture',
+		right: 6, top: 6
+	});
+	var onCaptureSuccess = function(path){
+		alert('success: ' + path);
+	};
+	var onCaptureError = function(errorDescription){
+		alert('error: ' + errorDescription);
+	};
+	captureButton.addEventListener('click', function() {
+		var includeWebView = true;
+		_this.arview.captureScreen(includeWebView, "Path/In/Bundle/toImage.png", {OnSuccess: onCaptureSuccess, OnError: onCaptureError});
+	});
+	headView.add(captureButton);
 	
-		self.add(headView);
-		
-		topPadding = 48;
-	}
 
 	var mainView = Ti.UI.createView({
 		backgroundColor : '#ffffff',
-		bottom : 0, left : 0, right : 0, top : topPadding
+		bottom : 0, left : 0, right : 0, top : 48
 	});
 
 	self.add(mainView);
@@ -149,7 +158,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 		var uri = new jsuri.Uri(event.url);
 		alert("url was invoked");
 	};
-	
+		
 	return self;
 }
 
