@@ -13,6 +13,6 @@
 	<classpathentry kind="lib" path="/Users/YOURUSER/Library/Application Support/Titanium/mobilesdk/osx/3.0.2.GA/android/kroll-apt.jar"/>
 
 	<!-- TODO: download from developer.wikitude.com -->
-	<classpathentry kind="lib" path="lib/wikitudesdk.jar"/>
+	<classpathentry kind="lib" path="lib/wikitudesdk_3_1_1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
