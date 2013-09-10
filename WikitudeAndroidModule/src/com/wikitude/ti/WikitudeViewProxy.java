@@ -1,8 +1,12 @@
 package com.wikitude.ti;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 
 import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.AsyncResult;
 import org.appcelerator.kroll.common.Log;
@@ -12,8 +16,11 @@ import org.appcelerator.titanium.proxy.TiViewProxy;
 import org.appcelerator.titanium.view.TiUIView;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
+
+import com.wikitude.architect.ArchitectView.CaptureScreenCallback;
 
 /**
  * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
@@ -148,11 +155,62 @@ public class WikitudeViewProxy extends TiViewProxy
 
 		setProperty(WikitudeView.PROPERTY_USER_LOCATION, location, true);
 	}
+	
+	@Kroll.method
+	public String captureScreen(boolean includeWebView, final String pathToImage, final HashMap callbacks /* final HashMap<String, KrollFunction> callbacks */ /* final Object callbacks */) throws IOException {
 
-	@Kroll.setProperty(retain=false)
-	public void setJs(final String code)
+		final KrollFunction callbackSuccess = (KrollFunction) ( callbacks.get("OnSuccess") );
+		final KrollFunction callbackError = (KrollFunction) ( callbacks.get("OnError") );
+		
+		final int quality = 100;
+		
+		final File file = new File(TiApplication.getAppCurrentActivity().getCacheDir().getAbsolutePath() + File.separator + pathToImage);
+		
+		if (!file.exists()) {
+			try {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			} catch (Exception exception) {
+				callbackError.call(getKrollObject(), new String[] {exception.getMessage()});
+				return null;
+			}
+		} else {
+			file.delete();
+		}
+		final int captureMode = includeWebView ? CaptureScreenCallback.CAPTURE_MODE_CAM_AND_WEBVIEW : CaptureScreenCallback.CAPTURE_MODE_CAM;
+		
+		((WikitudeView) view).captureScreen(captureMode, new CaptureScreenCallback() {
+			
+			private void sendError(final Exception e) {
+				String[] returnValues = new String[] {e.getMessage()};
+				callbackError.call(getKrollObject(), returnValues);
+			}
+			
+			private void sendSuccess(final String path) {
+				String[] returnValues = new String[] {file.getAbsolutePath()};
+				callbackSuccess.call(getKrollObject(), returnValues);
+			}
+			
+			@Override
+			public void onScreenCaptured(final Bitmap screenCapture) {
+				try {
+					final FileOutputStream fOut = new FileOutputStream(file);
+					screenCapture.compress( Bitmap.CompressFormat.PNG, Math.max( 0, Math.min( quality, 100 ) ), fOut );
+					sendSuccess(file.getAbsolutePath());
+				} catch (Exception e) {
+					sendError(e);
+				}
+			}
+		});
+		
+		return file.getAbsolutePath();
+		
+	}
+
+	@Kroll.method(name="callJavascript")
+	public void callJavascript(final String code)
 	{
-		Log.d(TAG, "setJs called");
+		Log.d(TAG, "callJavaScript called");
 
 		if (view != null) {
 			if (!TiApplication.isUIThread()) {
@@ -162,7 +220,7 @@ public class WikitudeViewProxy extends TiViewProxy
 							case MSG_SET_JS: {
 								AsyncResult result = (AsyncResult) message.obj;
 								WikitudeView wikitudeView = (WikitudeView) view;
-								wikitudeView.setJs(code);
+								wikitudeView.callJavascript(code);
 								result.setResult(null);
 								return true;
 							}
@@ -172,7 +230,7 @@ public class WikitudeViewProxy extends TiViewProxy
 				}).obtainMessage(MSG_SET_JS), code);
 			} else {
 				WikitudeView wikitudeView = (WikitudeView) view;
-				wikitudeView.setJs(code);
+				wikitudeView.callJavascript(code);
 			}
 		}
 

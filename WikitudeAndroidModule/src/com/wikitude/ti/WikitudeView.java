@@ -13,17 +13,10 @@ import org.appcelerator.titanium.view.TiCompositeLayout;
 import org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;
 import org.appcelerator.titanium.view.TiUIView;
 
-import android.content.Context;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.widget.Toast;
-
 import com.wikitude.architect.ArchitectUrlListener;
 import com.wikitude.architect.ArchitectView;
 import com.wikitude.architect.ArchitectView.ArchitectConfig;
-import com.wikitude.ti.Constants;
+import com.wikitude.architect.ArchitectView.CaptureScreenCallback;
 
 /**
  * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
@@ -204,9 +197,16 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener {
 	}
 
 	// wouldn't be better to create a callJavascript method in the proxy?
-	public void setJs(String code) {
-		if (architectView != null)
+	public void callJavascript(String code) {
+		if (architectView != null) {
 			architectView.callJavascript(code);
+		}	
+	}
+	
+	public void captureScreen(final int captureMode, final CaptureScreenCallback callback) {
+		if (architectView != null) {
+			architectView.captureScreen(captureMode, callback);
+		}	
 	}
 
 	@Override
@@ -253,5 +253,8 @@ public class WikitudeView extends TiUIView implements ArchitectUrlListener {
 		proxy.fireEvent(Constants.URL_WAS_INVOKED, data);
 		return true;
 	}
-
+	
+	
+	
+	
 }
