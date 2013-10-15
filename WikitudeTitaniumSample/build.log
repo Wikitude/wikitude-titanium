@@ -1,0 +1,464 @@
+Logfile initialized
+[INFO] logfile = /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build.log
+[DEBUG] /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/builder.py install ModuleSamples /Users/mobilizy/AndroidSDK /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample com.wikitude.titaniumsample 8  
+[INFO] Titanium SDK version: 3.1.1 (06/15/13 16:09 f7592c1)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.024323 seconds on emulator to get ready
+[DEBUG] com.wikitude.titaniumsample installed? False
+[INFO] Copying CommonJS modules...
+[INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/ui/windows/MainWindow.js => /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/bin/assets/Resources/ui/windows/MainWindow.js
+[DEBUG] LiveView not enabled
+[TRACE] Generating Java Classes
+[DEBUG] Processing Android resource drawables
+[DEBUG] copying app icon: /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/bin/assets/Resources/appicon.png
+[DEBUG] generating theme.xml
+[DEBUG] found drawable-long-land-hdpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-land-hdpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-land-hdpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-long-land-hdpi/background.png
+[DEBUG] found drawable-long-land-ldpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-land-ldpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-land-ldpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-long-land-ldpi/background.png
+[DEBUG] found drawable-long-port-hdpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-port-hdpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-port-hdpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-long-port-hdpi/background.png
+[DEBUG] found drawable-long-port-ldpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-port-ldpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-long-port-ldpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-long-port-ldpi/background.png
+[DEBUG] found drawable-notlong-land-hdpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-land-hdpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-land-hdpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-notlong-land-hdpi/background.png
+[DEBUG] found drawable-notlong-land-ldpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-land-ldpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-land-ldpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-notlong-land-ldpi/background.png
+[DEBUG] found drawable-notlong-land-mdpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-land-mdpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-land-mdpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-notlong-land-mdpi/background.png
+[DEBUG] found drawable-notlong-port-hdpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-port-hdpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-port-hdpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-notlong-port-hdpi/background.png
+[DEBUG] found drawable-notlong-port-ldpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-port-ldpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-port-ldpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-notlong-port-ldpi/background.png
+[DEBUG] found drawable-notlong-port-mdpi splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-port-mdpi/default.png
+[DEBUG] copying /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/Resources/android/images/res-notlong-port-mdpi/default.png splash screen to /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/res/drawable-notlong-port-mdpi/background.png
+[DEBUG] found splash screen at /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/bin/assets/Resources/default.png
+[TRACE] Writing out AndroidManifest.xml
+[DEBUG] adding /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/ModulesamplesActivity.java to javac build list
+[DEBUG] adding /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/ModulesamplesAppInfo.java to javac build list
+[DEBUG] adding /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/ModulesamplesApplication.java to javac build list
+[DEBUG] adding /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/R.java to javac build list
+[DEBUG] Building Java Sources: "/Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/ModulesamplesActivity.java" "/Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/ModulesamplesAppInfo.java" "/Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/ModulesamplesApplication.java" "/Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/gen/com/wikitude/titaniumsample/R.java"
+[INFO] Compiling Android Resources... This could take some time
+[DEBUG] Android classes.dex built
+[DEBUG] creating unsigned apk: /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/build/android/bin/app-unsigned.apk
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/assets/imageOne.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/js/imagerecognition.js
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/Red Bulletin Demo.pdf
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/demo.pdf
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_1_ImageOnTarget/index.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/assets/bike.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/assets/imageOne.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/assets/imageTwo.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/js/imagerecognition.js
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_2_MultipleTargets/index.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/assets/bike.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/assets/imageOne.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/assets/imageTwo.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/assets/wwwButton.jpg
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/js/imagerecognition.js
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_3_Interactivity/index.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/assets/imageOne.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/assets/imageSparkles.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/assets/imageTwo.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/assets/wwwButton.jpg
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/js/imagerecognition.js
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_Bonus-Sparkles/index.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/bike.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/imageOne.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/imageTwo.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/weather.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/assets/wwwButton.jpg
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/js/imagerecognition.js
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_4_HtmlDrawable/index.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/bike.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/imageOne.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/imageSparkles.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/imageTwo.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/weather.html
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/assets/wwwButton.jpg
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/js/imagerecognition.js
+[DEBUG] from resource zip => assets/Resources/assets/1_ImageRecognition_5_Bonus-Sparkles/index.html
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/assets/car.png
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/assets/car.wt3
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/assets/tracker.wtc
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/js/imagerecognitionand3d.js
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/carAd.jpg
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_1_3dModelOnTarget/index.html
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_2_AppearingAnimation/assets/car.png
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_2_AppearingAnimation/assets/car.wt3
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_2_AppearingAnimation/assets/tracker.wtc
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_2_AppearingAnimation/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_2_AppearingAnimation/js/imagerecognitionand3d.js
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_2_AppearingAnimation/index.html
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/assets/car.png
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/assets/car.wt3
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/assets/rotateButton.png
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/assets/tracker.wtc
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/js/imagerecognitionand3d.js
+[DEBUG] from resource zip => assets/Resources/assets/2_3dAndImageRecognition_3_Interactivity/index.html
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/assets/marker.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/css/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/js/poiatlocation.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_1_PoiAtLocation/index.html
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/assets/marker.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/css/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/js/poiwithlabel.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_2_PoiWithLabel/index.html
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/css/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/js/multiplepois.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_3_MultiplePois/index.html
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/css/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/js/selectingpois.js
+[DEBUG] from resource zip => assets/Resources/assets/3_PointOfInterest_4_SelectingPois/index.html
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/js/fromLocalResource.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/js/myJsonData.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/js/poisFromLocal.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_2_FromLocalResource/index.html
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/js/fromWebservice.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/4_ObtainPoiData_3_FromWebservice/index.html
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/js/presentingPoiDetails.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_1_PresentingDetails/index.html
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/assets/radar_bg.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/assets/radar_north.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/css/poi-radar.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/js/addingRadar.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/js/ade.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/js/radar.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_2_AddingRadar/index.html
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/assets/radar_bg.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/assets/radar_north.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/css/poi-radar.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/js/ade.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/js/limitingRange.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/js/radar.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_3_LimitingRange/index.html
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/assets/radar_bg.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/assets/radar_north.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/css/poi-radar.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/js/ade.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/js/radar.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/js/reloadingPois.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_4_ReloadingContent/index.html
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/assets/radar_bg.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/assets/radar_north.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/css/poi-radar.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/js/ade.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/js/nativePoiDetail.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/js/radar.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_5_NativeDetailScreen/index.html
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/assets/marker_idle.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/assets/marker_selected.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/assets/radar_bg.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/assets/radar_north.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/css/poi-radar.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/images/ajax-loader.gif
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/images/icons-18-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/images/icons-18-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/images/icons-36-black.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/images/icons-36-white.png
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/jquery-1.9.1.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/jquery-mobile-transparent-ui-overlay.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/jquery.mobile-1.3.2.min.css
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/jquery/jquery.mobile-1.3.2.min.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/js/ade.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/js/captureScreen.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/js/marker.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/js/radar.js
+[DEBUG] from resource zip => assets/Resources/assets/5_BrowsingPois_6_CaptureScreenBonus/index.html
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_1_SimpleVideo/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_1_SimpleVideo/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_1_SimpleVideo/assets/video.mp4
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_1_SimpleVideo/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_1_SimpleVideo/js/video.js
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_1_SimpleVideo/index.html
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/assets/playButton.png
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/assets/video.mp4
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/js/video.js
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_2_PlaybackStates/index.html
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/assets/magazine.wtc
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/assets/surfer.png
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/assets/transparentVideo.mp4
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/assets/wwwButton.jpg
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/js/video.js
+[DEBUG] from resource zip => assets/Resources/assets/6_Video_4_Bonus-TransparentVideo/index.html
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/ShopAd.wtc
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/ShopAdSmall.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/YourShop_Deal.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/YourShop_FindShops.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/YourShop_GetADeal.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/YourShop_Marker.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/YourShop_OpenWebsite.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/assets/YourShop_color.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/js/irandgeo.js
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/ShopAd.jpg
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_1_ImageRecognitionAndGeo/index.html
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Earth-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Jupiter-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Mars-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Mercury-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Neptune-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Pluto-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Saturn-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Sun-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Uranus-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/Venus-icon.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/assets/indi.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/js/solarsystem.js
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_2_SolarSystem(Geo)/index.html
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/SolarSystem.wtc
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/backdrop.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/earth.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/jupiter.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/mars.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/mercury.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/neptune.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/pluto.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/saturn.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/solarsystem.png
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/sun.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/uranus.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/assets/venus.wt3
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/css/default.css
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/js/solarsystemir.js
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/index.html
+[DEBUG] from resource zip => assets/Resources/assets/99_Demo_3_SolarSystem(ImageRecognition)/solarsystem.jpg
+[DEBUG] from resource zip => assets/Resources/ui/windows/ARchitectWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/windows/LaunchViaUrlWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/windows/MainWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/windows/SamplesListWindow.js
+[DEBUG] from resource zip => assets/Resources/app.js
+[DEBUG] from resource zip => assets/Resources/appicon.png
+[DEBUG] from resource zip => assets/Resources/default.png
+[DEBUG] from resource zip => assets/Resources/jsuri-1.1.1.js
+[DEBUG] from resource zip => assets/Resources/util.js
+[DEBUG] from resource zip => assets/app.json
+[DEBUG] from resource zip => assets/index.json
+[DEBUG] from resource zip => assets/tiapp.xml
+[DEBUG] from resource zip => res/drawable/appicon.png
+[DEBUG] from resource zip => res/drawable/background.png
+[DEBUG] from resource zip => res/drawable/btn_check_buttonless_on_64.png
+[DEBUG] from resource zip => res/drawable/btn_more_64.png
+[DEBUG] from resource zip => res/drawable/disclosure_64.png
+[DEBUG] from resource zip => res/layout/titanium_tabgroup.xml
+[DEBUG] from resource zip => res/layout/titanium_ui_list_header_or_footer.xml
+[DEBUG] from resource zip => res/layout/titanium_ui_list_item.xml
+[DEBUG] from resource zip => AndroidManifest.xml
+[DEBUG] from resource zip => resources.arsc
+[DEBUG] from resource zip => res/drawable-long-land-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-long-land-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-long-port-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-long-port-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-land-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-land-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-land-mdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-mdpi/background.png
+[DEBUG] from JAR /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/wikitudeand.jar => assets/required_folder.txt
+[DEBUG] from JAR /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/lib/wikitudesdk_3_2.jar => libs/armeabi/libarchitect.so
+[DEBUG] from JAR /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/lib/wikitudesdk_3_2.jar => libs/armeabi-v7a/libarchitect.so
+[DEBUG] from JAR /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/lib/wikitudesdk_3_2.jar => architect.js
+[DEBUG] from JAR /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/lib/wikitudesdk_3_2.jar => icon.png
+[DEBUG] from JAR /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/lib/wikitudesdk_3_2.jar => sdk_logo-1.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/build.properties
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/background.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_18.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_48.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_64.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_18.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_48.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_64.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_normal.9.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_pressed.9.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_selected.9.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/default_icon.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/photoDefault.png
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.js
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.min.js
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/json2.js
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/polling.js
+[DEBUG] from JAR /Users/mobilizy/Library/Application Support/Titanium/mobilesdk/osx/3.1.1.GA/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/polling.min.js
+[DEBUG] installing native lib: /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/libs/armeabi/libcom.wikitude.ti.so
+[DEBUG] installing native lib: /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/libs/armeabi-v7a/libcom.wikitude.ti.so
+[DEBUG] installing native lib: /Users/mobilizy/wikitude-titanium/WikitudeTitaniumSample/modules/android/com.wikitude.ti/3.2/libs/x86/libcom.wikitude.ti.so
+[DEBUG] installing native SDK libs
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.033302 seconds on emulator to get ready
+[INFO] Installing application on device
+[INFO] Application installed. Launch from drawer on Home Screen

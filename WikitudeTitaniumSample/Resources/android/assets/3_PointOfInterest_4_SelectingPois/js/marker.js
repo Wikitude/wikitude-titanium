@@ -3,12 +3,9 @@ var kMarker_AnimationDuration_Resize = 1000;
 
 function Marker(poiData) {
 
-
     this.poiData = poiData;
     this.isSelected = false;
 
-
-    // New: Two animation groups managing the animations used during selection/deselection 
     this.animationGroup_idle = null;
     this.animationGroup_selected = null;
 
@@ -26,8 +23,7 @@ function Marker(poiData) {
         onClick: null
     });
 
-
-    this.titleLabel = new AR.Label(poiData.title, 1, {
+    this.titleLabel = new AR.Label(poiData.title.trunc(10), 1, {
         zOrder: 1,
         offsetY: 0.55,
         style: {
@@ -36,7 +32,7 @@ function Marker(poiData) {
         }
     });
 
-    this.descriptionLabel = new AR.Label(poiData.description, 0.8, {
+    this.descriptionLabel = new AR.Label(poiData.description.trunc(15), 0.8, {
         zOrder: 1,
         offsetY: -0.55,
         style: {
@@ -45,13 +41,13 @@ function Marker(poiData) {
     });
 
 
-    // New: Direction Indicator
-    this.directionIndicatorDrawable = new AR.ImageDrawable(World.markerDrawable_directionIndicator, 0.5, {
-        enabled: false
+    this.directionIndicatorDrawable = new AR.ImageDrawable(World.markerDrawable_directionIndicator, 0.1, {
+        enabled: false,
+        verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP
     });
 
     // Changed: 
-    var markerObject = new AR.GeoObject(markerLocation, {
+    this.markerObject = new AR.GeoObject(markerLocation, {
         drawables: {
             cam: [this.markerDrawable_idle, this.markerDrawable_selected, this.titleLabel, this.descriptionLabel],
             indicator: this.directionIndicatorDrawable
@@ -71,12 +67,18 @@ Marker.prototype.getOnClickTrigger = function(marker) {
                 Marker.prototype.setDeselected(marker);
 
             } else {
-
-                World.onScreenClick(marker);
-
                 Marker.prototype.setSelected(marker);
+                try {
+                    World.onMarkerSelected(marker);
+                } catch (err) {
+                    alert(err);
+                }
+
             }
+        } else {
+            AR.logger.debug('a animation is already running');
         }
+
 
         return true;
     };
@@ -90,7 +92,7 @@ Marker.prototype.setSelected = function(marker) {
     if (marker.animationGroup_selected === null) {
 
         var hideIdleDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_idle, "opacity", null, 0.0, kMarker_AnimationDuration_ChangeDrawable);
-        var showSelectedDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_selected, "opacity", null, 1.0, kMarker_AnimationDuration_ChangeDrawable);
+        var showSelectedDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_selected, "opacity", null, 0.8, kMarker_AnimationDuration_ChangeDrawable);
 
         var idleDrawableResizeAnimation = new AR.PropertyAnimation(marker.markerDrawable_idle, 'scaling', null, 1.2, kMarker_AnimationDuration_Resize, new AR.EasingCurve(AR.CONST.EASING_CURVE_TYPE.EASE_OUT_ELASTIC, {
             amplitude: 2.0
@@ -109,14 +111,10 @@ Marker.prototype.setSelected = function(marker) {
         marker.animationGroup_selected = new AR.AnimationGroup(AR.CONST.ANIMATION_GROUP_TYPE.PARALLEL, [hideIdleDrawableAnimation, showSelectedDrawableAnimation, idleDrawableResizeAnimation, selectedDrawableResizeAnimation, titleLabelResizeAnimation, descriptionLabelResizeAnimation]);
     }
 
-
-    // New: 
     marker.markerDrawable_idle.onClick = null;
     marker.markerDrawable_selected.onClick = Marker.prototype.getOnClickTrigger(marker);
 
     marker.directionIndicatorDrawable.enabled = true;
-
-
     marker.animationGroup_selected.start();
 };
 
@@ -124,11 +122,10 @@ Marker.prototype.setDeselected = function(marker) {
 
     marker.isSelected = false;
 
-    // New: 
     if (marker.animationGroup_idle === null) {
 
-        var showIdleDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_idle, "opacity", null, 1.0, kMarker_AnimationDuration_ChangeDrawable);
-        var hideSelectedDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_selected, "opacity", null, 0.0, kMarker_AnimationDuration_ChangeDrawable);
+        var showIdleDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_idle, "opacity", null, 0.8, kMarker_AnimationDuration_ChangeDrawable);
+        var hideSelectedDrawableAnimation = new AR.PropertyAnimation(marker.markerDrawable_selected, "opacity", null, 0, kMarker_AnimationDuration_ChangeDrawable);
 
         var idleDrawableResizeAnimation = new AR.PropertyAnimation(marker.markerDrawable_idle, 'scaling', null, 1.0, kMarker_AnimationDuration_Resize, new AR.EasingCurve(AR.CONST.EASING_CURVE_TYPE.EASE_OUT_ELASTIC, {
             amplitude: 2.0
@@ -147,13 +144,10 @@ Marker.prototype.setDeselected = function(marker) {
         marker.animationGroup_idle = new AR.AnimationGroup(AR.CONST.ANIMATION_GROUP_TYPE.PARALLEL, [showIdleDrawableAnimation, hideSelectedDrawableAnimation, idleDrawableResizeAnimation, selectedDrawableResizeAnimation, titleLabelResizeAnimation, descriptionLabelResizeAnimation]);
     }
 
-
-    // New: 
     marker.markerDrawable_idle.onClick = Marker.prototype.getOnClickTrigger(marker);
     marker.markerDrawable_selected.onClick = null;
 
     marker.directionIndicatorDrawable.enabled = false;
-
     marker.animationGroup_idle.start();
 };
 
@@ -168,4 +162,9 @@ Marker.prototype.isAnyAnimationRunning = function(marker) {
             return false;
         }
     }
+};
+
+// will truncate all strings longer than given max-length "n". e.g. "foobar".trunc(3) -> "foo..."
+String.prototype.trunc = function(n) {
+    return this.substr(0, n - 1) + (this.length > n ? '...' : '');
 };

@@ -23,21 +23,23 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 	var headView = Ti.UI.createView({
 		backgroundColor : '#f2f2f2',
 		left : 0, right : 0, top : 0,
-		height : 48
+		height : 68
 	});
 
 	self.add(headView);
 
+	/*
 	var headLabel = Ti.UI.createLabel({
 		text : 'AR'
 	});
 
 	headView.add(headLabel);
+	*/
 
 	var backButton = Ti.UI.createButton({
 		title : 'Back',
 		left : 6, top : 6
-		// ,height : 36, width : 64
+		,height : 72, width : 200
 	});
 	backButton.addEventListener('click', function() {
 		self.close();
@@ -48,6 +50,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 	var captureButton = Ti.UI.createButton({
 		title: 'Capture',
 		right: 6, top: 6
+		,height : 72, width : 200
 	});
 	var onCaptureSuccess = function(path){
 		alert('success: ' + path);
@@ -64,7 +67,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
 	var mainView = Ti.UI.createView({
 		backgroundColor : '#ffffff',
-		bottom : 0, left : 0, right : 0, top : 48
+		bottom : 0, left : 0, right : 0, top : 76
 	});
 
 	self.add(mainView);
