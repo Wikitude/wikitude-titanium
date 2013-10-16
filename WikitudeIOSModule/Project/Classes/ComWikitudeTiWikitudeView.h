@@ -21,4 +21,6 @@
 
 - (void)stopAR;
 
+- (void)captureScreen:(id)args;
+
 @end

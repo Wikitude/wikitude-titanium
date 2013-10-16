@@ -125,4 +125,12 @@
 	NSLog(@"[VIEWPROXY LIFECYCLE EVENT] viewWillDetach");
 }
 
+- (void)captureScreen:(id)args
+{
+	NSLog(@"capture the fucking screen");
+    
+    [self.view performSelectorOnMainThread:@selector(captureScreen:) withObject:args waitUntilDone:NO];
+    
+}
+
 @end

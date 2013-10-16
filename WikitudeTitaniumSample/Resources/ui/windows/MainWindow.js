@@ -73,8 +73,29 @@ function MainWindow() {
 					{
 						windowTitle : 'Obtain POI data',
 						samples: [ 
-							{ title: '1. From webservice', 		file: '4_ObtainPoiData_1_FromWebservice/index.html' },
-							{ title: '2. From local resource', 	file: '4_ObtainPoiData_2_FromLocalResource/index.html' }
+							{ title: '1. From local resource', 	file: '4_ObtainPoiData_2_FromLocalResource/index.html' },
+							{ title: '2. From webservice', 		file: '4_ObtainPoiData_3_FromWebservice/index.html' }
+						]
+					},
+					
+					// Browsing POIs
+					{
+						windowTitle : 'Browsing POIs',
+						samples: [ 
+							{ title: '1. Presenting Details', 		file: '5_BrowsingPois_1_PresentingDetails/index.html' },
+							{ title: '2. Adding Radar', 			file: '5_BrowsingPois_2_AddingRadar/index.html' },
+							{ title: '3. Limiting Range', 			file: '5_BrowsingPois_3_LimitingRange/index.html' },
+							{ title: '4. Reloading Content', 		file: '5_BrowsingPois_4_ReloadingContent/index.html' }
+						]
+					},
+					
+					// Video Drawables
+					{
+						windowTitle : 'Videos in Image Recognition',
+						samples: [ 
+							{ title: '1. Simple Video', 			file: '6_Video_1_SimpleVideo/index.html' },
+							{ title: '2. Playback States', 			file: '6_Video_2_PlaybackStates/index.html' },
+							{ title: '3. Transparent Video', 		file: '6_Video_4_Bonus-TransparentVideo/index.html' }
 						]
 					},
 
@@ -82,9 +103,9 @@ function MainWindow() {
 					{
 						windowTitle : 'Demos',
 						samples: [ 
-							{ title: '1. IR and Geo', 						file: '6_Demo_1_ImageRecognitionAndGeo/index.html' },
-							{ title: '2. Solar System (Geo)', 				file: '6_Demo_2_SolarSystem(Geo)/index.html' },
-							{ title: '3. Solar System (IR)', file: '6_Demo_3_SolarSystem(ImageRecognition)/index.html'}
+							{ title: '1. IR and Geo', 				file: '99_Demo_1_ImageRecognitionAndGeo/index.html' },
+							{ title: '2. Solar System (Geo)', 		file: '99_Demo_2_SolarSystem(Geo)/index.html' },
+							{ title: '3. Solar System (IR)', 		file: '99_Demo_3_SolarSystem(ImageRecognition)/index.html'}
 						]
 					}
 				]
