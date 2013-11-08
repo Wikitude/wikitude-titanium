@@ -42,8 +42,7 @@
 	// you *must* call the superclass
 	
 	[super startup];
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] startup");
+
 }
 
 -(void)shutdown:(id)sender
@@ -51,8 +50,6 @@
 	// This method is called when the module is being unloaded.
 	// Typically this is during application shutdown. Make sure you don't do too
 	// much processing here or the app will be quit forceably
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] shutdown");
 	
 	// You *must* call the superclass
 	[super shutdown:sender];
@@ -62,9 +59,7 @@
 {
 	// This is the designated initializer method and will always be called
 	// when the proxy is created.
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] init");
-	
+
 	return [super init];
 }
 
@@ -72,8 +67,6 @@
 {
 	// This method is called from the dealloc method and is good place to
 	// release any objects and memory that have been allocated for the module.
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] _destroy");
 	
 	[super _destroy];
 }
@@ -83,16 +76,12 @@
 	// This method is called when the proxy is being deallocated. The superclass
 	// method calls the _destroy method.
 	
-	NSLog(@"[MODULE LIFECYCLE EVENT] dealloc");
-	
 	[super dealloc];
 }
 
 -(void)suspend:(id)sender
 {
 	// This method is called when the application is being suspended
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] suspend");
 	
 	[super suspend:sender];
 }
@@ -101,16 +90,12 @@
 {
 	// This method is called when the application is being resumed
 
-	NSLog(@"[MODULE LIFECYCLE EVENT] resume");
-	
 	[super resume:sender];
 }
 
 -(void)resumed:(id)sender
 {
 	// This method is called when the application has been resumed
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] resumed");
 	
 	[super resumed:sender];
 }
@@ -122,8 +107,6 @@
 	// This method is also called from the other _initWithPageContext method.
 	// The superclass method calls the init and _configure methods.
 	
-	NSLog(@"[MODULE LIFECYCLE EVENT] _initWithPageContext (no arguments)");
-	
 	return [super _initWithPageContext:context];
 }
 
@@ -134,8 +117,6 @@
 	// The superclass method calls the _initWithPageContext method without
 	// arguments.
 	
-	NSLog(@"[MODULE LIFECYCLE EVENT] _initWithPageContext (arguments)");
-	
 	return [super _initWithPageContext:context_ args:args];
 }
 
@@ -144,8 +125,6 @@
 	// This method is called from _initWithPageContext to allow for
 	// custom configuration of the module before startup. The superclass
 	// method calls the startup method.
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] _configure");
 	
 	[super _configure];
 }
@@ -157,9 +136,7 @@
 	// and is a good point to process arguments that have been passed to the
 	// proxy create method since most of the initialization has been completed
 	// at this point.
-	
-	NSLog(@"[MODULE LIFECYCLE EVENT] _initWithProperties");
-	
+
 	[super _initWithProperties:properties];
 }
 

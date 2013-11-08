@@ -30,8 +30,6 @@
 
 -(void)dealloc
 {
-	NSLog(@"[VIEW LIFECYCLE EVENT] dealloc");
-
 	// Release objects and memory allocated by the view
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
@@ -50,13 +48,9 @@
 	// is useful for initializing anything specific to the view
 
 	[super initializeState];
-
-	NSLog(@"[VIEW LIFECYCLE EVENT] initializeState");
     
     if (_architectView == nil && [WTArchitectView isDeviceSupportedForARMode:WTARMode_Geo]) {
-        
-		NSLog(@"[VIEW LIFECYCLE EVENT] _architectView");
-        
+
         CGRect screenSize = [[UIScreen mainScreen] bounds];
         
         _architectView = [[WTArchitectView alloc] initWithFrame:screenSize];
@@ -77,14 +71,10 @@
 	// to implement the dependent functionality.
 
 	[super configurationSet];
-
-	NSLog(@"[VIEW LIFECYCLE EVENT] configurationSet");
 }
 
 -(void)startARWithLicenseKey:(NSString*)key
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] startAR");
-    
     if ([self.architectView respondsToSelector:@selector(setSDKOrigin:)]) {
         [self.architectView performSelector:@selector(setSDKOrigin:) withObject:@"ORIGIN_TITANIUM"];
     }
@@ -102,8 +92,6 @@
 
 - (void)stopAR
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] stopAR: %@", self);
-    
     if ( _architectView ) {
         [_architectView stop];
     }
@@ -114,8 +102,6 @@
 	// You must implement this method for your view to be sized correctly.
 	// This method is called each time the frame / bounds / center changes
 	// within Titanium.
-
-	NSLog(@"[VIEW LIFECYCLE EVENT] frameSizeChanged");
 
 	if (_architectView != nil) {
 
@@ -129,29 +115,11 @@
 }
 
 #pragma mark - View Lifecycle
-
--(void)willMoveToSuperview:(UIView *)newSuperview
-{
-	NSLog(@"[VIEW LIFECYCLE EVENT] willMoveToSuperview: %@ (self.superview: %@)", newSuperview, self.superview);
-}
-
 - (void)didMoveToSuperview
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] didMoveToSuperview: %@", self.superview);
-    
     if (!self.superview) {
         [self stopAR];
     }
-}
-
-- (void)willMoveToWindow:(UIWindow *)newWindow
-{
-    NSLog(@"[VIEW LIFECYCLE EVENT] willMoveToWindow: %@ (self.window: %@)", newWindow, self.window);
-}
-
-- (void)didMoveToWindow
-{
-    NSLog(@"[VIEW LIFECYCLE EVENT] didMoveToWindow: %@", self.window);
 }
 
 - (void)didReceivedApplicationDidResignActiveNotification:(NSNotification *)aNotification
@@ -168,15 +136,11 @@
 
 - (void)setLicenseKey_:(id)key
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] setKey_");
-
     [self startARWithLicenseKey:[TiUtils stringValue:key]];
 }
 
 - (void)setArchitectWorldUri_:(id)url
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] setUrl_");
-
     if (_architectView != nil && [url isKindOfClass:[NSString class]]) {
 
         NSURL *architectWorldURL;
@@ -207,8 +171,6 @@
 
 - (void)setJs_:(id)code
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] setJs_");
-
     if (_architectView != nil)
         [_architectView callJavaScript:[TiUtils stringValue:code]];
 }
@@ -220,8 +182,6 @@
 
 - (void)setCullingDistance_:(id)value
 {
-    NSLog(@"[VIEW LIFECYCLE EVENT] setCullingDistance_");
-
     if (_architectView != nil)
         [_architectView setCullingDistance:[TiUtils floatValue:value]];
 }
@@ -275,7 +235,6 @@
                     self.screenshotErrorCallback = nil;
                 }
                 
-                NSLog(@"[WIKITUDE EVENT] capture screen");
                 [_architectView captureScreenWithMode:captureMode usingSaveMode:saveMode saveOptions:options context:context];
             }
         }
@@ -296,7 +255,6 @@
 
 - (void)architectView:(WTArchitectView *)architectView didCaptureScreenWithContext:(NSDictionary *)context
 {
-    NSLog(@"[WIKITUDE EVENT] did capture screen with context: %@", context);
     if (context && self.screenshotSuccessCallback) {
         
         NSArray *result = nil;
@@ -310,7 +268,6 @@
 
 - (void)architectView:(WTArchitectView *)architectView didFailCaptureScreenWithError:(NSError *)error
 {
-    NSLog(@"[WIKITUDE EVENT] did fail to capture screen with error: %@", [error localizedDescription]);
     if (self.screenshotErrorCallback) {
         
         [self.screenshotErrorCallback call:@[[error localizedDescription]] thisObject:nil];
