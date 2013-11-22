@@ -1,56 +1,57 @@
+// implementation of AR-Experience (aka "World")
 var World = {
+	// true once data was fetched
+	initiallyLoadedData: false,
 
-	markerDrawable: new AR.ImageResource("assets/marker.png"),
+	// POI-Marker asset
+	markerDrawable_idle: null,
 
-	init: function initFn() {
+	// called to inject new POI data
+	loadPoisFromJsonData: function loadPoisFromJsonDataFn(poiData) {
 
-		AR.context.onLocationChanged = World.onLocationChanged;
+		// start loading marker assets
+		World.markerDrawable_idle = new AR.ImageResource("assets/marker_idle.png");
+
+		// create the marker
+		var marker = new Marker(poiData);
+
+		World.updateStatusMessage('1 place loaded');
 	},
 
-	onLocationChanged: function onLocationChangedFn(latitude, longitude, altitude, accuracy) {
+	// updates status message shon in small "i"-button aligned bottom center
+	updateStatusMessage: function updateStatusMessageFn(message, isWarning) {
 
-		AR.context.onLocationChanged = null;
+		var themeToUse = isWarning ? "e" : "c";
+		var iconToUse = isWarning ? "alert" : "info";
 
-		World.createMarkerAtLocation(latitude + 0.01, longitude - 0.0005, altitude - 0.06, 'Titel', 'Description');
+		$("#status-message").html(message);
+		$("#popupInfoButton").buttonMarkup({
+			theme: themeToUse
+		});
+		$("#popupInfoButton").buttonMarkup({
+			icon: iconToUse
+		});
 	},
 
-	// New: Two additional parameters: title, description
-	createMarkerAtLocation: function createMarkerAtLocationFn(latitude, longitude, altitude, title, description) {
+	// location updates, fired every time you call architectView.setLocation() in native environment
+	locationChanged: function locationChangedFn(lat, lon, alt, acc) {
 
-		var markerLocation = new AR.GeoLocation(latitude, longitude, altitude);
-		var markerDrawable = new AR.ImageDrawable(World.markerDrawable, 2.5, {
+		// request data if not already present
+		if (!World.initiallyLoadedData) {
+			var poiData = {
+				"id": 1,
+				"longitude": (lon + (Math.random() / 5 - 0.1)),
+				"latitude": (lat + (Math.random() / 5 - 0.1)),
+				"altitude": 100.0,
+				"description": "This is the description of POI#1",
+				"title": "POI#1"
+			};
 
-			// New: Rendering order (zOrder)
-			zOrder: 0
-		});
-
-		// New: Title Label with options who define rendering order, offsets and label style
-		var titleLabel = new AR.Label(title, 1, {
-			zOrder: 1,
-			offsetY: 0.55,
-			style: {
-				textColor: '#FFFFFF',
-				fontStyle: AR.CONST.FONT_STYLE.BOLD
-			}
-		});
-
-		// New: Description Label (same new options as for the title label)
-		var descriptionLable = new AR.Label(description, 0.8, {
-			zOrder: 1,
-			offsetY: -0.55,
-			style: {
-				textColor: '#FFFFFF'
-			}
-		});
-
-		var markerObject = new AR.GeoObject(markerLocation, {
-			drawables: {
-
-				// New: two more cam drawables: title and description label
-				cam: [markerDrawable, titleLabel, descriptionLable]
-			}
-		});
-	}
+			World.loadPoisFromJsonData(poiData);
+			World.initiallyLoadedData = true;
+		}
+	},
 };
 
-World.init();
+/* forward locationChanges to custom function */
+AR.context.onLocationChanged = World.locationChanged;
