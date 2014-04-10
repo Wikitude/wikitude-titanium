@@ -151,7 +151,7 @@ ARchitectWindow.prototype.locationListener = function(location) {
     }
 
     if ((this.arview !== null)) {
-        this.arview.userLocation = locationInformation;
+        this.arview.injectLocation(locationInformation);
     }
 }
 
