@@ -10,18 +10,18 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
     /* Member Variables */
     var _this = this;
 
-    _this.augmentedRealityMode = augmentedRealityMode;
-    _this.URL = url;
-    _this.mainView = null;
+    this.augmentedRealityMode = augmentedRealityMode;
+    this.URL = url;
+    this.mainView = null;
 
 
-    _this.window = Ti.UI.createWindow({
+    this.window = Ti.UI.createWindow({
         backgroundColor: 'transparent',
         navBarHidden: true,
         title: 'ARchitectWindow'
     });
 
-    _this.window.isDeviceSupported = function() {
+    this.window.isDeviceSupported = function() {
 
         var isDeviceSupported = wikitude.isDeviceSupported(_this.augmentedRealityMode);
 
@@ -40,38 +40,37 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
         return isDeviceSupported;
     };
 
-    _this.window.LOCATION_LISTENER_ADDED = false;
-    _this.window.util = util;
+    this.window.LOCATION_LISTENER_ADDED = false;
+    this.window.util = util;
+    this.window.locationListener = this.locationListener;
 
 
-    _this.configureWindow(_this.window);
+    this.configureWindow(this.window);
 
 
     /* lifecycle handling */
-    _this.window.addEventListener('open', _this.onWindowOpen);
-    _this.window.addEventListener('close', _this.onWindowClose);
+    this.window.addEventListener('open', this.onWindowOpen);
+    this.window.addEventListener('close', this.onWindowClose);
 
     /* Android specific lifecycle handling */
     if (util.isAndroid()) {
 
-        _this.window.addEventListener('android:back', function() {
-            _this.window.close();
+        this.window.addEventListener('android:back', function() {
+            this.close();
         });
     }
 
 
-    _this.window.locationListener = _this.locationListener;
-
 
     /* ARchitect */
-    _this.window.loadArchitectWorldFromURL = _this.loadArchitectWorldFromURL;
+    this.window.loadArchitectWorldFromURL = this.loadArchitectWorldFromURL;
 
     /* ARchitect World callback handling */
     /* handles document.location = "architectsdk://yourvalues" calls within architect html */
-    _this.window.onURLWasInvoked = _this.onURLWasInvoked;
-    _this.window.onArchitectWorldLoaded = _this.onArchitectWorldLoaded;
+    this.window.onURLWasInvoked = this.onURLWasInvoked;
+    this.window.onArchitectWorldLoaded = this.onArchitectWorldLoaded;
 
-    return _this.window;
+    return this.window;
 }
 
 ARchitectWindow.prototype.configureWindow = function(window) {
@@ -133,28 +132,28 @@ ARchitectWindow.prototype.configureWindow = function(window) {
 
 
     window.add(mainView);
-}
+};
 
-ARchitectWindow.prototype.locationListener = function(location) {
-
-    var locationInformation = {
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        accuracy: location.coords.accuracy,
-        timestamp: location.coords.timestamp,
-        altitudeAccuracy: location.coords.altitudeAccuracy
-    };
-
-    // has altitude?
-    if (location.coords.altitude != 0) {
-        locationInformation.altitude = location.coords.altitude;
-    }
-
-    if ((this.arview !== null)) {
-        this.arview.injectLocation(locationInformation);
-    }
-}
-
+ARchitectWindow.prototype.locationListener = function(arview) {
+	return function(location) {
+	    var locationInformation = {
+	        latitude: location.coords.latitude,
+	        longitude: location.coords.longitude,
+	        accuracy: location.coords.accuracy,
+	        timestamp: location.coords.timestamp,
+	        altitudeAccuracy: location.coords.altitudeAccuracy
+	    };
+	
+	    // has altitude?
+	    if (location.coords.altitude != 0) {
+	        locationInformation.altitude = location.coords.altitude;
+	    }
+	
+	    if ((arview !== null)) {
+		    arview.injectLocation(locationInformation);
+	    }
+   };
+};
 
 ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
     if (true === event.result) {
@@ -162,20 +161,20 @@ ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
     } else {
         alert('error loading Architect World: ' + event.error);
     }
-}
+};
 
 
 ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url) {
 
     this.arview.addEventListener('URL_IS_LOADED', this.onArchitectWorldLoaded);
     this.arview.loadArchitectWorldFromURL(url);
-}
+};
 
 
 ARchitectWindow.prototype.onURLWasInvoked = function(url) {
     var uri = new jsuri.Uri(event.url);
     alert("url was invoked");
-}
+};
 
 
 ARchitectWindow.prototype.onWindowOpen = function() {
@@ -187,31 +186,32 @@ ARchitectWindow.prototype.onWindowOpen = function() {
     if (this.util.isAndroid()) {
 
         Titanium.Geolocation.distanceFilter = 1;
-
+		var _this = this;
+		var listener = this.locationListener(_this.arview);
         this.activity.addEventListener('resume', function() {
-            if (!this.LOCATION_LISTENER_ADDED) {
-                Titanium.Geolocation.addEventListener('location', this.locationListener);
-                this.LOCATION_LISTENER_ADDED = true;
+            if (!_this.LOCATION_LISTENER_ADDED) {
+                Titanium.Geolocation.addEventListener('location', listener);
+                _this.LOCATION_LISTENER_ADDED = true;
             }
         });
 
         this.activity.addEventListener('pause', function() {
-            if (this.LOCATION_LISTENER_ADDED) {
-                Titanium.Geolocation.removeEventListener('location', this.locationListener);
-                this.LOCATION_LISTENER_ADDED = false;
+            if (_this.LOCATION_LISTENER_ADDED) {
+                Titanium.Geolocation.removeEventListener('location', listener);
+                _this.LOCATION_LISTENER_ADDED = false;
             }
         });
 
         this.activity.addEventListener('destroy', function(e) {
-            if (this.LOCATION_LISTENER_ADDED) {
-                Titanium.Geolocation.removeEventListener('location', this.locationListener);
-                this.LOCATION_LISTENER_ADDED = false;
+            if (_this.LOCATION_LISTENER_ADDED) {
+                Titanium.Geolocation.removeEventListener('location', listener);
+                _this.LOCATION_LISTENER_ADDED = false;
             }
         });
 
         this.activityListenerLoaded = true;
     }
-}
+};
 
 ARchitectWindow.prototype.onWindowClose = function() {
 
@@ -222,6 +222,6 @@ ARchitectWindow.prototype.onWindowClose = function() {
         this.getChildren()[0].remove(this.arview);
         this.arview = null;
     }
-}
+};
 
 module.exports = ARchitectWindow;
