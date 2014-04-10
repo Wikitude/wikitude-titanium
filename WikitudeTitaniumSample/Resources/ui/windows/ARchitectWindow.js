@@ -158,16 +158,7 @@ ARchitectWindow.prototype.locationListener = function(location) {
 
 ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
     if (true === event.result) {
-        // alert(this);
-        // this.callJavaScript('alert(\'Hello!\');');
-        // this.injectLocation({
-        //     "latitude": 1,
-        //     "longitude": 2,
-        //     "altitude": 3,
-        //     "accuracy": 4
-        // });
-        this.cullingDistance = 123456;
-        alert(this.cullingDistance);
+        /* iOS only: react on load success */
     } else {
         alert('error loading Architect World: ' + event.error);
     }
