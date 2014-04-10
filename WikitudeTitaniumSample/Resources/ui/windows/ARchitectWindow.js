@@ -151,23 +151,14 @@ ARchitectWindow.prototype.locationListener = function(location) {
     }
 
     if ((this.arview !== null)) {
-        this.arview.userLocation = locationInformation;
+        this.arview.injectLocation(locationInformation);
     }
 }
 
 
 ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
     if (true === event.result) {
-        // alert(this);
-        // this.callJavaScript('alert(\'Hello!\');');
-        // this.injectLocation({
-        //     "latitude": 1,
-        //     "longitude": 2,
-        //     "altitude": 3,
-        //     "accuracy": 4
-        // });
-        this.cullingDistance = 123456;
-        alert(this.cullingDistance);
+        /* iOS only: react on load success */
     } else {
         alert('error loading Architect World: ' + event.error);
     }
