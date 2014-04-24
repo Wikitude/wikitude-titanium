@@ -1,168 +1,227 @@
-function ARchitectWindow(WikitudeLicenseKey, url) {
-
-	var _this = this;
-	
-	this.LOCATION_LISTENER_ADDED = false;
-	
-	/* Member Variables */
-	var worldUrl = url;
-	this.arview = null;
-	
-
-	/* initial view setup */
-	var jsuri = require('jsuri-1.1.1'),
-		util = require('util'),
-		wikitude = require('com.wikitude.ti');
-
-	var self = Ti.UI.createWindow({
-		backgroundColor : 'transparent',
-		navBarHidden : true,
-		title : 'ARchitectWindow'
-	});
-
-	var headView = Ti.UI.createView({
-		backgroundColor : '#f2f2f2',
-		left : 0, right : 0, top : 0,
-		height : 68
-	});
-
-	self.add(headView);
-
-	/*
-	var headLabel = Ti.UI.createLabel({
-		text : 'AR'
-	});
-
-	headView.add(headLabel);
-	*/
-
-	var backButton = Ti.UI.createButton({
-		title : 'Back',
-		left : 6, top : 6
-		,height : 72, width : 200
-	});
-	backButton.addEventListener('click', function() {
-		self.close();
-	});
-
-	headView.add(backButton);
-	
-	var captureButton = Ti.UI.createButton({
-		title: 'Capture',
-		right: 6, top: 6
-		,height : 72, width : 200
-	});
-	var onCaptureSuccess = function(path){
-		alert('success: ' + path);
-	};
-	var onCaptureError = function(errorDescription){
-		alert('error: ' + errorDescription);
-	};
-	captureButton.addEventListener('click', function() {
-		var includeWebView = true;
-		_this.arview.captureScreen(includeWebView, "Path/In/Bundle/toImage.png", {OnSuccess: onCaptureSuccess, OnError: onCaptureError});
-	});
-	headView.add(captureButton);
-	
-
-	var mainView = Ti.UI.createView({
-		backgroundColor : '#ffffff',
-		bottom : 0, left : 0, right : 0, top : 76
-	});
-
-	self.add(mainView);
-	
-	var _this = this;
-	
-	this.locationListener = function(location) {
-		var locationInformation = { latitude: location.coords.latitude, longitude: location.coords.longitude, accuracy: location.coords.accuracy, timestamp: location.coords.timestamp, altitudeAccuracy : location.coords.altitudeAccuracy  };
-		
-		// has altitude?
-		if (location.coords.altitude != 0) {
-			locationInformation.altitude = location.coords.altitude; 
-		}
-		
-		if ( ( _this.arview!==null ) ) {
-			_this.arview.userLocation = locationInformation;	
-		}
-		
-	};
+function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
 
 
-	/* lifecycle handling */
-	self.addEventListener('open', function() {
+    /* requirements */
+    var jsuri = require('jsuri-1.1.1');
+    var util = require('util');
+    var wikitude = require('com.wikitude.ti');
 
-		_this.arview = wikitude.createWikitudeView({
-			licenseKey : WikitudeLicenseKey,
-			bottom : 0, left : 0, right : 0, top : 0
-		});
 
-		mainView.add(_this.arview);
-		
-		if (Titanium.Platform.name == 'android') {
+    /* Member Variables */
+    var _this = this;
 
-			// Titanium.Geolocation.distanceFilter = 1;
-				
-            self.activity.addEventListener('resume', function() {
-		      if (!_this.LOCATION_LISTENER_ADDED) {
-		            Titanium.Geolocation.addEventListener('location', _this.locationListener);
-		            _this.LOCATION_LISTENER_ADDED = true;
-		        }
-		    });
-            
-            self.activity.addEventListener('pause', function() {
-                if (_this.LOCATION_LISTENER_ADDED) {
-	                Titanium.Geolocation.removeEventListener('location', _this.locationListener);
-	                _this.LOCATION_LISTENER_ADDED = false;
-	            }
+    this.augmentedRealityMode = augmentedRealityMode;
+    this.URL = url;
+    this.mainView = null;
+
+
+    this.window = Ti.UI.createWindow({
+        backgroundColor: 'transparent',
+        navBarHidden: true,
+        title: 'ARchitectWindow'
+    });
+
+    this.window.isDeviceSupported = function() {
+
+        var isDeviceSupported = wikitude.isDeviceSupported(_this.augmentedRealityMode);
+
+        if (isDeviceSupported) {
+
+            _this.window.arview = wikitude.createWikitudeView({
+                "licenseKey": WikitudeLicenseKey,
+                "augmentedRealityMode": _this.augmentedRealityMode,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                top: 65
             });
-            
-            self.activity.addEventListener('destroy', function(e) {
-		        if (_this.LOCATION_LISTENER_ADDED) {
-		            Titanium.Geolocation.removeEventListener('location', _this.locationListener);
-		            _this.LOCATION_LISTENER_ADDED = false;
-		        }
-		    });
-            
-         	self.activityListenerLoaded = true;	   
-         };
-         
-        _this.arview.addEventListener('URL_WAS_INVOKED', onUrlWasInvoked); // setup event listener
+        }
 
-		_this.arview.architectWorldUri = url; // load ARchitect world
-         
-         
-       });
+        return isDeviceSupported;
+    };
 
-	self.addEventListener('close', function() {
-
-		if (_this.arview !== null) {
-
-			_this.arview.removeEventListener('URL_WAS_INVOKED', onUrlWasInvoked); // useless, since arview is then destroyed
-
-			mainView.remove(_this.arview);
-			_this.arview = null;
-		}
-	});
+    this.window.LOCATION_LISTENER_ADDED = false;
+    this.window.util = util;
+    this.window.locationListener = this.locationListener;
 
 
-	/* Android specific lifecycle handling */
-	if (util.isAndroid()) {
-
-		self.addEventListener('android:back', function() {
-			self.close();
-		});
-	}
+    this.configureWindow(this.window);
 
 
-	/* ARchitect World callback handling */
-	/* handles document.location = "architectsdk://yourvalues" calls within architect html */
-	var onUrlWasInvoked = function(event) {
-		var uri = new jsuri.Uri(event.url);
-		alert("url was invoked");
-	};
-		
-	return self;
+    /* lifecycle handling */
+    this.window.addEventListener('open', this.onWindowOpen);
+    this.window.addEventListener('close', this.onWindowClose);
+
+    /* Android specific lifecycle handling */
+    if (util.isAndroid()) {
+
+        this.window.addEventListener('android:back', function() {
+            this.close();
+        });
+    }
+
+
+
+    /* ARchitect */
+    this.window.loadArchitectWorldFromURL = this.loadArchitectWorldFromURL;
+
+    /* ARchitect World callback handling */
+    /* handles document.location = "architectsdk://yourvalues" calls within architect html */
+    this.window.onURLWasInvoked = this.onURLWasInvoked;
+    this.window.onArchitectWorldLoaded = this.onArchitectWorldLoaded;
+
+    return this.window;
 }
+
+ARchitectWindow.prototype.configureWindow = function(window) {
+
+    /* initial view setup */
+    var mainView = Ti.UI.createView({
+        backgroundColor: '#ffffff',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        top: 0
+    });
+
+
+    var headView = Ti.UI.createView({
+        backgroundColor: '#f2f2f2',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: 65
+    });
+
+    var backButton = Ti.UI.createButton({
+        title: 'Back',
+        left: 6,
+        top: 10,
+        height: 45,
+        width: 75
+    });
+    backButton.addEventListener('click', function() {
+        window.close();
+    });
+
+    headView.add(backButton);
+
+    var captureButton = Ti.UI.createButton({
+        title: 'Capture',
+        right: 6,
+        top: 10,
+        height: 45,
+        width: 75
+    });
+
+    captureButton.addEventListener('click', function() {
+
+        var includeWebView = true;
+        window.arview.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
+            OnSuccess: function(path) {
+                alert('success: ' + path);
+            },
+            OnError: function(errorDescription) {
+                alert('error: ' + errorDescription);
+            }
+        });
+    });
+    headView.add(captureButton);
+
+    mainView.add(headView);
+
+
+    window.add(mainView);
+};
+
+ARchitectWindow.prototype.locationListener = function(arview) {
+	return function(location) {
+	    var locationInformation = {
+	        latitude: location.coords.latitude,
+	        longitude: location.coords.longitude,
+	        accuracy: location.coords.accuracy,
+	        timestamp: location.coords.timestamp,
+	        altitudeAccuracy: location.coords.altitudeAccuracy
+	    };
+	
+	    // has altitude?
+	    if (location.coords.altitude != 0) {
+	        locationInformation.altitude = location.coords.altitude;
+	    }
+	
+	    if ((arview !== null)) {
+		    arview.injectLocation(locationInformation);
+	    }
+   };
+};
+
+ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
+    if (true === event.result) {
+        /* iOS only: react on load success */
+    } else {
+        alert('error loading Architect World: ' + event.error);
+    }
+};
+
+
+ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url) {
+
+    this.arview.addEventListener('URL_IS_LOADED', this.onArchitectWorldLoaded);
+    this.arview.loadArchitectWorldFromURL(url);
+};
+
+
+ARchitectWindow.prototype.onURLWasInvoked = function(url) {
+    var uri = new jsuri.Uri(event.url);
+    alert("url was invoked");
+};
+
+
+ARchitectWindow.prototype.onWindowOpen = function() {
+
+    this.getChildren()[0].add(this.arview); // get the main view for this window and add the ar view
+
+    this.arview.addEventListener('URL_WAS_INVOKED', this.onURLWasInvoked); // add an event listener for architectsdk:// url schemes (inside the ARchitect World)
+
+    if (this.util.isAndroid()) {
+
+        Titanium.Geolocation.distanceFilter = 1;
+		var _this = this;
+		var listener = this.locationListener(_this.arview);
+        this.activity.addEventListener('resume', function() {
+            if (!_this.LOCATION_LISTENER_ADDED) {
+                Titanium.Geolocation.addEventListener('location', listener);
+                _this.LOCATION_LISTENER_ADDED = true;
+            }
+        });
+
+        this.activity.addEventListener('pause', function() {
+            if (_this.LOCATION_LISTENER_ADDED) {
+                Titanium.Geolocation.removeEventListener('location', listener);
+                _this.LOCATION_LISTENER_ADDED = false;
+            }
+        });
+
+        this.activity.addEventListener('destroy', function(e) {
+            if (_this.LOCATION_LISTENER_ADDED) {
+                Titanium.Geolocation.removeEventListener('location', listener);
+                _this.LOCATION_LISTENER_ADDED = false;
+            }
+        });
+
+        this.activityListenerLoaded = true;
+    }
+};
+
+ARchitectWindow.prototype.onWindowClose = function() {
+
+    if (this.arview !== null) {
+
+        this.arview.removeEventListener('URL_WAS_INVOKED', this.onURLWasInvoked);
+
+        this.getChildren()[0].remove(this.arview);
+        this.arview = null;
+    }
+};
 
 module.exports = ARchitectWindow;
