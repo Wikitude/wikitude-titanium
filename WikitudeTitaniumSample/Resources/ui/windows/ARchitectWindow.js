@@ -118,10 +118,10 @@ ARchitectWindow.prototype.configureWindow = function(window) {
 
         var includeWebView = true;
         window.arview.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
-            OnSuccess: function(path) {
+            onSuccess: function(path) {
                 alert('success: ' + path);
             },
-            OnError: function(errorDescription) {
+            onError: function(errorDescription) {
                 alert('error: ' + errorDescription);
             }
         });
@@ -143,12 +143,12 @@ ARchitectWindow.prototype.locationListener = function(arview) {
 	        timestamp: location.coords.timestamp,
 	        altitudeAccuracy: location.coords.altitudeAccuracy
 	    };
-	
+
 	    // has altitude?
 	    if (location.coords.altitude != 0) {
 	        locationInformation.altitude = location.coords.altitude;
 	    }
-	
+
 	    if ((arview !== null)) {
 		    arview.injectLocation(locationInformation);
 	    }
