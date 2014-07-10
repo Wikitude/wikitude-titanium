@@ -137,7 +137,7 @@ var World = {
 		// show panel
 		$("#panel-poidetail").panel("open", 123);
 
-		$( ".ui-panel-dismiss" ).unbind("mousedown");
+		$(".ui-panel-dismiss").unbind("mousedown");
 
 		$("#panel-poidetail").on("panelbeforeclose", function(event, ui) {
 			World.currentMarker.setDeselected(World.currentMarker);
@@ -242,6 +242,12 @@ var World = {
 		}
 	},
 
+	/*
+		You may need to reload POI information because of user movements or manually for various reasons. 
+		In this example POIs are reloaded when user presses the refresh button. 
+		The button is defined in index.html and calls World.reloadPlaces() on click.
+	*/
+
 	// reload places from content source
 	reloadPlaces: function reloadPlacesFn() {
 		if (!World.isRequestingData) {
@@ -266,9 +272,14 @@ var World = {
 		var serverUrl = ServerInformation.POIDATA_SERVER + "?" + ServerInformation.POIDATA_SERVER_ARG_LAT + "=" + lat + "&" + ServerInformation.POIDATA_SERVER_ARG_LON + "=" + lon + "&" + ServerInformation.POIDATA_SERVER_ARG_NR_POIS + "=20";
 
 		var jqxhr = $.getJSON(serverUrl, function(data) {
-			World.loadPoisFromJsonData(data);
-		})
+				World.loadPoisFromJsonData(data);
+			})
 			.error(function(err) {
+			/*
+					Under certain circumstances your web service may not be available or other connection issues can occur. 
+					To notify the user about connection problems a status message is updated.
+					In your own implementation you may e.g. use an info popup or similar.
+				*/
 				World.updateStatusMessage("Invalid web-service response.", true);
 				World.isRequestingData = false;
 			})
