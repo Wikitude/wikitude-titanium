@@ -1,10 +1,45 @@
 var World = {
 	loaded: false,
 
+
 	init: function initFn() {
 		/* Disable all sensors in "IR-only" Worlds to save performance. If the property is set to true, any geo-related components (such as GeoObjects and ActionRanges) are active. If the property is set to false, any geo-related components will not be visible on the screen, and triggers will not fire.*/
 		AR.context.services.sensors = false;
+
+		window.addEventListener('orientationchange', this.resizeSnapContainer, false);
+		this.resizeSnapContainer();
+
 		this.createOverlays();
+	},
+
+	/*
+		The snap to screen position is defined through a div element with a certain id. Since the size of the div defines the appeareance of the attached drawables (scale) the size of the div is changed based on the device orientation.
+	*/
+	resizeSnapContainer: function resizeSnapContainerFn() {
+		var documentElement = document.documentElement;
+		var aspectRatio = documentElement.clientWidth/documentElement.clientHeight;
+
+		/* Setup the initial portrait layout */
+		var width = 90;
+		var height = 0;
+		var left = 5;
+		var top = 0;
+
+		/* And adopt it for landscape accordingly */
+		if ( aspectRatio > 1 ) {
+			width = 50;
+			left = 25;
+		}
+
+		/* After the initial layout is setup the remaining values are calculated accordingly. Note: 50 stands for 50% of the screen height. */
+		height = width * aspectRatio;
+		top = 50 - (height * 0.5);
+
+		/* Finally the div is updated. Resizing the div will trigger a relayout for all snapped elements */
+		document.getElementById('snapContainer').style.width = width.toString()+"%";
+		document.getElementById('snapContainer').style.height = height.toString()+"%";
+		document.getElementById('snapContainer').style.left = left.toString()+"%";
+		document.getElementById('snapContainer').style.top = top.toString()+"%";
 	},
 
 	createOverlays: function createOverlaysFn() {
@@ -19,8 +54,8 @@ var World = {
 			enabled: false,
 			clicked: false,
 			onClick: function playButtonClicked() {
-				video.play(1);
-				video.playing = true;
+				World.video.play(1);
+				World.video.playing = true;
 				playButton.clicked = true;
 			},
 			offsetY: -0.3
@@ -31,37 +66,37 @@ var World = {
 
 			The video we use for this example is "video.mp4". As with all resources the video can be loaded locally from the application bundle or remotely from any server. In this example the video file is already bundled with the application.
 
-			The URL and the size are required when creating a new AR.VideoDrawable. Optionally the offsetX and offsetY parameters are set to position the video on the target. The values for the offsets are in SDUs. If you want to know more about SDUs look up the code reference.
+			The URL and the size are required when creating a new AR.VideoDrawable. Optionally the offsetX and offsetY parameters are set to position the video on the target. The values for the offsets are in SDUs. If you want to know more about SDUs look up the API reference.
 
-			The class AR.VideoDrawable offers functions and triggers to control playback of the video and get notified of playback states. The following implementation makes use of the triggers and states to display an image of a play button on top of the target. Once the user clicks the play button the video starts to play. Additionally the video will be paused/resumed whenever the target is lost so the user does not miss any video content when looking away.
+			The class AR.VideoDrawable offers functions and triggers to control playback of the video and get notified of playback states. The following implementation makes use of the triggers and states to display an image of a play button on top of the target. Once the user clicks the play button the video starts to play.
 
 			Once the user clicks the button the video is played once: video.play(1). Starting the playback fires the onPlaybackStarted trigger and hides the playButton. When playback finishes the onFinishedPlaying trigger is called that shows the playButton again.
 
 			To give the user the possibility to pause the video the AR.VideoDrawable's click trigger is used. If the video is playing and the user is clicking the function pause() is called which then pauses playback. Clicking the video again resumes playback.
 		*/
-		var video = new AR.VideoDrawable("assets/video.mp4", 0.40, {
+		this.video = new AR.VideoDrawable("assets/video.mp4", 0.4, {
 			offsetY: playButton.offsetY,
 			onLoaded: function videoLoaded() {
 				playButton.enabled = true;
 			},
 			onPlaybackStarted: function videoPlaying() {
 				playButton.enabled = false;
-				video.enabled = true;
+				World.video.enabled = true;
 			},
 			onFinishedPlaying: function videoFinished() {
 				playButton.enabled = true;
-				video.playing = false;
-				video.enabled = false;
+				World.video.playing = false;
+				World.video.enabled = false;
 			},
 			onClick: function videoClicked() {
 				if (playButton.clicked) {
 					playButton.clicked = false;
-				} else if (video.playing) {
-					video.pause();
-					video.playing = false;
+				} else if (World.video.playing) {
+					World.video.pause();
+					World.video.playing = false;
 				} else {
-					video.resume();
-					video.playing = true;
+					World.video.resume();
+					World.video.playing = true;
 				}
 			}
 		});
@@ -71,23 +106,21 @@ var World = {
 
 			Note that this time we use "*" as target name. That means that the AR.Trackable2DObject will respond to any target that is defined in the specified tracker. You can use wildcards to specify more complex name matchings. E.g. 'target_?' to reference 'target_1' through 'target_9' or 'target*' for any targets names that start with 'target'.
 
-			To start the video immediately after the target is recognized we call play inside the onEnterFieldOfVision trigger. Supplying -1 to play tells the Wikitude SDK to loop the video infinitely. Choose any positive number to re-play it multiple times.
+			This time we don't pause/resume the video when target is lost/recognized but instead snap the video to the screen so that the user can still watch it even when the target image is not visible for the camera. To Do so we set the 'snapToScreen.enabledOnExitFieldOfVision' property to true which indicates that the snapping should occur when the onExitFieldOfVision event occurs. Setting the 'snapToScreen.enabled' property to true in the onExitFieldOfVision trigger will not work because the target is already lost then and snap to screen can only activated for Trackable2DObject that are currently in the onEnterFieldOfVision state.
+			When the onEnterFieldOfVision event occurs we set 'snapToScreen.enabled' to false which will unsnap the drawables from the cam and augmentation will stick on the target again.
 
-			Similar to the user clicking on the video we want to pause/resume the playback if the target image is lost - as this means the user is currently not actively watching the video. To accomplish this the onEnterFieldOfVision and onExitFieldOfVision triggers of the AR.Trackable2DObject are used:
+			Of course the video will continue playing back in the meantime so that the user can watch the entire video without any interruption.
 		*/
-		var pageOne = new AR.Trackable2DObject(this.tracker, "*", {
+		this.pageOne = new AR.Trackable2DObject(this.tracker, "*", {
 			drawables: {
-				cam: [video, playButton]
+				cam: [this.video, playButton]
 			},
-			onEnterFieldOfVision: function onEnterFieldOfViewFn() {
-				if (video.playing) {
-					video.resume();
-				}
+			onEnterFieldOfVision: function onEnterFieldOfVision() {
+				World.pageOne.snapToScreen.enabled = false;
 			},
-			onExitFieldOfVision: function onExitFieldOfView() {
-				if (video.playing) {
-					video.pause();
-				}
+			snapToScreen: {
+				enabledOnExitFieldOfVision: true,
+				snapContainer: document.getElementById('snapContainer')
 			}
 		});
 	},
