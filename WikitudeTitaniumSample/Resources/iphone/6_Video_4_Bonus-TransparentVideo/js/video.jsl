@@ -20,8 +20,8 @@ var World = {
 			Summarizing the required steps, here is what you need to do in order to use transparent videos in a simple list. We are describing each of the steps in more detail.
 
 			1.	Produce a green screen (chroma key) video
-			2.	Edit that video using standard video processing software 
-				and remove the green screen. Export your result into a file format, 
+			2.	Edit that video using standard video processing software
+				and remove the green screen. Export your result into a file format,
 				which can handle alpha channel information (e.g. Apple PreRes 4444)
 			3.	Convert the video from step 2 using the script in the tools folder
 			4.	Add it to a target image
@@ -66,7 +66,7 @@ var World = {
 		video.pause();
 
 		// add the video and the button to the AR.Trackable2DObject
-		var pageOne = new AR.Trackable2DObject(this.tracker, "pageOne", {
+		var pageOne = new AR.Trackable2DObject(this.tracker, "*", {
 			drawables: {
 				cam: [video, pageOneButton]
 			},
@@ -88,11 +88,13 @@ var World = {
 	},
 
 	worldLoaded: function worldLoadedFn() {
-		var cssDivLeft = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
-		var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
+		var cssDivInstructions = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
+		var cssDivSurfer = " style='display: table-cell;vertical-align: middle; text-align: left; padding-right: 15px; width: 38px'";
+		var cssDivBiker = " style='display: table-cell;vertical-align: middle; text-align: left; padding-right: 15px;'";
 		document.getElementById('loadingMessage').innerHTML =
-			"<div" + cssDivLeft + ">Scan Red Bulletin Target:</div>" +
-			"<div" + cssDivRight + "><img src='assets/surfer.png'></img></div>";
+			"<div" + cssDivInstructions + ">Scan Target &#35;1 (surfer) or &#35;2 (biker):</div>" +
+			"<div" + cssDivSurfer + "><img src='assets/surfer.png'></img></div>" +
+			"<div" + cssDivBiker + "><img src='assets/bike.png'></img></div>";
 
 		// Remove Scan target message after 10 sec.
 		setTimeout(function() {

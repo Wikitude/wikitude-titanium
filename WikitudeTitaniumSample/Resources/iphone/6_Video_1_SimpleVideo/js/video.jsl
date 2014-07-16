@@ -27,9 +27,11 @@ var World = {
 		/*
 			Adding the video to the image target is straight forward and similar like adding any other drawable to an image target.
 
+			Note that this time we use "*" as target name. That means that the AR.Trackable2DObject will respond to any target that is defined in the specified tracker. You can use wildcards to specify more complex name matchings. E.g. 'target_?' to reference 'target_1' through 'target_9' or 'target*' for any targets names that start with 'target'.
+
 			To start the video immediately after the target is recognized we call play inside the onEnterFieldOfVision trigger. Supplying -1 to play tells the Wikitude SDK to loop the video infinitely. Choose any positive number to re-play it multiple times.
 		*/
-		var pageOne = new AR.Trackable2DObject(this.tracker, "pageOne", {
+		var pageOne = new AR.Trackable2DObject(this.tracker, "*", {
 			drawables: {
 				cam: [video]
 			},
@@ -40,11 +42,13 @@ var World = {
 	},
 
 	worldLoaded: function worldLoadedFn() {
-		var cssDivLeft = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
-		var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
+		var cssDivInstructions = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
+		var cssDivSurfer = " style='display: table-cell;vertical-align: middle; text-align: left; padding-right: 15px; width: 38px'";
+		var cssDivBiker = " style='display: table-cell;vertical-align: middle; text-align: left; padding-right: 15px;'";
 		document.getElementById('loadingMessage').innerHTML =
-			"<div" + cssDivLeft + ">Scan Red Bulletin Target:</div>" +
-			"<div" + cssDivRight + "><img src='assets/surfer.png'></img></div>";
+            "<div" + cssDivInstructions + ">Scan Target &#35;1 (surfer) or &#35;2 (biker):</div>" +
+            "<div" + cssDivSurfer + "><img src='assets/surfer.png'></img></div>" +
+            "<div" + cssDivBiker + "><img src='assets/bike.png'></img></div>";
 
 		// Remove Scan target message after 10 sec.
 		setTimeout(function() {
