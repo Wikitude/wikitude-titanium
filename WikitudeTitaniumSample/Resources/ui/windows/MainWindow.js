@@ -8,6 +8,7 @@ function MainWindow() {
      *
      * The license key used in this project is ONLY valid for this project and must not
      * be used for your project.
+     * You need to provide a valid trial, flex or pro license key in order to try/use the Wikitude SDK.
      *
      * http://www.wikitude.com/products/wikitude-sdk/pricing/
      */
