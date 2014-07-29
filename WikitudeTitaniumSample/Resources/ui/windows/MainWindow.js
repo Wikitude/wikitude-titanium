@@ -8,6 +8,7 @@ function MainWindow() {
      *
      * The license key used in this project is ONLY valid for this project and must not
      * be used for your project.
+     * You need to provide a valid trial, flex or pro license key in order to try/use the Wikitude SDK.
      *
      * http://www.wikitude.com/products/wikitude-sdk/pricing/
      */
@@ -68,6 +69,9 @@ function MainWindow() {
             }, {
                 title: '3. Interactivity',
                 file: '2_3dAndImageRecognition_3_Interactivity/index.html'
+            }, {
+                title: '4. Snap to Screen',
+                file: '2_3dAndImageRecognition_4_SnapToScreen/index.html'
             }]
         },
 
@@ -130,6 +134,9 @@ function MainWindow() {
             }, {
                 title: '2. Playback States',
                 file: '6_Video_2_PlaybackStates/index.html'
+            }, {
+                title: '3. Snapping Video',
+                file: '6_Video_3_SnappingVideo/index.html'
             }, {
                 title: '3. Transparent Video',
                 file: '6_Video_4_Bonus-TransparentVideo/index.html'
