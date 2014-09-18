@@ -188,10 +188,19 @@ ARchitectWindow.prototype.onWindowOpen = function() {
         Titanium.Geolocation.distanceFilter = 1;
 		var _this = this;
 		var listener = this.locationListener(_this.arview);
+		
+		var isOnOpen = true; //boolean var to check if location service started for first time onWindowOpen
+		
+		if(isOnOpen){
+		   Titanium.Geolocation.addEventListener('location', listener); //start location listener and passing data
+            	   _this.LOCATION_LISTENER_ADDED = true;
+		}
+		
         this.activity.addEventListener('resume', function() {
             if (!_this.LOCATION_LISTENER_ADDED) {
                 Titanium.Geolocation.addEventListener('location', listener);
                 _this.LOCATION_LISTENER_ADDED = true;
+                isOnOpen = false; //setting to false to not add again location listener
             }
         });
 
@@ -199,6 +208,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
             if (_this.LOCATION_LISTENER_ADDED) {
                 Titanium.Geolocation.removeEventListener('location', listener);
                 _this.LOCATION_LISTENER_ADDED = false;
+                isOnOpen = false; //setting to false to not add again location listener
             }
         });
 
@@ -206,6 +216,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
             if (_this.LOCATION_LISTENER_ADDED) {
                 Titanium.Geolocation.removeEventListener('location', listener);
                 _this.LOCATION_LISTENER_ADDED = false;
+                isOnOpen = false; //setting to false to not add again location listener
             }
         });
 
