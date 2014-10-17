@@ -33,6 +33,14 @@
     <property name="ti.ui.defaultunit">system</property>
     <ios>
         <min-ios-ver>4.3</min-ios-ver>
+        <plist>
+            <dict>
+                <key>NSLocationWhenInUseUsageDescription</key>
+                <string>
+                    Accessing GPS information is needed to display POIs around your current location
+                </string>
+            </dict>
+        </plist>
     </ios>
     <iphone>
         <orientations device="iphone">
