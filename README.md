@@ -7,8 +7,8 @@ The provided sample projects for Android and iOS demo the most common usecases.
 
 # Documentation & Samples
 - Please find details about plugin installation and samples at [Wikitude Developer Section](http://developer.wikitude.com/documentation/appcelerator).
-- Please install the Wikitude Modules from Appcelerator Marketplace in the Titanium Sample Application upfront.
-- Downloading the Modules via GitHub is no longer supported.
+- Please install the Wikitude Modules from our [website](http://www.wikitude.com/download) or the [Appcelerator Marketplace](https://marketplace.appcelerator.com/apps/6755#!overview) upfront.
+    - Downloading the Modules via GitHub is no longer supported.
 
 **Note: This plugin has hard and software requirements for Android and iOS devices and does not run on a desktop browser. **
 

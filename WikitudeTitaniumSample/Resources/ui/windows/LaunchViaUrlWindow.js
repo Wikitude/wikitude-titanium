@@ -39,7 +39,14 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 			alert("Please enter valid url");
 		} else {
 			var ARchitectWindow = require('/ui/windows/ARchitectWindow');
-			new ARchitectWindow( WikitudeLicenseKey, url2launch).open();	
+
+            var architectWindow = new ARchitectWindow(WikitudeLicenseKey, "IrAndGeo");
+            if (architectWindow.isDeviceSupported()) {
+                architectWindow.loadArchitectWorldFromURL(url2launch);
+                architectWindow.open();
+            } else {
+                alert('not supported');
+            }	
 		}
 			
 	});	
