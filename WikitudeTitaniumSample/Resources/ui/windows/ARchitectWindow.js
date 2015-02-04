@@ -1,4 +1,4 @@
-function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
+function ARchitectWindow(WikitudeLicenseKey, augmentedRealityFeatures, url) {
 
 
     /* requirements */
@@ -10,7 +10,7 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
     /* Member Variables */
     var _this = this;
 
-    this.augmentedRealityMode = augmentedRealityMode;
+    this.augmentedRealityFeatures = augmentedRealityFeatures;
     this.URL = url;
     this.mainView = null;
 
@@ -23,13 +23,13 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
 
     this.window.isDeviceSupported = function() {
 
-        var isDeviceSupported = wikitude.isDeviceSupported(_this.augmentedRealityMode);
+        var isDeviceSupported = wikitude.isDeviceSupported(_this.augmentedRealityFeatures);
 
         if (isDeviceSupported) {
 
             _this.window.arview = wikitude.createWikitudeView({
                 "licenseKey": WikitudeLicenseKey,
-                "augmentedRealityMode": _this.augmentedRealityMode,
+                "augmentedRealityFeatures": _this.augmentedRealityFeatures,
                 bottom: 0,
                 left: 0,
                 right: 0,
