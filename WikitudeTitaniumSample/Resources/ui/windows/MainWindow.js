@@ -1,3 +1,9 @@
+
+
+var FeatureGeo         = (1<<0);
+var Feature2DTracking  = (1<<1);
+
+
 function MainWindow() {
 
     var _this = this;
@@ -41,19 +47,24 @@ function MainWindow() {
             windowTitle: 'Image Recognition',
             samples: [{
                 title: '1. Image on Target',
-                file: '1_ImageRecognition_1_ImageOnTarget/index.html'
+                file: '1_ImageRecognition_1_ImageOnTarget/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '2. Multiple Targets',
-                file: '1_ImageRecognition_2_MultipleTargets/index.html'
+                file: '1_ImageRecognition_2_MultipleTargets/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '3. Interactivity',
-                file: '1_ImageRecognition_3_Interactivity/index.html'
+                file: '1_ImageRecognition_3_Interactivity/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '4. HTML Drawable',
-                file: '1_ImageRecognition_4_HtmlDrawable/index.html'
+                file: '1_ImageRecognition_4_HtmlDrawable/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '5. Bonus-Sparkles',
-                file: '1_ImageRecognition_5_Bonus-Sparkles/index.html'
+                file: '1_ImageRecognition_5_Bonus-Sparkles/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }]
         },
 
@@ -62,16 +73,20 @@ function MainWindow() {
             windowTitle: '3D and Image Recognition',
             samples: [{
                 title: '1. 3D Model on Target',
-                file: '2_3dAndImageRecognition_1_3dModelOnTarget/index.html'
+                file: '2_3dAndImageRecognition_1_3dModelOnTarget/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '2. Appearing Animation',
-                file: '2_3dAndImageRecognition_2_AppearingAnimation/index.html'
+                file: '2_3dAndImageRecognition_2_AppearingAnimation/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '3. Interactivity',
-                file: '2_3dAndImageRecognition_3_Interactivity/index.html'
+                file: '2_3dAndImageRecognition_3_Interactivity/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '4. Snap to Screen',
-                file: '2_3dAndImageRecognition_4_SnapToScreen/index.html'
+                file: '2_3dAndImageRecognition_4_SnapToScreen/index.html',
+                augmentedRealityFeatures: Feature2DTracking
             }]
         },
 
@@ -80,16 +95,20 @@ function MainWindow() {
             windowTitle: 'Point Of Interest',
             samples: [{
                     title: '1. POI at location',
-                    file: '3_PointOfInterest_1_PoiAtLocation/index.html'
+                    file: '3_PointOfInterest_1_PoiAtLocation/index.html',
+	                augmentedRealityFeatures: FeatureGeo
                 }, {
                     title: '2. POI with label',
-                    file: '3_PointOfInterest_2_PoiWithLabel/index.html'
+                    file: '3_PointOfInterest_2_PoiWithLabel/index.html',
+	                augmentedRealityFeatures: FeatureGeo
                 }, {
                     title: '3. Multiple POIs',
-                    file: '3_PointOfInterest_3_MultiplePois/index.html'
+                    file: '3_PointOfInterest_3_MultiplePois/index.html',
+	                augmentedRealityFeatures: FeatureGeo
                 }, {
                     title: '4. Selecting POIs',
-                    file: '3_PointOfInterest_4_SelectingPois/index.html'
+                    file: '3_PointOfInterest_4_SelectingPois/index.html',
+	                augmentedRealityFeatures: FeatureGeo
                 }
 
             ]
@@ -100,10 +119,12 @@ function MainWindow() {
             windowTitle: 'Obtain POI data',
             samples: [{
                 title: '1. From local resource',
-                file: '4_ObtainPoiData_2_FromLocalResource/index.html'
+                file: '4_ObtainPoiData_2_FromLocalResource/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }, {
                 title: '2. From webservice',
-                file: '4_ObtainPoiData_3_FromWebservice/index.html'
+                file: '4_ObtainPoiData_3_FromWebservice/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }]
         },
 
@@ -112,16 +133,20 @@ function MainWindow() {
             windowTitle: 'Browsing POIs',
             samples: [{
                 title: '1. Presenting Details',
-                file: '5_BrowsingPois_1_PresentingDetails/index.html'
+                file: '5_BrowsingPois_1_PresentingDetails/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }, {
                 title: '2. Adding Radar',
-                file: '5_BrowsingPois_2_AddingRadar/index.html'
+                file: '5_BrowsingPois_2_AddingRadar/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }, {
                 title: '3. Limiting Range',
-                file: '5_BrowsingPois_3_LimitingRange/index.html'
+                file: '5_BrowsingPois_3_LimitingRange/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }, {
                 title: '4. Reloading Content',
-                file: '5_BrowsingPois_4_ReloadingContent/index.html'
+                file: '5_BrowsingPois_4_ReloadingContent/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }]
         },
 
@@ -130,16 +155,20 @@ function MainWindow() {
             windowTitle: 'Videos in Image Recognition',
             samples: [{
                 title: '1. Simple Video',
-                file: '6_Video_1_SimpleVideo/index.html'
+                file: '6_Video_1_SimpleVideo/index.html',
+	            augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '2. Playback States',
-                file: '6_Video_2_PlaybackStates/index.html'
+                file: '6_Video_2_PlaybackStates/index.html',
+	            augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '3. Snapping Video',
-                file: '6_Video_3_SnappingVideo/index.html'
+                file: '6_Video_3_SnappingVideo/index.html',
+	            augmentedRealityFeatures: Feature2DTracking
             }, {
                 title: '3. Transparent Video',
-                file: '6_Video_4_Bonus-TransparentVideo/index.html'
+                file: '6_Video_4_Bonus-TransparentVideo/index.html',
+	            augmentedRealityFeatures: Feature2DTracking
             }]
         },
 
@@ -148,13 +177,16 @@ function MainWindow() {
             windowTitle: 'Demos',
             samples: [{
                 title: '1. IR and Geo',
-                file: '99_Demo_1_ImageRecognitionAndGeo/index.html'
+                file: '99_Demo_1_ImageRecognitionAndGeo/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }, {
                 title: '2. Solar System (Geo)',
-                file: '99_Demo_2_SolarSystem(Geo)/index.html'
+                file: '99_Demo_2_SolarSystem(Geo)/index.html',
+	            augmentedRealityFeatures: FeatureGeo
             }, {
                 title: '3. Solar System (IR)',
-                file: '99_Demo_3_SolarSystem(ImageRecognition)/index.html'
+                file: '99_Demo_3_SolarSystem(ImageRecognition)/index.html',
+	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
             }]
         }
     ];
@@ -164,7 +196,7 @@ function MainWindow() {
 
     var defaultFontSize = Ti.Platform.name === 'android' ? 24 : 18;
 
-    var i = 0
+    var i = 0;
 
     // add samples to list
     for (i = 0; i < this.samples.length; i++) {

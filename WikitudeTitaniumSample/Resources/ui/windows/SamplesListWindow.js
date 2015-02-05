@@ -46,12 +46,30 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 
         row.add(labelSample);
 
-        row.callback = function(index) {
+        row.callback = function(index) 
+        {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
+            
+            var arFeatures = (_this.samples[index].augmentedRealityFeatures != undefined) ? _this.samples[index].augmentedRealityFeatures : 0;
+            var camPos = (_this.samples[index].cameraPosition != undefined) ? _this.samples[index].cameraPosition : 0; 
 
-            var architectWindow = new ARchitectWindow(WikitudeLicenseKey, "IrAndGeo");
-            if (architectWindow.isDeviceSupported()) {
-                architectWindow.loadArchitectWorldFromURL(_this.samples[index].file);
+            var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
+            if (architectWindow.isDeviceSupported(arFeatures)) {
+                architectWindow.loadArchitectWorldFromURL(_this.samples[index].file, arFeatures, 
+                										  { 
+                										  	"cameraPosition": camPos,
+										                    "cameraFocusMode": "Locked",
+										                    //"cameraFocusMode": "AutoFocus",
+										                    //"cameraFocusMode": "ContinuousAutoFocus",
+										                    "iOS" : {
+				                    	                        "CaptureSessionPreset" : "1280x720",
+										                        "cameraFocusRangeRestriction" : "CameraFocusRangeNear",
+                    											"videoMirrored" : true
+										                    },
+										                    "android" : {
+										                    	
+										                    }
+                										  });
                 architectWindow.open();
             } else {
                 alert('not supported');
