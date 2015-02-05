@@ -1,4 +1,4 @@
-function ARchitectWindow(WikitudeLicenseKey, augmentedRealityFeatures, url) {
+function ARchitectWindow(WikitudeLicenseKey, url) {
 
 
     /* requirements */
@@ -10,7 +10,6 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityFeatures, url) {
     /* Member Variables */
     var _this = this;
 
-    this.augmentedRealityFeatures = augmentedRealityFeatures;
     this.URL = url;
     this.mainView = null;
 
@@ -21,15 +20,15 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityFeatures, url) {
         title: 'ARchitectWindow'
     });
 
-    this.window.isDeviceSupported = function() {
+    this.window.isDeviceSupported = function(augmentedRealityFeatures) {
 
-        var isDeviceSupported = wikitude.isDeviceSupported(_this.augmentedRealityFeatures);
+        var isDeviceSupported = wikitude.isDeviceSupported(augmentedRealityFeatures);
 
         if (isDeviceSupported) {
 
             _this.window.arview = wikitude.createWikitudeView({
                 "licenseKey": WikitudeLicenseKey,
-                "augmentedRealityFeatures": _this.augmentedRealityFeatures,
+                "augmentedRealityFeatures": augmentedRealityFeatures,
                 bottom: 0,
                 left: 0,
                 right: 0,
@@ -164,10 +163,10 @@ ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
 };
 
 
-ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url) {
+ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRealityFeatures, startupConfiguration) {
 
     this.arview.addEventListener('URL_IS_LOADED', this.onArchitectWorldLoaded);
-    this.arview.loadArchitectWorldFromURL(url);
+    this.arview.loadArchitectWorldFromURL(url, augmentedRealityFeatures, startupConfiguration);
 };
 
 

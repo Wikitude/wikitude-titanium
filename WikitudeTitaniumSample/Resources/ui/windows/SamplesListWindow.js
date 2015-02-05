@@ -46,16 +46,18 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 
         row.add(labelSample);
 
-        row.callback = function(index) {
+        row.callback = function(index) 
+        {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
             
-            var arFeatures = _this.samples[i].augemtedRealityFeatures;
+            var arFeatures = (_this.samples[index].augmentedRealityFeatures != undefined) ? _this.samples[index].augmentedRealityFeatures : 0;
+            var camPos = (_this.samples[index].cameraPosition != undefined) ? _this.samples[index].cameraPosition : 0; 
 
-            var architectWindow = new ARchitectWindow(WikitudeLicenseKey, arFeatures);
+            var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
             if (architectWindow.isDeviceSupported(arFeatures)) {
                 architectWindow.loadArchitectWorldFromURL(_this.samples[index].file, arFeatures, 
                 										  { 
-                										  	"cameraPosition": _this.samples[i].cameraPosition,
+                										  	"cameraPosition": camPos,
 										                    "cameraFocusMode": "Locked",
 										                    //"cameraFocusMode": "AutoFocus",
 										                    //"cameraFocusMode": "ContinuousAutoFocus",
