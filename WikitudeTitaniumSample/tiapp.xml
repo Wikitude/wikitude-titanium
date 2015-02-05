@@ -11,13 +11,13 @@
         <target device="mobileweb">false</target>
         <target device="iphone">true</target>
         <target device="ipad">true</target>
-        <target device="android">true</target>
+        <target device="android">false</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>3.4.0.GA</sdk-version>
+    <sdk-version>3.5.0.GA</sdk-version>
     <id>com.wikitude.titaniumsample</id>
     <name>ModuleSamples</name>
-    <version>4.0.2</version>
+    <version>4.1.0</version>
     <publisher>Wikitude GmbH</publisher>
     <url>http://</url>
     <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>

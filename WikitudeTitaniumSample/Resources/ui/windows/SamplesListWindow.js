@@ -50,21 +50,39 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
         {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
             
+            /* flag mask bits:
+             * Feature_Geo         (1<<2)
+			 * Feature_2DTracking  (1<<0)
+             */
             var arFeatures = (_this.samples[index].augmentedRealityFeatures != undefined) ? _this.samples[index].augmentedRealityFeatures : 0;
-            var camPos = (_this.samples[index].cameraPosition != undefined) ? _this.samples[index].cameraPosition : 0; 
+            
+            /* possible values: "Front", "Back" */
+            var camPos = (_this.samples[index].cameraPosition != undefined) ? _this.samples[index].cameraPosition : ""; 
+
+			/* possible values: "Locked", "AutoFocus", "ContinuousAutoFocus" */
+            var cameraFocusMode = (_this.samples[index].cameraFocusMode != undefined) ? _this.samples[index].cameraFocusMode : "";
+             
+            /* possible values: "320x240", "640x480", "1280x720" */
+            var captureSessionPreset = (_this.samples[index].captureSessionPreset != undefined) ? _this.samples[index].captureSessionPreset : "640x480"; 
+
+			/* possible values: "Near", "Far", "None" */
+			var cameraFocusRangeRestriction = (_this.samples[index].cameraFocusRangeRestriction != undefined) ? _this.samples[index].cameraFocusRangeRestriction : "";
+
+			/* possible values: true, false */
+			var videoMirrored = (_this.samples[index].videoMirrored != undefined) ? _this.samples[index].videoMirrored : false;
+
 
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
             if (architectWindow.isDeviceSupported(arFeatures)) {
-                architectWindow.loadArchitectWorldFromURL(_this.samples[index].file, arFeatures, 
-                										  { 
+                architectWindow.loadArchitectWorldFromURL(_this.samples[index].file, 
+                										  arFeatures, 
+                										  {
                 										  	"cameraPosition": camPos,
-										                    "cameraFocusMode": "Locked",
-										                    //"cameraFocusMode": "AutoFocus",
-										                    //"cameraFocusMode": "ContinuousAutoFocus",
+										                    "cameraFocusMode": cameraFocusMode,
 										                    "iOS" : {
-				                    	                        "CaptureSessionPreset" : "1280x720",
-										                        "cameraFocusRangeRestriction" : "CameraFocusRangeNear",
-                    											"videoMirrored" : true
+				                    	                        "captureSessionPreset" : captureSessionPreset,
+										                        "cameraFocusRangeRestriction" : cameraFocusRangeRestriction,
+                    											"videoMirrored" : videoMirrored
 										                    },
 										                    "android" : {
 										                    	

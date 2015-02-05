@@ -1,3 +1,8 @@
+
+var FeatureGeo         = (1<<2);
+var Feature2DTracking  = (1<<0);
+
+
 function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	
 	var self = null;
@@ -40,9 +45,9 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 		} else {
 			var ARchitectWindow = require('/ui/windows/ARchitectWindow');
 
-            var architectWindow = new ARchitectWindow(WikitudeLicenseKey, "IrAndGeo");
-            if (architectWindow.isDeviceSupported()) {
-                architectWindow.loadArchitectWorldFromURL(url2launch);
+            var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
+            if (architectWindow.isDeviceSupported(FeatureGeo | Feature2DTracking)) {
+                architectWindow.loadArchitectWorldFromURL(url2launch, FeatureGeo | Feature2DTracking, nil);
                 architectWindow.open();
             } else {
                 alert('not supported');

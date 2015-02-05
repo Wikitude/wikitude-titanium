@@ -1,7 +1,7 @@
 
 
-var FeatureGeo         = (1<<0);
-var Feature2DTracking  = (1<<1);
+var FeatureGeo         = (1<<2);
+var Feature2DTracking  = (1<<0);
 
 
 function MainWindow() {
@@ -48,15 +48,19 @@ function MainWindow() {
             samples: [{
                 title: '1. Image on Target',
                 file: '1_ImageRecognition_1_ImageOnTarget/index.html',
-                augmentedRealityFeatures: Feature2DTracking
+                augmentedRealityFeatures: Feature2DTracking,
+                cameraPosition: "Back"
             }, {
                 title: '2. Multiple Targets',
                 file: '1_ImageRecognition_2_MultipleTargets/index.html',
-                augmentedRealityFeatures: Feature2DTracking
+                augmentedRealityFeatures: Feature2DTracking,
+                cameraPosition: "Front"
             }, {
                 title: '3. Interactivity',
                 file: '1_ImageRecognition_3_Interactivity/index.html',
-                augmentedRealityFeatures: Feature2DTracking
+                augmentedRealityFeatures: Feature2DTracking,
+                cameraPosition: "Back",
+                videoMirrored: true
             }, {
                 title: '4. HTML Drawable',
                 file: '1_ImageRecognition_4_HtmlDrawable/index.html',
@@ -120,11 +124,11 @@ function MainWindow() {
             samples: [{
                 title: '1. From local resource',
                 file: '4_ObtainPoiData_2_FromLocalResource/index.html',
-	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
+	            augmentedRealityFeatures: FeatureGeo
             }, {
                 title: '2. From webservice',
                 file: '4_ObtainPoiData_3_FromWebservice/index.html',
-	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
+	            augmentedRealityFeatures: FeatureGeo
             }]
         },
 
@@ -134,19 +138,19 @@ function MainWindow() {
             samples: [{
                 title: '1. Presenting Details',
                 file: '5_BrowsingPois_1_PresentingDetails/index.html',
-	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
+	            augmentedRealityFeatures: FeatureGeo
             }, {
                 title: '2. Adding Radar',
                 file: '5_BrowsingPois_2_AddingRadar/index.html',
-	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
+	            augmentedRealityFeatures: FeatureGeo
             }, {
                 title: '3. Limiting Range',
                 file: '5_BrowsingPois_3_LimitingRange/index.html',
-	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
+	            augmentedRealityFeatures: FeatureGeo
             }, {
                 title: '4. Reloading Content',
                 file: '5_BrowsingPois_4_ReloadingContent/index.html',
-	            augmentedRealityFeatures: FeatureGeo | Feature2DTracking
+	            augmentedRealityFeatures: FeatureGeo
             }]
         },
 
