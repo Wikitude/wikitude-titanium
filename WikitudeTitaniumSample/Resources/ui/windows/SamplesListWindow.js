@@ -62,13 +62,13 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 			/* possible values: "Locked", "AutoFocus", "ContinuousAutoFocus" */
             var cameraFocusMode = (_this.samples[index].cameraFocusMode != undefined) ? _this.samples[index].cameraFocusMode : "";
              
-            /* possible values: "320x240", "640x480", "1280x720" */
+            /* possible values: "320x240", "640x480", "1280x720" (iOS only) */
             var captureSessionPreset = (_this.samples[index].captureSessionPreset != undefined) ? _this.samples[index].captureSessionPreset : "640x480"; 
 
-			/* possible values: "Near", "Far", "None" */
+			/* possible values: "Near", "Far", "None" (iOS only) */
 			var cameraFocusRangeRestriction = (_this.samples[index].cameraFocusRangeRestriction != undefined) ? _this.samples[index].cameraFocusRangeRestriction : "";
 
-			/* possible values: true, false */
+			/* possible values: true, false (iOS only) */
 			var videoMirrored = (_this.samples[index].videoMirrored != undefined) ? _this.samples[index].videoMirrored : false;
 
 
@@ -83,9 +83,6 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 				                    	                        "captureSessionPreset" : captureSessionPreset,
 										                        "cameraFocusRangeRestriction" : cameraFocusRangeRestriction,
                     											"videoMirrored" : videoMirrored
-										                    },
-										                    "android" : {
-										                    	
 										                    }
                 										  });
                 architectWindow.open();
