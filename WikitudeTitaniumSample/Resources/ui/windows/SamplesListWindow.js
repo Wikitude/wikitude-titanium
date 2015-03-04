@@ -50,41 +50,12 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
         {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
             
-            /* flag mask bits:
-             * Feature_Geo         (1<<2)
-			 * Feature_2DTracking  (1<<0)
-             */
-            var arFeatures = (_this.samples[index].augmentedRealityFeatures != undefined) ? _this.samples[index].augmentedRealityFeatures : 0;
+            var requiredFeatures = _this.samples[index].required_features;
+            var startupConfiguration = _this.samples[index].startup_configuration;
             
-            /* possible values: "Front", "Back" */
-            var camPos = (_this.samples[index].cameraPosition != undefined) ? _this.samples[index].cameraPosition : ""; 
-
-			/* possible values: "Locked", "AutoFocus", "ContinuousAutoFocus" */
-            var cameraFocusMode = (_this.samples[index].cameraFocusMode != undefined) ? _this.samples[index].cameraFocusMode : "";
-             
-            /* possible values: "320x240", "640x480", "1280x720" (iOS only) */
-            var captureSessionPreset = (_this.samples[index].captureSessionPreset != undefined) ? _this.samples[index].captureSessionPreset : "640x480"; 
-
-			/* possible values: "Near", "Far", "None" (iOS only) */
-			var cameraFocusRangeRestriction = (_this.samples[index].cameraFocusRangeRestriction != undefined) ? _this.samples[index].cameraFocusRangeRestriction : "";
-
-			/* possible values: true, false (iOS only) */
-			var videoMirrored = (_this.samples[index].videoMirrored != undefined) ? _this.samples[index].videoMirrored : false;
-
-
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
-            if (architectWindow.isDeviceSupported(arFeatures)) {
-                architectWindow.loadArchitectWorldFromURL(_this.samples[index].file, 
-                										  arFeatures, 
-                										  {
-                										  	"cameraPosition": camPos,
-										                    "cameraFocusMode": cameraFocusMode,
-										                    "iOS" : {
-				                    	                        "captureSessionPreset" : captureSessionPreset,
-										                        "cameraFocusRangeRestriction" : cameraFocusRangeRestriction,
-                    											"videoMirrored" : videoMirrored
-										                    }
-                										  });
+            if (architectWindow.isDeviceSupported(requiredFeatures)) {
+                architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
                 architectWindow.open();
             } else {
                 alert('not supported');

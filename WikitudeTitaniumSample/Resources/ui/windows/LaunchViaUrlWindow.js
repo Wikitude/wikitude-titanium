@@ -1,8 +1,3 @@
-
-var FeatureGeo         = (1<<2);
-var Feature2DTracking  = (1<<0);
-
-
 function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	
 	var self = null;
@@ -44,10 +39,14 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 			alert("Please enter valid url");
 		} else {
 			var ARchitectWindow = require('/ui/windows/ARchitectWindow');
+			var requiredFeatures = [
+            	"2d_tracking", 
+            	"geo"
+            ];
 
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
-            if (architectWindow.isDeviceSupported(FeatureGeo | Feature2DTracking)) {
-                architectWindow.loadArchitectWorldFromURL(url2launch, FeatureGeo | Feature2DTracking, nil);
+            if (architectWindow.isDeviceSupported(requiredFeatures)) {
+                architectWindow.loadArchitectWorldFromURL(url2launch, requiredFeatures, null);
                 architectWindow.open();
             } else {
                 alert('not supported');
