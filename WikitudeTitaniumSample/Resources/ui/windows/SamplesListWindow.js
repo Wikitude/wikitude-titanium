@@ -46,12 +46,16 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 
         row.add(labelSample);
 
-        row.callback = function(index) {
+        row.callback = function(index) 
+        {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
-
-            var architectWindow = new ARchitectWindow(WikitudeLicenseKey, "IrAndGeo");
-            if (architectWindow.isDeviceSupported()) {
-                architectWindow.loadArchitectWorldFromURL(_this.samples[index].file);
+            
+            var requiredFeatures = _this.samples[index].required_features;
+            var startupConfiguration = _this.samples[index].startup_configuration;
+            
+            var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
+            if (architectWindow.isDeviceSupported(requiredFeatures)) {
+                architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
                 architectWindow.open();
             } else {
                 alert('not supported');
