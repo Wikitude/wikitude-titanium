@@ -2,7 +2,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
 
     /* requirements */
-    var jsuri = require('jsuri-1.1.1');
+    //var jsuri = require('jsuri-1.1.1');
     var util = require('util');
     var wikitude = require('com.wikitude.ti');
 
@@ -171,8 +171,8 @@ ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRea
 
 
 ARchitectWindow.prototype.onURLWasInvoked = function(url) {
-    var uri = new jsuri.Uri(event.url);
-    alert("url was invoked");
+    //var uri = new jsuri.Uri(event.url);
+    //alert("url was invoked");
 };
 
 
