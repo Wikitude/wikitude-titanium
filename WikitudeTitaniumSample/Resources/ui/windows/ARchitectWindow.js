@@ -2,7 +2,6 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
 
     /* requirements */
-    //var jsuri = require('jsuri-1.1.1');
     var util = require('util');
     var wikitude = require('com.wikitude.ti');
 
@@ -118,7 +117,10 @@ ARchitectWindow.prototype.configureWindow = function(window) {
         var includeWebView = true;
         window.arview.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
             onSuccess: function(path) {
-                alert('success: ' + path);
+                if(path)
+                    alert('success: screen stored to ' + path);
+                else
+                    alert('success: screen stored to the device\'s image library');
             },
             onError: function(errorDescription) {
                 alert('error: ' + errorDescription);
@@ -170,9 +172,23 @@ ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRea
 };
 
 
-ARchitectWindow.prototype.onURLWasInvoked = function(url) {
-    //var uri = new jsuri.Uri(event.url);
-    //alert("url was invoked");
+ARchitectWindow.prototype.onURLWasInvoked = function(event) 
+{
+    if ( event.url.indexOf("action=captureScreen") != -1 ) 
+    {
+        var includeWebView = true;
+        this.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
+            onSuccess: function(path) {
+                if(path)
+                    alert('success: screen stored to ' + path);
+                else
+                    alert('success: screen stored to the device\'s image library');
+            },
+            onError: function(errorDescription) {
+                alert('error: ' + errorDescription);
+            }
+        });
+    }
 };
 
 
