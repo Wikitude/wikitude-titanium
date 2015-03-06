@@ -67,9 +67,17 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
     /* handles document.location = "architectsdk://yourvalues" calls within architect html */
     this.window.onURLWasInvoked = this.onURLWasInvoked;
     this.window.onArchitectWorldLoaded = this.onArchitectWorldLoaded;
+    
+    this.window.callJavaScript = this.callJavaScript; 
 
     return this.window;
 }
+
+ARchitectWindow.prototype.callJavaScript = function( jsSource ) 
+{
+	alert(jsSource);
+	this.arview.callJavaScript( jsSource );
+};
 
 ARchitectWindow.prototype.configureWindow = function(window) {
 
