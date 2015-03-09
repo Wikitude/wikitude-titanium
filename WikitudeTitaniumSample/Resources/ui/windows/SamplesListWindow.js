@@ -53,17 +53,25 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
             var startupConfiguration = _this.samples[index].startupConfiguration;
             var requiredExtension = _this.samples[index].requiredExtension;
 		  	
-		  	Ti.include("/ui/windows/LocationUpdated.js");
+		  	Ti.include("/ui/windows/LocationUpdater.js");
           
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
             if (architectWindow.isDeviceSupported(requiredFeatures)) {
                 architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
                 architectWindow.open();
 	                
+	                
                 if ( requiredExtension === "ObtainPoiDataFromApplicationModel" )
                 {
-                	LocationUpdated.setArchitectWindow(architectWindow);
-                    Ti.Geolocation.getCurrentPosition( LocationUpdated.onLocationUpdated );
+                	if (Ti.Platform.name === 'android') {
+		                architectWindow.arview.addEventListener('WORLD_IS_LOADED', function () {
+		                	LocationUpdater.setArchitectWindow(architectWindow);
+	    	                Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
+	                  	});
+	                } else {
+		                LocationUpdater.setArchitectWindow(architectWindow);
+	    	            Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
+	                } 
                 }
             } 
             else 
