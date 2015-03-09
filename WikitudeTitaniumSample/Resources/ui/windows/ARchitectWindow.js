@@ -75,7 +75,6 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
 ARchitectWindow.prototype.callJavaScript = function( jsSource ) 
 {
-	alert(jsSource);
 	this.arview.callJavaScript( jsSource );
 };
 

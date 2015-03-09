@@ -1,7 +1,4 @@
-Ti.include("/ui/windows/loadingPoisFromApplicationModel.js");
-
 function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
-
     var _this = this;
 
     var self = null;
@@ -55,7 +52,9 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
             var requiredFeatures = _this.samples[index].requiredFeatures;
             var startupConfiguration = _this.samples[index].startupConfiguration;
             var requiredExtension = _this.samples[index].requiredExtension;
-            
+		  	
+		  	Ti.include("/ui/windows/LocationUpdated.js");
+          
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
             if (architectWindow.isDeviceSupported(requiredFeatures)) {
                 architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
@@ -63,7 +62,8 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 	                
                 if ( requiredExtension === "ObtainPoiDataFromApplicationModel" )
                 {
-                    Ti.Geolocation.getCurrentPosition( onLocationUpdated );
+                	LocationUpdated.setArchitectWindow(architectWindow);
+                    Ti.Geolocation.getCurrentPosition( LocationUpdated.onLocationUpdated );
                 }
             } 
             else 
