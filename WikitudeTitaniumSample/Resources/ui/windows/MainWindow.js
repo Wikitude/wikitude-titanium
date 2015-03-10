@@ -59,7 +59,7 @@ function MainWindow() {
                 fontFamily: 'Arial',
                 fontSize: defaultFontSize + 3
             },
-            text: modelStorage[i].window_title,
+            text: modelStorage[i].windowTitle,
             left: 10,
             top: 6,
             // height: defaultFontSize+10
