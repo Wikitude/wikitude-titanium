@@ -1,14 +1,14 @@
-var LocationUpdated = {
+var LocationUpdater = {
 	
 	/* Creates poi-data, which are passed over to JS / Wikitude SDK on first location update. */
 	
 	architectWindow: null,
 	
 	setArchitectWindow: function(architectWindow) {
-		LocationUpdated.architectWindow = architectWindow;
+		LocationUpdater.architectWindow = architectWindow;
 	},
 	
-	onLocationUpdated: function(position) 
+	onLocationUpdater: function(position) 
 	{
 	
 		var latitude = position.coords.latitude;
@@ -19,11 +19,11 @@ var LocationUpdated = {
 	
 		// creates dummy poi-data around given lat/lon
 		for (var i=0; i< placesAmount; i++) {
-			poiData.push({ 'id': (i+1), 'longitude': longitude + 0.01 * ( 5 - LocationUpdated.getRandomInt(1,10) ), 'latitude' : latitude + 0.01 * (5 - LocationUpdated.getRandomInt(1,10)), 'description': 'This is the description of POI#'+(i+1), 'altitude' : 100.0, 'name': 'POI#'+(i+1)});
+			poiData.push({ 'id': (i+1), 'longitude': longitude + 0.001 * ( 5 - LocationUpdater.getRandomInt(1,10) ), 'latitude' : latitude + 0.001 * (5 - LocationUpdater.getRandomInt(1,10)), 'description': 'This is the description of POI#'+(i+1), 'altitude' : 100.0, 'name': 'POI#'+(i+1)});
 		}
 		var jsSource = "World.loadPoisFromJsonData("+JSON.stringify(poiData)+");";
 		
-		LocationUpdated.architectWindow.callJavaScript(jsSource);
+		LocationUpdater.architectWindow.callJavaScript(jsSource);
 	},
 	
 	getRandomInt: function(min, max) {

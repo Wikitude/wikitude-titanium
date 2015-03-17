@@ -1,5 +1,6 @@
 var World = {
 	loaded: false,
+	rotating: false,
 	trackableVisible: false,
 
 	init: function initFn() {
@@ -24,17 +25,18 @@ var World = {
 
 			A function is attached to the onLoaded trigger to receive a notification once the 3D model is fully loaded. Depending on the size of the model and where it is stored (locally or remotely) it might take some time to completely load and it is recommended to inform the user about the loading time.
 		*/
-		this.modelCar = new AR.Model("assets/car_animated.wt3", {
+		this.modelCar = new AR.Model("assets/car.wt3", {
 			onLoaded: this.loadingStep,
 			/*
 				The drawables are made clickable by setting their onClick triggers. Click triggers can be set in the options of the drawable when the drawable is created. Thus, when the 3D model onClick: this.toggleAnimateModel is set in the options it is then passed to the AR.Model constructor. Similar the button's onClick: this.toggleAnimateModel trigger is set in the options passed to the AR.ImageDrawable constructor. toggleAnimateModel() is therefore called when the 3D model or the button is clicked.
 
 				Inside the toggleAnimateModel() function, it is checked if the animation is running and decided if it should be started, resumed or paused.
 			*/
+			onClick: this.toggleAnimateModel,
 			scale: {
-				x: 0.5,
-				y: 0.5,
-				z: 0.5
+				x: 0.0,
+				y: 0.0,
+				z: 0.0
 			},
 			translate: {
 				x: 0.0,
@@ -43,41 +45,6 @@ var World = {
 			},
 			rotate: {
 				roll: -25
-			},
-			onClick : function( drawable, model_part ) {
-				switch(model_part) 
-				{
-					case 'WindFL': 
-					case 'DoorL[0]':
-					case 'DoorL[1]':
-					case 'DoorL[2]':
-					case 'DoorL[3]':
-						var anim = new AR.ModelAnimation(World.modelCar, "DoorOpenL_animation");
-						anim.start();
-						break;
-
-					case 'WindFR': 
-					case 'DoorR[0]':
-					case 'DoorR[1]':
-					case 'DoorR[2]':
-					case 'DoorR[3]':
-						var anim = new AR.ModelAnimation(World.modelCar, "DoorOpenR_animation");
-						anim.start();
-						break;
-
-					case 'Rear[0]':
-					case 'Rear[1]':
-					case 'WindR1[0]':
-					case 'WindR1[1]':
-						var anim = new AR.ModelAnimation(World.modelCar, "EngineWindow_animation");
-						anim.start();
-						break;
-
-					case 'Hood':
-						var anim = new AR.ModelAnimation(World.modelCar, "Trunkopen_animation");
-						anim.start();
-						break;
-				}
 			}
 		});
 
@@ -87,13 +54,28 @@ var World = {
 		this.appearingAnimation = this.createAppearingAnimation(this.modelCar, 0.045);
 
 		/*
+			The rotation animation for the 3D model is created by defining an AR.PropertyAnimation for the rotate.roll property.
+		*/
+		this.rotationAnimation = new AR.PropertyAnimation(this.modelCar, "rotate.roll", -25, 335, 10000);
+
+		/*
+			Additionally to the 3D model an image that will act as a button is added to the image target. This can be accomplished by loading an AR.ImageResource and creating a drawable from it.
+		*/
+		var imgRotate = new AR.ImageResource("assets/rotateButton.png");
+		var buttonRotate = new AR.ImageDrawable(imgRotate, 0.2, {
+			offsetX: 0.35,
+			offsetY: 0.45,
+			onClick: this.toggleAnimateModel
+		});
+
+		/*
 			To receive a notification once the image target is inside the field of vision the onEnterFieldOfVision trigger of the AR.Trackable2DObject is used. In the example the function appear() is attached. Within the appear function the previously created AR.AnimationGroup is started by calling its start() function which plays the animation once.
 
 			To add the AR.ImageDrawable to the image target together with the 3D model both drawables are supplied to the AR.Trackable2DObject.
 		*/
 		var trackable = new AR.Trackable2DObject(this.tracker, "*", {
 			drawables: {
-				cam: [this.modelCar]
+				cam: [this.modelCar, buttonRotate]
 			},
 			onEnterFieldOfVision: this.appear,
 			onExitFieldOfVision: this.disappear
@@ -111,13 +93,9 @@ var World = {
 			
 			var cssDivLeft = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
 			var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
-			var cssDivBottom = " style='width:90%; display: table-cell;vertical-align: middle; text-align: middle;'";
 			document.getElementById('loadingMessage').innerHTML =
-				"<div style='width:100%'>"+
-					"<div" + cssDivLeft + ">Scan CarAd Tracker Image:</div>" +
-					"<div" + cssDivRight + "><img src='assets/car.png'></img></div>" +
-				"<div>"+
-				"<div" + cssDivBottom + ">Click the doors, the hood or the trunk to start the animations.</div>";
+				"<div" + cssDivLeft + ">Scan CarAd ClientTracker Image:</div>" +
+				"<div" + cssDivRight + "><img src='assets/car.png'></img></div>";
 
 			// Remove Scan target message after 10 sec.
 			setTimeout(function() {
@@ -159,9 +137,28 @@ var World = {
 	},
 
 	resetModel: function resetModelFn() {
+		World.rotationAnimation.stop();
+		World.rotating = false;
 		World.modelCar.rotate.roll = -25;
 	},
 
+	toggleAnimateModel: function toggleAnimateModelFn() {
+		if (!World.rotationAnimation.isRunning()) {
+			if (!World.rotating) {
+				// Starting an animation with .start(-1) will loop it indefinitely.
+				World.rotationAnimation.start(-1);
+				World.rotating = true;
+			} else {
+				// Resumes the rotation animation
+				World.rotationAnimation.resume();
+			}
+		} else {
+			// Pauses the rotation animation
+			World.rotationAnimation.pause();
+		}
+
+		return false;
+	}
 };
 
 World.init();

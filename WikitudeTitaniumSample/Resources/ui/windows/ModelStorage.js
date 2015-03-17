@@ -1,7 +1,7 @@
 // This file and it's content is automatically generated and should not be alstered!
 var modelStorage = [
     {
-        "window_title": "Client Recognition", 
+        "windowTitle": "Client Recognition", 
         "samples": [
             {
                 "path": "1_ClientRecognition_1_ImageOnTarget/index.html", 
@@ -66,7 +66,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Cloud Recognition", 
+        "windowTitle": "Cloud Recognition", 
         "samples": [
             {
                 "path": "2_CloudRecognition_1_BasicRecognitionOn-Click/index.html", 
@@ -101,7 +101,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "3D Models", 
+        "windowTitle": "3D Models", 
         "samples": [
             {
                 "path": "3_3dModels_1_3dModelOnTarget/index.html", 
@@ -166,7 +166,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Point of Interest", 
+        "windowTitle": "Point of Interest", 
         "samples": [
             {
                 "path": "4_PointOfInterest_1_PoiAtLocation/index.html", 
@@ -211,7 +211,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Obtain Poi Data", 
+        "windowTitle": "Obtain Poi Data", 
         "samples": [
             {
                 "path": "5_ObtainPoiData_1_FromApplicationModel/index.html", 
@@ -247,7 +247,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Browsing Pois", 
+        "windowTitle": "Browsing Pois", 
         "samples": [
             {
                 "path": "6_BrowsingPois_1_PresentingDetails/index.html", 
@@ -302,7 +302,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Video", 
+        "windowTitle": "Video", 
         "samples": [
             {
                 "path": "7_Video_1_SimpleVideo/index.html", 
@@ -347,7 +347,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Hardware Control", 
+        "windowTitle": "Hardware Control", 
         "samples": [
             {
                 "path": "8_HardwareControl_1_FrontCamera/index.html", 
@@ -382,7 +382,7 @@ var modelStorage = [
         ]
     }, 
     {
-        "window_title": "Demos", 
+        "windowTitle": "Demos", 
         "samples": [
             {
                 "path": "99_Demo_1_2dTrackingAndGeo/index.html", 
