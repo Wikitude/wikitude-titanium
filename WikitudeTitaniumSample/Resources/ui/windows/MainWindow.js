@@ -1,3 +1,5 @@
+
+
 function MainWindow() {
 
     var _this = this;
@@ -33,141 +35,17 @@ function MainWindow() {
             exitOnClose: true
         });
     }
-
-    // sample meta-information
-    this.samples = [
-        // Image Recognition
-        {
-            windowTitle: 'Image Recognition',
-            samples: [{
-                title: '1. Image on Target',
-                file: '1_ImageRecognition_1_ImageOnTarget/index.html'
-            }, {
-                title: '2. Multiple Targets',
-                file: '1_ImageRecognition_2_MultipleTargets/index.html'
-            }, {
-                title: '3. Interactivity',
-                file: '1_ImageRecognition_3_Interactivity/index.html'
-            }, {
-                title: '4. HTML Drawable',
-                file: '1_ImageRecognition_4_HtmlDrawable/index.html'
-            }, {
-                title: '5. Bonus-Sparkles',
-                file: '1_ImageRecognition_5_Bonus-Sparkles/index.html'
-            }]
-        },
-
-        // 3D and Image Recognition
-        {
-            windowTitle: '3D and Image Recognition',
-            samples: [{
-                title: '1. 3D Model on Target',
-                file: '2_3dAndImageRecognition_1_3dModelOnTarget/index.html'
-            }, {
-                title: '2. Appearing Animation',
-                file: '2_3dAndImageRecognition_2_AppearingAnimation/index.html'
-            }, {
-                title: '3. Interactivity',
-                file: '2_3dAndImageRecognition_3_Interactivity/index.html'
-            }, {
-                title: '4. Snap to Screen',
-                file: '2_3dAndImageRecognition_4_SnapToScreen/index.html'
-            }]
-        },
-
-        // Point Of Interest
-        {
-            windowTitle: 'Point Of Interest',
-            samples: [{
-                    title: '1. POI at location',
-                    file: '3_PointOfInterest_1_PoiAtLocation/index.html'
-                }, {
-                    title: '2. POI with label',
-                    file: '3_PointOfInterest_2_PoiWithLabel/index.html'
-                }, {
-                    title: '3. Multiple POIs',
-                    file: '3_PointOfInterest_3_MultiplePois/index.html'
-                }, {
-                    title: '4. Selecting POIs',
-                    file: '3_PointOfInterest_4_SelectingPois/index.html'
-                }
-
-            ]
-        },
-
-        // Obtain POI data
-        {
-            windowTitle: 'Obtain POI data',
-            samples: [{
-                title: '1. From local resource',
-                file: '4_ObtainPoiData_2_FromLocalResource/index.html'
-            }, {
-                title: '2. From webservice',
-                file: '4_ObtainPoiData_3_FromWebservice/index.html'
-            }]
-        },
-
-        // Browsing POIs
-        {
-            windowTitle: 'Browsing POIs',
-            samples: [{
-                title: '1. Presenting Details',
-                file: '5_BrowsingPois_1_PresentingDetails/index.html'
-            }, {
-                title: '2. Adding Radar',
-                file: '5_BrowsingPois_2_AddingRadar/index.html'
-            }, {
-                title: '3. Limiting Range',
-                file: '5_BrowsingPois_3_LimitingRange/index.html'
-            }, {
-                title: '4. Reloading Content',
-                file: '5_BrowsingPois_4_ReloadingContent/index.html'
-            }]
-        },
-
-        // Video Drawables
-        {
-            windowTitle: 'Videos in Image Recognition',
-            samples: [{
-                title: '1. Simple Video',
-                file: '6_Video_1_SimpleVideo/index.html'
-            }, {
-                title: '2. Playback States',
-                file: '6_Video_2_PlaybackStates/index.html'
-            }, {
-                title: '3. Snapping Video',
-                file: '6_Video_3_SnappingVideo/index.html'
-            }, {
-                title: '3. Transparent Video',
-                file: '6_Video_4_Bonus-TransparentVideo/index.html'
-            }]
-        },
-
-        // Demos
-        {
-            windowTitle: 'Demos',
-            samples: [{
-                title: '1. IR and Geo',
-                file: '99_Demo_1_ImageRecognitionAndGeo/index.html'
-            }, {
-                title: '2. Solar System (Geo)',
-                file: '99_Demo_2_SolarSystem(Geo)/index.html'
-            }, {
-                title: '3. Solar System (IR)',
-                file: '99_Demo_3_SolarSystem(ImageRecognition)/index.html'
-            }]
-        }
-    ];
-
+    
+    Ti.include("/ui/windows/ModelStorage.js");
 
     var list = [];
 
     var defaultFontSize = Ti.Platform.name === 'android' ? 24 : 18;
 
-    var i = 0
+    var i = 0;
 
     // add samples to list
-    for (i = 0; i < this.samples.length; i++) {
+    for (i = 0; i < modelStorage.length; i++) {
 
         var row = Ti.UI.createTableViewRow({
             className: 'forumEvent', // used to improve table performance
@@ -181,7 +59,7 @@ function MainWindow() {
                 fontFamily: 'Arial',
                 fontSize: defaultFontSize + 3
             },
-            text: _this.samples[i].windowTitle,
+            text: modelStorage[i].windowTitle,
             left: 10,
             top: 6,
             // height: defaultFontSize+10
@@ -191,7 +69,7 @@ function MainWindow() {
 
         row.callback = function(index) {
             var SamplesListWindow = require('/ui/windows/SamplesListWindow');
-            new SamplesListWindow(WikitudeLicenseKey, _this.samples[index].windowTitle, _this.samples[index].samples).open();
+            new SamplesListWindow(WikitudeLicenseKey, modelStorage[index].window_title, modelStorage[index].samples).open();
         };
 
         list.push(row);

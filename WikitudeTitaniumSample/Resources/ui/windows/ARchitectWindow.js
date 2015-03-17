@@ -1,8 +1,7 @@
-function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
+function ARchitectWindow(WikitudeLicenseKey, url) {
 
 
     /* requirements */
-    var jsuri = require('jsuri-1.1.1');
     var util = require('util');
     var wikitude = require('com.wikitude.ti');
 
@@ -10,7 +9,6 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
     /* Member Variables */
     var _this = this;
 
-    this.augmentedRealityMode = augmentedRealityMode;
     this.URL = url;
     this.mainView = null;
 
@@ -21,15 +19,15 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
         title: 'ARchitectWindow'
     });
 
-    this.window.isDeviceSupported = function() {
+    this.window.isDeviceSupported = function(augmentedRealityFeatures) {
 
-        var isDeviceSupported = wikitude.isDeviceSupported(_this.augmentedRealityMode);
+        var isDeviceSupported = wikitude.isDeviceSupported(augmentedRealityFeatures);
 
         if (isDeviceSupported) {
 
             _this.window.arview = wikitude.createWikitudeView({
                 "licenseKey": WikitudeLicenseKey,
-                "augmentedRealityMode": _this.augmentedRealityMode,
+                "augmentedRealityFeatures": augmentedRealityFeatures,
                 bottom: 0,
                 left: 0,
                 right: 0,
@@ -69,9 +67,16 @@ function ARchitectWindow(WikitudeLicenseKey, augmentedRealityMode, url) {
     /* handles document.location = "architectsdk://yourvalues" calls within architect html */
     this.window.onURLWasInvoked = this.onURLWasInvoked;
     this.window.onArchitectWorldLoaded = this.onArchitectWorldLoaded;
+    
+    this.window.callJavaScript = this.callJavaScript; 
 
     return this.window;
 }
+
+ARchitectWindow.prototype.callJavaScript = function( jsSource ) 
+{
+	this.arview.callJavaScript( jsSource );
+};
 
 ARchitectWindow.prototype.configureWindow = function(window) {
 
@@ -119,7 +124,10 @@ ARchitectWindow.prototype.configureWindow = function(window) {
         var includeWebView = true;
         window.arview.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
             onSuccess: function(path) {
-                alert('success: ' + path);
+                if(path)
+                    alert('success: screen stored to ' + path);
+                else
+                    alert('success: screen stored to the device\'s image library');
             },
             onError: function(errorDescription) {
                 alert('error: ' + errorDescription);
@@ -164,16 +172,30 @@ ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
 };
 
 
-ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url) {
+ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRealityFeatures, startupConfiguration) {
 
     this.arview.addEventListener('URL_IS_LOADED', this.onArchitectWorldLoaded);
-    this.arview.loadArchitectWorldFromURL(url);
+    this.arview.loadArchitectWorldFromURL(url, augmentedRealityFeatures, startupConfiguration);
 };
 
 
-ARchitectWindow.prototype.onURLWasInvoked = function(url) {
-    var uri = new jsuri.Uri(event.url);
-    alert("url was invoked");
+ARchitectWindow.prototype.onURLWasInvoked = function(event) 
+{
+    if ( event.url.indexOf("action=captureScreen") != -1 ) 
+    {
+        var includeWebView = true;
+        this.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
+            onSuccess: function(path) {
+                if(path)
+                    alert('success: screen stored to ' + path);
+                else
+                    alert('success: screen stored to the device\'s image library');
+            },
+            onError: function(errorDescription) {
+                alert('error: ' + errorDescription);
+            }
+        });
+    }
 };
 
 
