@@ -40,7 +40,7 @@ function MainWindow() {
 
     var list = [];
 
-    var defaultFontSize = Ti.Platform.name === 'android' ? 24 : 18;
+    var defaultFontSize = Ti.Platform.name === 'android' ?  15 : 18;
 
     var i = 0;
 
@@ -50,7 +50,7 @@ function MainWindow() {
         var row = Ti.UI.createTableViewRow({
             className: 'forumEvent', // used to improve table performance
             rowIndex: i, // custom property, useful for determining the row during events
-            height: defaultFontSize * 3,
+            height: defaultFontSize * 2,
             verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
         });
 
@@ -79,7 +79,7 @@ function MainWindow() {
     var row = Ti.UI.createTableViewRow({
         className: 'forumEvent', // used to improve table performance
         rowIndex: i, // custom property, useful for determining the row during events
-        height: defaultFontSize * 3,
+        height: defaultFontSize * 2,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
     });
 
