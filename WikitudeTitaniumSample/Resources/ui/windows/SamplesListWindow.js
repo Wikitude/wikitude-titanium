@@ -3,6 +3,8 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 
     var self = null;
 
+    var windowTitle = 'Wikitude Module Samples';
+
     if (Ti.Platform.name === 'android') {
         self = Ti.UI.createWindow({
             navBarHidden: false,
@@ -21,14 +23,14 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
 
     var list = [];
 
-    var defaultFontSize = Ti.Platform.name === 'android' ? 24 : 18;
+    var defaultFontSize = Ti.Platform.name === 'android' ? 15 : 18;
 
     for (var i = 0; i < this.samples.length; i++) {
 
         var row = Ti.UI.createTableViewRow({
             className: 'forumEvent', // used to improve table performance
             rowIndex: i, // custom property, useful for determining the row during events
-            height: defaultFontSize * 3,
+            height: defaultFontSize * 2,
             verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
         });
 
@@ -96,23 +98,25 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
         layout: 'vertical'
     });
 
-    var backButton = Ti.UI.createButton({
-        title: 'Back',
-        font: {
-            fontFamily: 'Arial',
-            fontSize: defaultFontSize
-        },
-        left: 6,
-        top: 6,
-        height: defaultFontSize * 3,
-        width: defaultFontSize * 6
-    });
-    backButton.addEventListener('click', function() {
-        self.close();
-    });
+    if (Ti.Platform.name != 'android') {
+	    var backButton = Ti.UI.createButton({
+	        title: 'Back',
+	        font: {
+	            fontFamily: 'Arial',
+	            fontSize: defaultFontSize
+	        },
+	        left: 6,
+	        top: 6,
+	        height: defaultFontSize * 2,
+	        width: defaultFontSize * 4
+	    });
+	    backButton.addEventListener('click', function() {
+	        self.close();
+	    });
 
-    view.add(backButton);
-
+    	view.add(backButton);
+	}
+	
     view.add(listView);
     self.add(view);
 
