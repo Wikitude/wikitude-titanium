@@ -80,6 +80,8 @@ ARchitectWindow.prototype.callJavaScript = function( jsSource )
 
 ARchitectWindow.prototype.configureWindow = function(window) {
 
+    var defaultFontSize = Ti.Platform.name === 'android' ? 8 : 16;
+
     /* initial view setup */
     var mainView = Ti.UI.createView({
         backgroundColor: '#ffffff',
@@ -102,7 +104,7 @@ ARchitectWindow.prototype.configureWindow = function(window) {
         title: 'Back',
         font: {
             fontFamily: 'Arial',
-            fontSize: 8
+            fontSize: defaultFontSize
         },
         left: 6,
         height: 30,
@@ -118,7 +120,7 @@ ARchitectWindow.prototype.configureWindow = function(window) {
         title: 'Capture',
         font: {
             fontFamily: 'Arial',
-            fontSize: 8
+            fontSize: defaultFontSize
         },
         right: 6,
         height: 30,
