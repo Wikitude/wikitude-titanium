@@ -7,17 +7,15 @@
     <property name="acs-oauth-key-development" type="string">3FfyYQbAvRovrwM4abKNuOAeqBCZDWD8</property>
     <property name="acs-api-key-development" type="string">srVFM0r6iSKx6n6qKbYZXOcjPMo6fJAI</property>
     <deployment-targets>
-        <target device="tizen">false</target>
         <target device="mobileweb">false</target>
         <target device="iphone">true</target>
         <target device="ipad">true</target>
         <target device="android">true</target>
-        <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>3.5.0.GA</sdk-version>
+    <sdk-version>4.1.0.GA</sdk-version>
     <id>com.wikitude.titaniumsample</id>
     <name>ModuleSamples</name>
-    <version>4.1.0</version>
+    <version>5.0.0</version>
     <publisher>Wikitude GmbH</publisher>
     <url>http://</url>
     <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
@@ -30,8 +28,8 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>true</navbar-hidden>
     <analytics>true</analytics>
-    <guid>566c8a1f-896c-4a1c-a994-9ecdb197ba62</guid>
-    <property name="ti.ui.defaultunit">system</property>
+    <guid>161a6a33-8978-4403-9888-474a7ea8da44</guid>
+    <property name="ti.ui.defaultunit">dp</property>
     <ios>
         <min-ios-ver>4.3</min-ios-ver>
         <plist>
@@ -73,4 +71,5 @@
         <module platform="iphone">com.wikitude.ti</module>
         <module platform="android">com.wikitude.ti</module>
     </modules>
+    <property name="appc-app-id" type="string">55eef1fb81387a807d445a15</property>
 </ti:app>

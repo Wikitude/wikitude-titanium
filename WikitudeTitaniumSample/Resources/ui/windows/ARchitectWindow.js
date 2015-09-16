@@ -31,7 +31,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                top: 65
+                top: 35
             });
         }
 
@@ -80,6 +80,8 @@ ARchitectWindow.prototype.callJavaScript = function( jsSource )
 
 ARchitectWindow.prototype.configureWindow = function(window) {
 
+    var defaultFontSize = Ti.Platform.name === 'android' ? 8 : 16;
+
     /* initial view setup */
     var mainView = Ti.UI.createView({
         backgroundColor: '#ffffff',
@@ -95,15 +97,18 @@ ARchitectWindow.prototype.configureWindow = function(window) {
         left: 0,
         right: 0,
         top: 0,
-        height: 65
+        height: 35
     });
 
     var backButton = Ti.UI.createButton({
         title: 'Back',
+        font: {
+            fontFamily: 'Arial',
+            fontSize: defaultFontSize
+        },
         left: 6,
-        top: 10,
-        height: 45,
-        width: 75
+        height: 30,
+        width: 100
     });
     backButton.addEventListener('click', function() {
         window.close();
@@ -113,10 +118,13 @@ ARchitectWindow.prototype.configureWindow = function(window) {
 
     var captureButton = Ti.UI.createButton({
         title: 'Capture',
+        font: {
+            fontFamily: 'Arial',
+            fontSize: defaultFontSize
+        },
         right: 6,
-        top: 10,
-        height: 45,
-        width: 75
+        height: 30,
+        width: 100
     });
 
     captureButton.addEventListener('click', function() {

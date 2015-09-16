@@ -8,7 +8,7 @@ var LocationUpdater = {
 		LocationUpdater.architectWindow = architectWindow;
 	},
 	
-	onLocationUpdater: function(position) 
+	onLocationUpdated: function(position) 
 	{
 	
 		var latitude = position.coords.latitude;

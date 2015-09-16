@@ -24,7 +24,17 @@ var modelStorage = [
                 "title": "Multiple Targets"
             }, 
             {
-                "path": "1_ClientRecognition_3_Interactivity/index.html", 
+                "path": "1_ClientRecognition_3_ExtendedTracking/index.html", 
+                "requiredFeatures": [
+                    "2d_tracking"
+                ], 
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }, 
+                "title": "Extended Tracking"
+            }, 
+            {
+                "path": "1_ClientRecognition_4_Interactivity/index.html", 
                 "requiredFeatures": [
                     "2d_tracking"
                 ], 
@@ -34,7 +44,7 @@ var modelStorage = [
                 "title": "Interactivity"
             }, 
             {
-                "path": "1_ClientRecognition_4_HtmlDrawable/index.html", 
+                "path": "1_ClientRecognition_5_HtmlDrawable/index.html", 
                 "requiredFeatures": [
                     "2d_tracking"
                 ], 
@@ -44,7 +54,7 @@ var modelStorage = [
                 "title": "Html Drawable"
             }, 
             {
-                "path": "1_ClientRecognition_5_Bonus-Sparkles/index.html", 
+                "path": "1_ClientRecognition_6_Bonus-Sparkles/index.html", 
                 "requiredFeatures": [
                     "2d_tracking"
                 ], 
@@ -54,7 +64,7 @@ var modelStorage = [
                 "title": "Bonus: Sparkles"
             }, 
             {
-                "path": "1_ClientRecognition_6_Bonus-DistanceToTarget/index.html", 
+                "path": "1_ClientRecognition_7_Bonus-DistanceToTarget/index.html", 
                 "requiredFeatures": [
                     "2d_tracking"
                 ], 
@@ -385,7 +395,7 @@ var modelStorage = [
         "windowTitle": "Demos", 
         "samples": [
             {
-                "path": "99_Demo_1_2dTrackingAndGeo/index.html", 
+                "path": "x_Demo_1_2dTrackingAndGeo/index.html", 
                 "requiredFeatures": [
                     "2d_tracking", 
                     "geo"
@@ -396,7 +406,7 @@ var modelStorage = [
                 "title": "2D Tracking And Geo"
             }, 
             {
-                "path": "99_Demo_2_SolarSystem(Geo)/index.html", 
+                "path": "x_Demo_2_SolarSystem(Geo)/index.html", 
                 "requiredFeatures": [
                     "geo"
                 ], 
@@ -406,7 +416,7 @@ var modelStorage = [
                 "title": "Solar System (Geo)"
             }, 
             {
-                "path": "99_Demo_3_SolarSystem(2dTracking)/index.html", 
+                "path": "x_Demo_3_SolarSystem(2dTracking)/index.html", 
                 "requiredFeatures": [
                     "2d_tracking"
                 ], 
