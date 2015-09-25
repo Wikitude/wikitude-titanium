@@ -65,17 +65,18 @@ function LaunchViaUrlWindow(WikitudeLicenseKey, windowTitle) {
 	  verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
 	});
 	
-	var backButton = Ti.UI.createButton({
-		title : 'Back',
-		left : 6, top : 6, // height : 36, width : 64
-		 
-	});
-	backButton.addEventListener('click', function() {
-		self.close();
-	});
-
-	view.add(backButton);
+	if (Ti.Platform.name != 'android') {
+		var backButton = Ti.UI.createButton({
+			title : 'Back',
+			left : 6, top : 6, // height : 36, width : 64
+			 
+		});
+		backButton.addEventListener('click', function() {
+			self.close();
+		});
 	
+		view.add(backButton);
+	}
 	view.add(textField);
 	view.add(buttonLaunch);
 
