@@ -70,34 +70,47 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
             
             var sample = _this.samples[index];
-            var geoPermissionRequired = sample.requiredFeatures.indexOf("geo") != -1;
-            var hasCameraPermission = Titanium.Media.hasCameraPermissions();
-            var hasGeoPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS);
-
-		  	Ti.include("/ui/windows/LocationUpdater.js");
+            
+  		  	Ti.include("/ui/windows/LocationUpdater.js");
 		  	
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
             if (architectWindow.isDeviceSupported(sample.requiredFeatures)) {
-            	if ((geoPermissionRequired && !hasGeoPermission ) || !hasCameraPermission) {
-            		Titanium.Media.requestCameraPermissions(function(e) {
-				        if (e.success === true) {
-				        	if (!geoPermissionRequired || hasGeoPermission) {
-				        		loadWorld(architectWindow, sample);
-				        	}
-				        } else {
-				            alert("Access denied, error: " + e.error);
-				        }
-				  	});
-            		if (geoPermissionRequired && !hasGeoPermission) {
-						Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS, function(e) {
+            	if (Ti.Platform.name === 'android') {
+		            var geoPermissionRequired = sample.requiredFeatures.indexOf("geo") != -1;
+		            var hasCameraPermission = Titanium.Media.hasCameraPermissions();
+		            var hasGeoPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE);
+					
+					if (geoPermissionRequired) {
+						Ti.Geolocation.setAccuracy(Ti.Geolocation.ACCURACY_HIGH);
+					}
+	        		
+	            	if ((geoPermissionRequired && !hasGeoPermission ) || !hasCameraPermission) {
+	            		Titanium.Media.requestCameraPermissions(function(e) {
 					        if (e.success === true) {
-					        	if (hasCameraPermission) {
+					        	if (!geoPermissionRequired || hasGeoPermission) {
 					        		loadWorld(architectWindow, sample);
+					        	} else {
+					        		hasCameraPermission = true;
 					        	}
 					        } else {
 					            alert("Access denied, error: " + e.error);
 					        }
 					  	});
+	            		if (geoPermissionRequired && !hasGeoPermission) {
+							Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE, function(e) {
+						        if (e.success === true) {
+						        	if (hasCameraPermission) {
+						        		loadWorld(architectWindow, sample);
+						        	} else {
+						        		hasGeoPermission = true;
+						        	}
+						        } else {
+						            alert("Access denied, error: " + e.error);
+						        }
+						  	});
+						}
+					} else {
+	            		loadWorld(architectWindow, sample);
 					}
             	} else {
             		loadWorld(architectWindow, sample);
