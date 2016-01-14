@@ -46,40 +46,82 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
         });
 
         row.add(labelSample);
+        
+        var loadWorld = function(architectWindow, sample) {
+            architectWindow.loadArchitectWorldFromURL(sample.path, sample.requiredFeatures, sample.startupConfiguration);
+            architectWindow.open();
+                				                
+            if ( sample.requiredExtension === "ObtainPoiDataFromApplicationModel" )
+            {
+            	if (Ti.Platform.name === 'android') {
+	                architectWindow.arview.addEventListener('WORLD_IS_LOADED', function () {
+	                	LocationUpdater.setArchitectWindow(architectWindow);
+    	                Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
+                  	});
+                } else {
+	                LocationUpdater.setArchitectWindow(architectWindow);
+    	            Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
+                } 
+            }
+        };
 
         row.callback = function(index) 
         {
             var ARchitectWindow = require('/ui/windows/ARchitectWindow');
             
-            var requiredFeatures = _this.samples[index].requiredFeatures;
-            var startupConfiguration = _this.samples[index].startupConfiguration;
-            var requiredExtension = _this.samples[index].requiredExtension;
+            var sample = _this.samples[index];
+            
+  		  	Ti.include("/ui/windows/LocationUpdater.js");
 		  	
-		  	Ti.include("/ui/windows/LocationUpdater.js");
-          
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
-            if (architectWindow.isDeviceSupported(requiredFeatures)) {
-                architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
-                architectWindow.open();
-	                
-	                
-                if ( requiredExtension === "ObtainPoiDataFromApplicationModel" )
-                {
-                	if (Ti.Platform.name === 'android') {
-		                architectWindow.arview.addEventListener('WORLD_IS_LOADED', function () {
-		                	LocationUpdater.setArchitectWindow(architectWindow);
-	    	                Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
-	                  	});
-	                } else {
-		                LocationUpdater.setArchitectWindow(architectWindow);
-	    	            Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
-	                } 
-                }
+            if (architectWindow.isDeviceSupported(sample.requiredFeatures)) {
+            	if (Ti.Platform.name === 'android') {
+		            var geoPermissionRequired = sample.requiredFeatures.indexOf("geo") != -1;
+		            var hasCameraPermission = Titanium.Media.hasCameraPermissions();
+		            var hasGeoPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE);
+					
+					if (geoPermissionRequired) {
+						Ti.Geolocation.setAccuracy(Ti.Geolocation.ACCURACY_HIGH);
+					}
+	        		
+	            	if ((geoPermissionRequired && !hasGeoPermission ) || !hasCameraPermission) {
+	            		Titanium.Media.requestCameraPermissions(function(e) {
+					        if (e.success === true) {
+					        	if (!geoPermissionRequired || hasGeoPermission) {
+					        		loadWorld(architectWindow, sample);
+					        	} else {
+					        		hasCameraPermission = true;
+					        	}
+					        } else {
+					            alert("Access denied, error: " + e.error);
+					        }
+					  	});
+	            		if (geoPermissionRequired && !hasGeoPermission) {
+							Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE, function(e) {
+						        if (e.success === true) {
+						        	if (hasCameraPermission) {
+						        		loadWorld(architectWindow, sample);
+						        	} else {
+						        		hasGeoPermission = true;
+						        	}
+						        } else {
+						            alert("Access denied, error: " + e.error);
+						        }
+						  	});
+						}
+					} else {
+	            		loadWorld(architectWindow, sample);
+					}
+            	} else {
+            		loadWorld(architectWindow, sample);
+            	}
             } 
             else 
             {
                 alert('not supported');
             }
+            
+        	
         };
 
         list.push(row);
