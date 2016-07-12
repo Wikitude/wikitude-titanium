@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
-    <guid>965872ce-6493-448a-9555-39dd7759799c</guid>
-    <property name="acs-oauth-secret-production" type="string">QYid1A0Z5wwDegPam8fldCjiObreUs7g</property>
-    <property name="acs-oauth-key-production" type="string">YzeRSwNUVGwjK09cgci23VYmCc8VSuIu</property>
-    <property name="acs-api-key-production" type="string">XdR1FFCZPoQ99ctxLAEIT9c4KGXKjE5L</property>
-    <property name="acs-oauth-secret-development" type="string">KAUeBdbPPJdgjUnlogSkdXKjmqdGQk55</property>
-    <property name="acs-oauth-key-development" type="string">W0ZwQTL6w8xO2PrSBfHGqTM1a5k9yORX</property>
-    <property name="acs-api-key-development" type="string">LjactAkNeuJN7e5pqvEEePREoZiq9kRC</property>
+<ti:app xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ti="http://ti.appcelerator.org">
     <deployment-targets>
         <target device="mobileweb">false</target>
         <target device="iphone">true</target>
         <target device="ipad">true</target>
         <target device="android">true</target>
     </deployment-targets>
-    <sdk-version>5.1.1.GA</sdk-version>
+    <sdk-version>5.3.0.GA</sdk-version>
     <id>com.wikitude.titaniumsample</id>
     <name>ModuleSamples</name>
-    <version>5.1.0</version>
+    <version>5.2.0</version>
     <publisher>Wikitude GmbH</publisher>
     <url>http://</url>
     <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
-    <copyright>2015 Wikitude GmbH</copyright>
+    <copyright>2016 Wikitude GmbH</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -54,13 +47,17 @@
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
-    <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <android>
         <manifest android:installLocation="auto">
-            <supports-screens android:anyDensity="true"/>
+            <supports-screens android:anyDensity="true" />
+            <application>
+                <activity android:name="com.wikitude.architect.BrowserActivity" />
+                <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity" />
+            </application>
         </manifest>
     </android>
     <mobileweb>
-        <precache/>
+        <precache />
         <splash>
             <enabled>true</enabled>
             <inline-css-images>true</inline-css-images>
@@ -68,19 +65,12 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
+        <module platform="commonjs">ti.cloud</module>
         <module platform="iphone">com.wikitude.ti</module>
         <module platform="android">com.wikitude.ti</module>
-        <module platform="commonjs">ti.cloud</module>
     </modules>
-    <property name="appc-app-id" type="string">5603da631a0839ef083a87fc</property>
     <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
     <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
-    <property name="acs-username-development" type="string">appc_app_user_dev</property>
-    <property name="acs-password-development" type="string">HWTMWKmy6MmZBOFYvm</property>
     <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
     <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
-    <property name="acs-username-production" type="string">appc_app_user</property>
-    <property name="acs-password-production" type="string">nUe3XBB6ncsnyVDHBy</property>
-    <property name="appc-org-id" type="string">100067504</property>
-    <property name="appc-creator-user-id" type="string">32965da2-02e8-412e-9b51-481a934b421e</property>
 </ti:app>

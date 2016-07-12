@@ -1,6 +1,5 @@
 function ARchitectWindow(WikitudeLicenseKey, url) {
 
-
     /* requirements */
     var util = require('util');
     var wikitude = require('com.wikitude.ti');
@@ -68,7 +67,11 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
     this.window.onURLWasInvoked = this.onURLWasInvoked;
     this.window.onArchitectWorldLoaded = this.onArchitectWorldLoaded;
     
-    this.window.callJavaScript = this.callJavaScript; 
+    this.window.callJavaScript = this.callJavaScript;
+    
+    /* runtime permission handling */
+    this.window.requestLocationPermission = this.requestLocationPermission;
+    this.window.requestCameraPermission = this.requestCameraPermission;
 
     return this.window;
 }
@@ -173,7 +176,7 @@ ARchitectWindow.prototype.locationListener = function(arview) {
 
 ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
     if (true === event.result) {
-        /* iOS only: react on load success */
+        /* empty default implementation */
     } else {
         alert('error loading Architect World: ' + event.error);
     }
@@ -181,15 +184,21 @@ ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
 
 
 ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRealityFeatures, startupConfiguration) {
-
-    this.arview.addEventListener('URL_IS_LOADED', this.onArchitectWorldLoaded);
+    this.arview.addEventListener('WORLD_IS_LOADED', this.onArchitectWorldLoaded);
+    this.arview.addEventListener('DEVICE_SENSOR_CALIBRATION_NEEDED', function(){alert('calibration needed');});
+    this.arview.addEventListener('DEVICE_SENSOR_CALIBRATION_FINISHED', function(){alert('calibration done');});
     this.arview.loadArchitectWorldFromURL(url, augmentedRealityFeatures, startupConfiguration);
 };
 
 
 ARchitectWindow.prototype.onURLWasInvoked = function(event) 
 {
-    if ( event.url.indexOf("action=captureScreen") != -1 ) 
+    if (event.url.indexOf("markerselected") != -1)
+    {
+        alert(event.url + " This operation is not supported in the Titanium samples.");
+    }
+
+    if ( event.url.indexOf("action=captureScreen") != -1 )
     {
         var includeWebView = true;
         this.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
@@ -209,15 +218,27 @@ ARchitectWindow.prototype.onURLWasInvoked = function(event)
 
 ARchitectWindow.prototype.onWindowOpen = function() {
 
-    this.getChildren()[0].add(this.arview); // get the main view for this window and add the ar view
+	var _this = this;
 
-    this.arview.addEventListener('URL_WAS_INVOKED', this.onURLWasInvoked); // add an event listener for architectsdk:// url schemes (inside the ARchitect World)
+	if (_this.util.isAndroid()) {
+		_this.requestLocationPermission(
+			function () {
+				_this.requestCameraPermission(
+					function () { _this.getChildren()[0].add(_this.arview); }
+				);	
+			}
+		);
+	}
+	else {
+		_this.getChildren()[0].add(_this.arview);
+	}
 
-    if (this.util.isAndroid()) {
+    _this.arview.addEventListener('URL_WAS_INVOKED', _this.onURLWasInvoked); // add an event listener for architectsdk:// url schemes (inside the ARchitect World)
+
+    if (_this.util.isAndroid()) {
 
         Titanium.Geolocation.distanceFilter = 1;
-		var _this = this;
-		var listener = this.locationListener(_this.arview);
+		var listener = _this.locationListener(_this.arview);
 		
 		var isOnOpen = true; //boolean var to check if location service started for first time onWindowOpen
 		
@@ -226,7 +247,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
             	   _this.LOCATION_LISTENER_ADDED = true;
 		}
 		
-        this.activity.addEventListener('resume', function() {
+        _this.activity.addEventListener('resume', function() {
             if (!_this.LOCATION_LISTENER_ADDED) {
                 Titanium.Geolocation.addEventListener('location', listener);
                 _this.LOCATION_LISTENER_ADDED = true;
@@ -234,7 +255,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
             }
         });
 
-        this.activity.addEventListener('pause', function() {
+        _this.activity.addEventListener('pause', function() {
             if (_this.LOCATION_LISTENER_ADDED) {
                 Titanium.Geolocation.removeEventListener('location', listener);
                 _this.LOCATION_LISTENER_ADDED = false;
@@ -242,7 +263,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
             }
         });
 
-        this.activity.addEventListener('destroy', function(e) {
+        _this.activity.addEventListener('destroy', function(e) {
             if (_this.LOCATION_LISTENER_ADDED) {
                 Titanium.Geolocation.removeEventListener('location', listener);
                 _this.LOCATION_LISTENER_ADDED = false;
@@ -250,7 +271,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
             }
         });
 
-        this.activityListenerLoaded = true;
+        _this.activityListenerLoaded = true;
     }
 };
 
@@ -263,6 +284,32 @@ ARchitectWindow.prototype.onWindowClose = function() {
         this.getChildren()[0].remove(this.arview);
         this.arview = null;
     }
+};
+
+ARchitectWindow.prototype.requestLocationPermission = function(callback) {
+	if (Ti.Geolocation.hasLocationPermissions()) {
+		callback();
+	}
+	else {
+		Ti.Geolocation.requestLocationPermissions(
+			function (e) {
+				callback();
+			}
+		);
+	}
+};
+
+ARchitectWindow.prototype.requestCameraPermission = function (callback) {
+	if (Ti.Media.hasCameraPermissions()) {
+		callback();
+	}
+	else {
+		Ti.Media.requestCameraPermissions(
+			function (e) {
+				callback();
+			}
+		);
+	}
 };
 
 module.exports = ARchitectWindow;
