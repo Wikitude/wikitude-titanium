@@ -37,6 +37,10 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
         return isDeviceSupported;
     };
 
+    this.window.getMissingFeatureMessage = function(augmentedRealityFeatures) {
+        return wikitude.getMissingFeatureMessage(augmentedRealityFeatures);
+    }
+
     this.window.LOCATION_LISTENER_ADDED = false;
     this.window.util = util;
     this.window.locationListener = this.locationListener;

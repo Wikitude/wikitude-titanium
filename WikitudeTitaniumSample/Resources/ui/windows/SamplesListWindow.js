@@ -77,7 +77,7 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
             } 
             else 
             {
-                alert('not supported');
+                alert(architectWindow.getMissingFeatureMessage(requiredFeatures));
             }
         };
 
