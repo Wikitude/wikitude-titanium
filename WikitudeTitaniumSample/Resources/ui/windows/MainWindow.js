@@ -32,7 +32,8 @@ function MainWindow() {
             title: windowTitle,
             backgroundColor: 'white',
             color: 'black',
-            exitOnClose: true
+            exitOnClose: true,
+            top: 20
         });
     }
 

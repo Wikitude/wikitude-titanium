@@ -15,7 +15,8 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
             navBarHidden: false,
             title: windowTitle,
             backgroundColor: 'white',
-            color: 'black'
+            color: 'black',
+            top: 20
         });
     }
 

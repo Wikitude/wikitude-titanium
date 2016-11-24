@@ -1,76 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ti="http://ti.appcelerator.org">
-    <deployment-targets>
-        <target device="mobileweb">false</target>
-        <target device="iphone">true</target>
-        <target device="ipad">true</target>
-        <target device="android">true</target>
-    </deployment-targets>
-    <sdk-version>5.3.0.GA</sdk-version>
-    <id>com.wikitude.titaniumsample</id>
-    <name>ModuleSamples</name>
-    <version>5.3.0</version>
-    <publisher>Wikitude GmbH</publisher>
-    <url>http://</url>
-    <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
-    <copyright>2016 Wikitude GmbH</copyright>
-    <icon>appicon.png</icon>
-    <persistent-wifi>false</persistent-wifi>
-    <prerendered-icon>false</prerendered-icon>
-    <statusbar-style>default</statusbar-style>
-    <statusbar-hidden>false</statusbar-hidden>
-    <fullscreen>false</fullscreen>
-    <navbar-hidden>true</navbar-hidden>
-    <analytics>true</analytics>
-    <property name="ti.ui.defaultunit">dp</property>
-    <ios>
-        <min-ios-ver>4.3</min-ios-ver>
-        <plist>
-            <dict>
-                <key>NSLocationWhenInUseUsageDescription</key>
-                <string>
-                    Accessing GPS information is needed to display POIs around your current location
-                </string>
-            </dict>
-        </plist>
+  <deployment-targets>
+    <target device="mobileweb">false</target>
+    <target device="iphone">true</target>
+    <target device="ipad">true</target>
+    <target device="android">true</target>
+  </deployment-targets>
+  <sdk-version>5.5.0.GA</sdk-version>
+  <id>com.wikitude.titaniumsample</id>
+  <name>ModuleSamples</name>
+  <version>5.3.1</version>
+  <publisher>Wikitude GmbH</publisher>
+  <url>http://</url>
+  <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
+  <copyright>2016 Wikitude GmbH</copyright>
+  <icon>appicon.png</icon>
+  <persistent-wifi>false</persistent-wifi>
+  <prerendered-icon>false</prerendered-icon>
+  <statusbar-style>default</statusbar-style>
+  <statusbar-hidden>false</statusbar-hidden>
+  <fullscreen>false</fullscreen>
+  <navbar-hidden>true</navbar-hidden>
+  <analytics>true</analytics>
+  <property name="ti.ui.defaultunit">dp</property>
+  <ios>
+    <min-ios-ver>8.0</min-ios-ver>
+    <plist>
+      <dict>
+        <key>NSCameraUsageDescription</key>
+        <string>Accessing the Camera is required to run the Wikitude SDK</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>Accessing GPS information is needed to display POIs around your current location</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Access to your photo library is required for the example 'Bonus: Capture Screen' because it adds a screenshot of the current Architect view</string>
+      </dict>
+    </plist>
     </ios>
-    <iphone>
-        <orientations device="iphone">
-            <orientation>Ti.UI.PORTRAIT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
-        </orientations>
-        <orientations device="ipad">
-            <orientation>Ti.UI.PORTRAIT</orientation>
-            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
-        </orientations>
-    </iphone>
-    <android>
-        <manifest android:installLocation="auto">
-            <supports-screens android:anyDensity="true" />
-            <application>
-                <activity android:name="com.wikitude.architect.BrowserActivity" />
-                <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity" />
-            </application>
-        </manifest>
-    </android>
-    <mobileweb>
-        <precache />
-        <splash>
-            <enabled>true</enabled>
-            <inline-css-images>true</inline-css-images>
-        </splash>
-        <theme>default</theme>
-    </mobileweb>
-    <modules>
-        <module platform="commonjs">ti.cloud</module>
-        <module platform="iphone">com.wikitude.ti</module>
-        <module platform="android">com.wikitude.ti</module>
-    </modules>
-    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
-    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
-    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
-    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
-</ti:app>
+  <iphone>
+    <orientations device="iphone">
+      <orientation>Ti.UI.PORTRAIT</orientation>
+      <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+      <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+    </orientations>
+    <orientations device="ipad">
+      <orientation>Ti.UI.PORTRAIT</orientation>
+      <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+      <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+      <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+    </orientations>
+  </iphone>
+  <android>
+    <manifest android:installLocation="auto">
+      <supports-screens android:anyDensity="true" />
+      <application>
+        <activity android:name="com.wikitude.architect.BrowserActivity" />
+        <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity" />
+      </application>
+    </manifest>
+  </android>
+  <mobileweb>
+    <precache />
+    <splash>
+      <enabled>true</enabled>
+      <inline-css-images>true</inline-css-images>
+    </splash>
+    <theme>default</theme>
+  </mobileweb>
+  <modules>
+    <module platform="commonjs">ti.cloud</module>
+    <module platform="iphone">com.wikitude.ti</module>
+    <module platform="android">com.wikitude.ti</module>
+  </modules>
+  <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+  <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+  <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+  <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+  </ti:app>

@@ -12,11 +12,20 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
     this.mainView = null;
 
 
-    this.window = Ti.UI.createWindow({
-        backgroundColor: 'transparent',
-        navBarHidden: true,
-        title: 'ARchitectWindow'
-    });
+    if (Ti.Platform.name === 'android') {
+        this.window = Ti.UI.createWindow({
+	        backgroundColor: 'transparent',
+	        navBarHidden: true,
+	        title: 'ARchitectWindow'
+        });
+    } else {
+        this.window = Ti.UI.createWindow({
+	        backgroundColor: 'transparent',
+	        navBarHidden: true,
+	        title: 'ARchitectWindow',
+            top: 20
+        });
+    }
 
     this.window.isDeviceSupported = function(augmentedRealityFeatures) {
 
