@@ -37,7 +37,7 @@ function MainWindow() {
         });
     }
 
-    Ti.include("/ui/windows/ModelStorage.js");
+    var modelStorage = require("/ui/windows/ModelStorage");
 
     var list = [];
 
@@ -100,6 +100,40 @@ function MainWindow() {
     row.callback = function(index) {
         var LaunchViaUrlWindow = require('/ui/windows/LaunchViaUrlWindow');
         new LaunchViaUrlWindow(WikitudeLicenseKey, 'Launch World via Url').open();
+    };
+
+    list.push(row);
+    
+    var row = Ti.UI.createTableViewRow({
+        className: 'forumEvent', // used to improve table performance
+        rowIndex: i, // custom property, useful for determining the row during events
+        height: defaultFontSize * 2,
+        verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+    });
+
+    var labelSample = Ti.UI.createLabel({
+        font: {
+            fontFamily: 'Arial',
+            fontSize: defaultFontSize + 3
+        },
+        text: 'Show SDK Build Information',
+        left: 10,
+        top: 6,
+        // height: defaultFontSize+10
+    });
+
+    row.add(labelSample);
+
+    row.callback = function(index) {
+ 
+		var wikitude = require('com.wikitude.ti');
+		var buildInformation = JSON.parse(wikitude.getSDKBuildInformation());
+		alert(
+			"Build configuration: " + buildInformation.buildConfiguration + "\n" +
+			"Build date: " + buildInformation.buildDate + "\n" +
+			"Build number: " + buildInformation.buildNumber + "\n" +
+			"Build version: " + wikitude.getSDKVersion()
+		);
     };
 
     list.push(row);

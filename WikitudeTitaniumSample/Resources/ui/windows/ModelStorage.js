@@ -1,76 +1,99 @@
 // This file and it's content is automatically generated and should not be alstered!
 var modelStorage = [
     {
-        "windowTitle": "Client Recognition",
+        "windowTitle": "Image Recognition",
         "samples": [
             {
                 "title": "Image on Target",
-                "path": "1_ClientRecognition_1_ImageOnTarget/index.html",
+                "path": "01_ImageRecognition_1_ImageOnTarget/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Multiple Targets",
-                "path": "1_ClientRecognition_2_MultipleTargets/index.html",
+                "path": "01_ImageRecognition_2_MultipleTargets/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
-                }
-            },
-            {
-                "title": "Extended Tracking",
-                "path": "1_ClientRecognition_3_ExtendedTracking/index.html",
-                "requiredFeatures": [
-                    "2d_tracking"
-                ],
-                "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Interactivity",
-                "path": "1_ClientRecognition_4_Interactivity/index.html",
+                "path": "01_ImageRecognition_3_Interactivity/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Html Drawable",
-                "path": "1_ClientRecognition_5_HtmlDrawable/index.html",
+                "path": "01_ImageRecognition_4_HtmlDrawable/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Bonus: Sparkles",
-                "path": "1_ClientRecognition_6_Bonus-Sparkles/index.html",
+                "path": "01_ImageRecognition_5_Bonus-Sparkles/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            }
+        ]
+    },
+    {
+        "windowTitle": "Advanced Image Recognition",
+        "samples": [
+            {
+                "title": "Gestures",
+                "path": "02_AdvancedImageRecognition_1_Gestures/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
-                "title": "Bonus: Distance To Target",
-                "path": "1_ClientRecognition_7_Bonus-DistanceToTarget/index.html",
+                "title": "Distance To Target",
+                "path": "02_AdvancedImageRecognition_2_DistanceToTarget/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "Extended Tracking",
+                "path": "02_AdvancedImageRecognition_3_ExtendedTracking/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "sd_640x480"
                 }
             }
         ]
@@ -79,20 +102,20 @@ var modelStorage = [
         "windowTitle": "Cloud Recognition",
         "samples": [
             {
-                "title": "Basic Recognition On: Click",
-                "path": "2_CloudRecognition_1_BasicRecognitionOn-Click/index.html",
+                "title": "Single Image Recognition",
+                "path": "03_CloudRecognition_1_SingleImageRecognition/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
                     "camera_position": "back"
                 }
             },
             {
-                "title": "Continuous Recognition Vs On: Click",
-                "path": "2_CloudRecognition_2_ContinuousRecognitionVsOn-Click/index.html",
+                "title": "Continuous Image Recognition",
+                "path": "03_CloudRecognition_2_ContinuousImageRecognition/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
                     "camera_position": "back"
@@ -100,9 +123,44 @@ var modelStorage = [
             },
             {
                 "title": "Using Response Metainformation",
-                "path": "2_CloudRecognition_3_UsingMetainformationInTheResponse/index.html",
+                "path": "03_CloudRecognition_3_UsingMetainformationInTheResponse/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }
+            }
+        ]
+    },
+    {
+        "windowTitle": "Instant Tracking",
+        "samples": [
+            {
+                "title": "Basic Instant Tracking",
+                "path": "04_InstantTracking_1_SimpleInstantTracking/index.html",
+                "requiredFeatures": [
+                    "instant_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }
+            },
+            {
+                "title": "3D Model on Plane",
+                "path": "04_InstantTracking_2_3DModels/index.html",
+                "requiredFeatures": [
+                    "instant_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }
+            },
+            {
+                "title": "Interactivity",
+                "path": "04_InstantTracking_3_GesturesAnd3DModels/index.html",
+                "requiredFeatures": [
+                    "instant_tracking"
                 ],
                 "startupConfiguration": {
                     "camera_position": "back"
@@ -115,62 +173,68 @@ var modelStorage = [
         "samples": [
             {
                 "title": "3D Model on Target",
-                "path": "3_3dModels_1_3dModelOnTarget/index.html",
+                "path": "05_3dModels_1_3dModelOnTarget/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Appearing Animation",
-                "path": "3_3dModels_2_AppearingAnimation/index.html",
+                "path": "05_3dModels_2_AppearingAnimation/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Interactivity",
-                "path": "3_3dModels_3_Interactivity/index.html",
+                "path": "05_3dModels_3_Interactivity/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Snap To Screen",
-                "path": "3_3dModels_4_SnapToScreen/index.html",
+                "path": "05_3dModels_4_SnapToScreen/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Animated Model Parts",
-                "path": "3_3dModels_5_AnimatedModelParts/index.html",
+                "path": "05_3dModels_5_AnimatedModelParts/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "3d Model At Geo Location",
-                "path": "3_3dModels_6_3dModelAtGeoLocation/index.html",
+                "path": "05_3dModels_6_3dModelAtGeoLocation/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -180,42 +244,46 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Poi At Location",
-                "path": "4_PointOfInterest_1_PoiAtLocation/index.html",
+                "path": "06_PointOfInterest_1_PoiAtLocation/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Poi With Label",
-                "path": "4_PointOfInterest_2_PoiWithLabel/index.html",
+                "path": "06_PointOfInterest_2_PoiWithLabel/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Multiple Pois",
-                "path": "4_PointOfInterest_3_MultiplePois/index.html",
+                "path": "06_PointOfInterest_3_MultiplePois/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Selecting Pois",
-                "path": "4_PointOfInterest_4_SelectingPois/index.html",
+                "path": "06_PointOfInterest_4_SelectingPois/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -225,33 +293,36 @@ var modelStorage = [
         "samples": [
             {
                 "title": "From Application Model",
-                "path": "5_ObtainPoiData_1_FromApplicationModel/index.html",
+                "path": "07_ObtainPoiData_1_FromApplicationModel/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 },
                 "requiredExtension": "ObtainPoiDataFromApplicationModel"
             },
             {
                 "title": "From Local Resource",
-                "path": "5_ObtainPoiData_2_FromLocalResource/index.html",
+                "path": "07_ObtainPoiData_2_FromLocalResource/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "From Webservice",
-                "path": "5_ObtainPoiData_3_FromWebservice/index.html",
+                "path": "07_ObtainPoiData_3_FromWebservice/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -261,52 +332,58 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Presenting Details",
-                "path": "6_BrowsingPois_1_PresentingDetails/index.html",
+                "path": "08_BrowsingPois_1_PresentingDetails/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Adding Radar",
-                "path": "6_BrowsingPois_2_AddingRadar/index.html",
+                "path": "08_BrowsingPois_2_AddingRadar/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Limiting Range",
-                "path": "6_BrowsingPois_3_LimitingRange/index.html",
+                "path": "08_BrowsingPois_3_LimitingRange/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Reloading Content",
-                "path": "6_BrowsingPois_4_ReloadingContent/index.html",
+                "path": "08_BrowsingPois_4_ReloadingContent/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Bonus: Capture Screen",
-                "path": "6_BrowsingPois_6_Bonus-CaptureScreen/index.html",
+                "path": "08_BrowsingPois_6_Bonus-CaptureScreen/index.html",
                 "requiredFeatures": [
-                    "geo"
+                    "geo",
+                    "photo_library_screenshot_import"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -316,42 +393,46 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Simple Video",
-                "path": "7_Video_1_SimpleVideo/index.html",
+                "path": "09_Video_1_SimpleVideo/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Playback States",
-                "path": "7_Video_2_PlaybackStates/index.html",
+                "path": "09_Video_2_PlaybackStates/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Snapping Video",
-                "path": "7_Video_3_SnappingVideo/index.html",
+                "path": "09_Video_3_SnappingVideo/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Bonus: Transparent Video",
-                "path": "7_Video_4_Bonus-TransparentVideo/index.html",
+                "path": "09_Video_4_Bonus-TransparentVideo/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -361,7 +442,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Front Camera",
-                "path": "8_HardwareControl_1_FrontCamera/index.html",
+                "path": "10_HardwareControl_1_FrontCamera/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -371,22 +452,24 @@ var modelStorage = [
             },
             {
                 "title": "Camera Switching",
-                "path": "8_HardwareControl_2_CameraSwitching/index.html",
+                "path": "10_HardwareControl_2_CameraSwitching/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Camera Control",
-                "path": "8_HardwareControl_3_AdvancedFeatures/index.html",
+                "path": "10_HardwareControl_3_AdvancedFeatures/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -398,11 +481,12 @@ var modelStorage = [
                 "title": "2D Tracking And Geo",
                 "path": "x_Demo_1_2dTrackingAndGeo/index.html",
                 "requiredFeatures": [
-                    "2d_tracking",
+                    "image_tracking",
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -412,19 +496,22 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
                 "title": "Solar System (2D Tracking)",
                 "path": "x_Demo_3_SolarSystem(2dTracking)/index.html",
                 "requiredFeatures": [
-                    "2d_tracking"
+                    "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
     }
 ];
+module.exports = modelStorage;

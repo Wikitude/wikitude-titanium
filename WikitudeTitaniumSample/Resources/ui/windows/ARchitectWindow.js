@@ -11,7 +11,6 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
     this.URL = url;
     this.mainView = null;
 
-
     if (Ti.Platform.name === 'android') {
         this.window = Ti.UI.createWindow({
 	        backgroundColor: 'transparent',
@@ -48,7 +47,7 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
 
     this.window.getMissingFeatureMessage = function(augmentedRealityFeatures) {
         return wikitude.getMissingFeatureMessage(augmentedRealityFeatures);
-    }
+    };
 
     this.window.LOCATION_LISTENER_ADDED = false;
     this.window.util = util;
@@ -70,9 +69,11 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
         });
     }
 
+    /* ARchitect */    
+    this.window.unauthorizedAPIs= [];    
+    this.window.apiAuthorizationResults = [];
+    this.window.accessSuccessCallback = null;
 
-
-    /* ARchitect */
     this.window.loadArchitectWorldFromURL = this.loadArchitectWorldFromURL;
 
     /* ARchitect World callback handling */
@@ -85,6 +86,11 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
     /* runtime permission handling */
     this.window.requestLocationPermission = this.requestLocationPermission;
     this.window.requestCameraPermission = this.requestCameraPermission;
+    
+    this.window.restrictedAPIs = this.restrictedAPIs;
+    this.window.requestAccess = this.requestAccess;
+    this.window.requestPermissionForRestrictedAPI = this.requestPermissionForRestrictedAPI;
+    this.window.permissionRequestFinished = this.permissionRequestFinished;
 
     return this.window;
 }
@@ -195,14 +201,12 @@ ARchitectWindow.prototype.onArchitectWorldLoaded = function(event) {
     }
 };
 
-
 ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRealityFeatures, startupConfiguration) {
     this.arview.addEventListener('WORLD_IS_LOADED', this.onArchitectWorldLoaded);
     this.arview.addEventListener('DEVICE_SENSOR_CALIBRATION_NEEDED', function(){alert('calibration needed');});
     this.arview.addEventListener('DEVICE_SENSOR_CALIBRATION_FINISHED', function(){alert('calibration done');});
     this.arview.loadArchitectWorldFromURL(url, augmentedRealityFeatures, startupConfiguration);
 };
-
 
 ARchitectWindow.prototype.onURLWasInvoked = function(event) 
 {
@@ -228,23 +232,11 @@ ARchitectWindow.prototype.onURLWasInvoked = function(event)
     }
 };
 
-
 ARchitectWindow.prototype.onWindowOpen = function() {
 
 	var _this = this;
 
-	if (_this.util.isAndroid()) {
-		_this.requestLocationPermission(
-			function () {
-				_this.requestCameraPermission(
-					function () { _this.getChildren()[0].add(_this.arview); }
-				);	
-			}
-		);
-	}
-	else {
-		_this.getChildren()[0].add(_this.arview);
-	}
+	_this.getChildren()[0].add(_this.arview);
 
     _this.arview.addEventListener('URL_WAS_INVOKED', _this.onURLWasInvoked); // add an event listener for architectsdk:// url schemes (inside the ARchitect World)
 
@@ -300,13 +292,13 @@ ARchitectWindow.prototype.onWindowClose = function() {
 };
 
 ARchitectWindow.prototype.requestLocationPermission = function(callback) {
-	if (Ti.Geolocation.hasLocationPermissions()) {
-		callback();
+	if (Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE)) {
+		callback({'success': true, 'code': 0});
 	}
 	else {
-		Ti.Geolocation.requestLocationPermissions(
-			function (e) {
-				callback();
+		Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE,
+			function (result) {				
+				callback(result);
 			}
 		);
 	}
@@ -314,14 +306,87 @@ ARchitectWindow.prototype.requestLocationPermission = function(callback) {
 
 ARchitectWindow.prototype.requestCameraPermission = function (callback) {
 	if (Ti.Media.hasCameraPermissions()) {
-		callback();
+		callback({'success': true, 'code': 0});
 	}
 	else {
 		Ti.Media.requestCameraPermissions(
-			function (e) {
-				callback();
+			function (result) {				
+				callback(result);
 			}
 		);
+	}
+};
+
+ARchitectWindow.prototype.restrictedAPIs = function(requiredFeatures) {
+	
+	var restrictedAPIs = [];	
+	for ( requiredFeature in requiredFeatures ) {		
+		if ( 'image_tracking' == requiredFeatures[requiredFeature] || 'instant_tracking' == requiredFeatures[requiredFeature] ) {
+			restrictedAPIs.push('camera');
+		} else if ( 'geo' == requiredFeatures[requiredFeature] ) {
+			restrictedAPIs.push('camera');
+			restrictedAPIs.push('location');
+		}
+	}
+	
+	return restrictedAPIs;
+};
+
+ARchitectWindow.prototype.requestAccess = function(restrictedAPIs, callback) {
+		
+	this.unauthorizedAPIs = restrictedAPIs.slice();
+	this.accessSuccessCallback = callback;
+
+	if ( this.unauthorizedAPIs.length ) {
+		this.requestPermissionForRestrictedAPI(this.unauthorizedAPIs[0]);
+	}
+};
+
+ARchitectWindow.prototype.requestPermissionForRestrictedAPI= function(restrictedAPI) {
+	
+	var _this = this;
+	if ( 'camera' == restrictedAPI ) {
+		this.requestCameraPermission(function(result) {
+			_this.permissionRequestFinished(result);
+		});
+	} else if ( 'location' == restrictedAPI ) {
+		this.requestLocationPermission(function(result) {
+			_this.permissionRequestFinished(result);
+		});
+	} else {
+		alert("Unable to request access for unknown feature '" + requiredFeature + "'.");
+	}
+};
+
+ARchitectWindow.prototype.permissionRequestFinished = function(result) {
+	
+	/* For some reason the unauthorizedAPIs array is not mutable, so we need to make a temporary copy, edit it and assign it back to unauthorizedAPIs. */
+	var t = this.unauthorizedAPIs.slice(); 
+	t.shift();
+	this.unauthorizedAPIs = t;
+		
+	var n = this.apiAuthorizationResults.slice();
+	n.push(result);
+	this.apiAuthorizationResults = n;
+	
+	if ( this.unauthorizedAPIs.length ) {		
+		this.requestPermissionForRestrictedAPI(this.unauthorizedAPIs[0]);			
+	} else {		
+		var callbackResult = {'errors': []};
+		var allPermissionsGranted = true;
+		
+		this.apiAuthorizationResults.forEach(function(result) {		
+			allPermissionsGranted &= result.success;
+			if ( !result.success ) {
+				callbackResult['errors'].push(result.error);
+			}
+		});
+		
+		callbackResult['success'] = allPermissionsGranted;
+				
+		if ( this.accessSuccessCallback ) {
+			this.accessSuccessCallback(callbackResult);
+		}
 	}
 };
 

@@ -56,30 +56,40 @@ function SamplesListWindow(WikitudeLicenseKey, windowTitle, samples) {
             var startupConfiguration = _this.samples[index].startupConfiguration;
             var requiredExtension = _this.samples[index].requiredExtension;
 		  	
-		  	Ti.include("/ui/windows/LocationUpdater.js");
+		  	var LocationUpdater = require("/ui/windows/LocationUpdater");
           
             var architectWindow = new ARchitectWindow(WikitudeLicenseKey);
             if (architectWindow.isDeviceSupported(requiredFeatures)) {
-                architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
-                architectWindow.open();
+            	architectWindow.requestAccess(architectWindow.restrictedAPIs(requiredFeatures), function(result) {
+            		if ( result.success ) {
+            			architectWindow.loadArchitectWorldFromURL(_this.samples[index].path, requiredFeatures, startupConfiguration);
+                		architectWindow.open();
                 
-                if ( requiredExtension === "ObtainPoiDataFromApplicationModel" )
-                {
-                	if (Ti.Platform.name === 'android') {
-		                architectWindow.arview.addEventListener('WORLD_IS_LOADED', function () {
-		                	LocationUpdater.setArchitectWindow(architectWindow);
-	    	                Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
-	                  	});
-	                } else {
-		                LocationUpdater.setArchitectWindow(architectWindow);
-	    	            Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
-	                } 
-                }
+                		if ( requiredExtension === "ObtainPoiDataFromApplicationModel" )
+                		{
+                			if (Ti.Platform.name === 'android') {
+		                		architectWindow.arview.addEventListener('WORLD_IS_LOADED', function () {
+		                			LocationUpdater.setArchitectWindow(architectWindow);
+	    	                		Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
+	                  			});
+		               		} else {
+			               		LocationUpdater.setArchitectWindow(architectWindow);
+	    	           			Ti.Geolocation.getCurrentPosition( LocationUpdater.onLocationUpdated );
+	               			} 
+                		}
+            		} else {
+            			var message = "Authorizations issues:";
+            			result.errors.forEach(function(errorMessage){
+            				message += "\n" + errorMessage;
+            			});
+            			alert(message);
+            		}
+            	});                
             } 
             else 
             {
                 alert(architectWindow.getMissingFeatureMessage(requiredFeatures));
-            }
+            }                                  
         };
 
         list.push(row);
