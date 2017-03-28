@@ -10,8 +10,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -21,8 +21,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -32,8 +32,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -43,8 +43,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -54,8 +54,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -70,8 +70,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -81,8 +81,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -92,8 +92,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "sd_640x480",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "sd_640x480"
                 }
             }
         ]
@@ -178,8 +178,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -189,8 +189,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -200,8 +200,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -211,8 +211,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -222,8 +222,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -233,8 +233,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -249,8 +249,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -260,8 +260,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -271,8 +271,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -282,8 +282,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -298,8 +298,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 },
                 "requiredExtension": "ObtainPoiDataFromApplicationModel"
             },
@@ -310,8 +310,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -321,8 +321,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -337,8 +337,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -348,8 +348,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -359,8 +359,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -370,8 +370,19 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "Native Detail Screen",
+                "path": "08_BrowsingPois_5_NativeDetailScreen/index.html",
+                "requiredFeatures": [
+                    "geo"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -382,8 +393,8 @@ var modelStorage = [
                     "photo_library_screenshot_import"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -398,8 +409,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -409,8 +420,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -420,8 +431,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -431,8 +442,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -457,8 +468,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -468,8 +479,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]
@@ -485,8 +496,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -496,8 +507,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             },
             {
@@ -507,8 +518,8 @@ var modelStorage = [
                     "image_tracking"
                 ],
                 "startupConfiguration": {
-                    "camera_resolution": "auto",
-                    "camera_position": "back"
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
                 }
             }
         ]

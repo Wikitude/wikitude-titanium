@@ -77,8 +77,8 @@ function ARchitectWindow(WikitudeLicenseKey, url) {
     this.window.loadArchitectWorldFromURL = this.loadArchitectWorldFromURL;
 
     /* ARchitect World callback handling */
-    /* handles document.location = "architectsdk://yourvalues" calls within architect html */
-    this.window.onURLWasInvoked = this.onURLWasInvoked;
+    /* handles AR.platform.sendJSONObject calls within architect html */
+    this.window.onJSONObjectReceived = this.onJSONObjectReceived;
     this.window.onArchitectWorldLoaded = this.onArchitectWorldLoaded;
     
     this.window.callJavaScript = this.callJavaScript;
@@ -208,27 +208,27 @@ ARchitectWindow.prototype.loadArchitectWorldFromURL = function(url, augmentedRea
     this.arview.loadArchitectWorldFromURL(url, augmentedRealityFeatures, startupConfiguration);
 };
 
-ARchitectWindow.prototype.onURLWasInvoked = function(event) 
+ARchitectWindow.prototype.onJSONObjectReceived = function(jsonObject)
 {
-    if (event.url.indexOf("markerselected") != -1)
+    if (typeof jsonObject.action !== 'undefined')
     {
-        alert(event.url + " This operation is not supported in the Titanium samples.");
-    }
-
-    if ( event.url.indexOf("action=captureScreen") != -1 )
-    {
-        var includeWebView = true;
-        this.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
-            onSuccess: function(path) {
-                if(path)
-                    alert('success: screen stored to ' + path);
-                else
-                    alert('success: screen stored to the device\'s image library');
-            },
-            onError: function(errorDescription) {
-                alert('error: ' + errorDescription);
-            }
-        });
+        if ( jsonObject.action === "capture_screen" ) {
+            var includeWebView = true;
+            this.captureScreen(includeWebView, null, { // "Path/In/Bundle/toImage.png"
+                onSuccess: function(path) {
+                    if(path)
+                        alert('success: screen stored to ' + path);
+                    else
+                        alert('success: screen stored to the device\'s image library');
+                },
+                onError: function(errorDescription) {
+                    alert('error: ' + errorDescription);
+                }
+            });
+        } else if (jsonObject.action === "present_poi_details") {
+            var alertMessage = "Poi '" + jsonObject.id + "' selected\nTitle: " + jsonObject.title + "\nDescription: " + jsonObject.description;
+            alert(alertMessage);
+        }
     }
 };
 
@@ -238,7 +238,7 @@ ARchitectWindow.prototype.onWindowOpen = function() {
 
 	_this.getChildren()[0].add(_this.arview);
 
-    _this.arview.addEventListener('URL_WAS_INVOKED', _this.onURLWasInvoked); // add an event listener for architectsdk:// url schemes (inside the ARchitect World)
+    _this.arview.addEventListener('JSON_OBJECT_RECEIVED', _this.onJSONObjectReceived); // add an event listener for architectsdk:// url schemes (inside the ARchitect World)
 
     if (_this.util.isAndroid()) {
 
@@ -284,7 +284,7 @@ ARchitectWindow.prototype.onWindowClose = function() {
 
     if (this.arview !== null) {
 
-        this.arview.removeEventListener('URL_WAS_INVOKED', this.onURLWasInvoked);
+        this.arview.removeEventListener('JSON_OBJECT_RECEIVED', this.onJSONObjectReceived);
 
         this.getChildren()[0].remove(this.arview);
         this.arview = null;
