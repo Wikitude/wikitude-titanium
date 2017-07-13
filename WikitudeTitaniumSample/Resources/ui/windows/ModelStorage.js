@@ -1,11 +1,11 @@
 // This file and it's content is automatically generated and should not be alstered!
 var modelStorage = [
     {
-        "windowTitle": "Image Recognition",
+        "windowTitle": "Image Tracking",
         "samples": [
             {
                 "title": "Image on Target",
-                "path": "01_ImageRecognition_1_ImageOnTarget/index.html",
+                "path": "01_ImageTracking_1_ImageOnTarget/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -15,8 +15,8 @@ var modelStorage = [
                 }
             },
             {
-                "title": "Multiple Targets",
-                "path": "01_ImageRecognition_2_MultipleTargets/index.html",
+                "title": "Different Targets",
+                "path": "01_ImageTracking_2_DifferentTargets/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -27,7 +27,7 @@ var modelStorage = [
             },
             {
                 "title": "Interactivity",
-                "path": "01_ImageRecognition_3_Interactivity/index.html",
+                "path": "01_ImageTracking_3_Interactivity/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -38,7 +38,7 @@ var modelStorage = [
             },
             {
                 "title": "Html Drawable",
-                "path": "01_ImageRecognition_4_HtmlDrawable/index.html",
+                "path": "01_ImageTracking_4_HtmlDrawable/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -49,7 +49,7 @@ var modelStorage = [
             },
             {
                 "title": "Bonus: Sparkles",
-                "path": "01_ImageRecognition_5_Bonus-Sparkles/index.html",
+                "path": "01_ImageTracking_5_Bonus-Sparkles/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -61,11 +61,11 @@ var modelStorage = [
         ]
     },
     {
-        "windowTitle": "Advanced Image Recognition",
+        "windowTitle": "Advanced Image Tracking",
         "samples": [
             {
                 "title": "Gestures",
-                "path": "02_AdvancedImageRecognition_1_Gestures/index.html",
+                "path": "02_AdvancedImageTracking_1_Gestures/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -76,7 +76,7 @@ var modelStorage = [
             },
             {
                 "title": "Distance To Target",
-                "path": "02_AdvancedImageRecognition_2_DistanceToTarget/index.html",
+                "path": "02_AdvancedImageTracking_2_DistanceToTarget/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -87,7 +87,7 @@ var modelStorage = [
             },
             {
                 "title": "Extended Tracking",
-                "path": "02_AdvancedImageRecognition_3_ExtendedTracking/index.html",
+                "path": "02_AdvancedImageTracking_3_ExtendedTracking/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -99,11 +99,49 @@ var modelStorage = [
         ]
     },
     {
+        "windowTitle": "Multiple Targets",
+        "samples": [
+            {
+                "title": "Multiple Targets",
+                "path": "03_MultipleTargets_1_MultipleTargets/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "Distance Between Targets",
+                "path": "03_MultipleTargets_2_DistanceBetweenTargets/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "Transformation Between Targets",
+                "path": "03_MultipleTargets_3_TransformationBetweenTargets/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            }
+        ]
+    },
+    {
         "windowTitle": "Cloud Recognition",
         "samples": [
             {
                 "title": "Single Image Recognition",
-                "path": "03_CloudRecognition_1_SingleImageRecognition/index.html",
+                "path": "04_CloudRecognition_1_SingleImageRecognition/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -113,7 +151,7 @@ var modelStorage = [
             },
             {
                 "title": "Continuous Image Recognition",
-                "path": "03_CloudRecognition_2_ContinuousImageRecognition/index.html",
+                "path": "04_CloudRecognition_2_ContinuousImageRecognition/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -123,7 +161,7 @@ var modelStorage = [
             },
             {
                 "title": "Using Response Metainformation",
-                "path": "03_CloudRecognition_3_UsingMetainformationInTheResponse/index.html",
+                "path": "04_CloudRecognition_3_UsingMetainformationInTheResponse/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -138,7 +176,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Basic Instant Tracking",
-                "path": "04_InstantTracking_1_SimpleInstantTracking/index.html",
+                "path": "05_InstantTracking_1_SimpleInstantTracking/index.html",
                 "requiredFeatures": [
                     "instant_tracking"
                 ],
@@ -148,7 +186,7 @@ var modelStorage = [
             },
             {
                 "title": "3d Model on Plane",
-                "path": "04_InstantTracking_2_3dModelOnPlane/index.html",
+                "path": "05_InstantTracking_2_3dModelOnPlane/index.html",
                 "requiredFeatures": [
                     "instant_tracking"
                 ],
@@ -158,7 +196,17 @@ var modelStorage = [
             },
             {
                 "title": "Interactivity",
-                "path": "04_InstantTracking_3_Interactivity/index.html",
+                "path": "05_InstantTracking_3_Interactivity/index.html",
+                "requiredFeatures": [
+                    "instant_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }
+            },
+            {
+                "title": "Scene Interaction",
+                "path": "05_InstantTracking_4_SceneInteraction/index.html",
                 "requiredFeatures": [
                     "instant_tracking"
                 ],
@@ -169,11 +217,49 @@ var modelStorage = [
         ]
     },
     {
+        "windowTitle": "Object Tracking",
+        "samples": [
+            {
+                "title": "Basic Object Tracking",
+                "path": "06_ObjectTracking_1_BasicObjectTracking/index.html",
+                "requiredFeatures": [
+                    "object_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "2D Image and Sound Augmentations",
+                "path": "06_ObjectTracking_2_2dImageAndSoundAugmentations/index.html",
+                "requiredFeatures": [
+                    "object_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "Animated 3D Augmentations",
+                "path": "06_ObjectTracking_3_Animated3dAugmentations/index.html",
+                "requiredFeatures": [
+                    "object_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            }
+        ]
+    },
+    {
         "windowTitle": "3D Models",
         "samples": [
             {
                 "title": "3D Model on Target",
-                "path": "05_3dModels_1_3dModelOnTarget/index.html",
+                "path": "07_3dModels_1_3dModelOnTarget/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -184,7 +270,7 @@ var modelStorage = [
             },
             {
                 "title": "Appearing Animation",
-                "path": "05_3dModels_2_AppearingAnimation/index.html",
+                "path": "07_3dModels_2_AppearingAnimation/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -195,7 +281,7 @@ var modelStorage = [
             },
             {
                 "title": "Interactivity",
-                "path": "05_3dModels_3_Interactivity/index.html",
+                "path": "07_3dModels_3_Interactivity/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -206,7 +292,7 @@ var modelStorage = [
             },
             {
                 "title": "Snap To Screen",
-                "path": "05_3dModels_4_SnapToScreen/index.html",
+                "path": "07_3dModels_4_SnapToScreen/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -217,7 +303,7 @@ var modelStorage = [
             },
             {
                 "title": "Animated Model Parts",
-                "path": "05_3dModels_5_AnimatedModelParts/index.html",
+                "path": "07_3dModels_5_AnimatedModelParts/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -228,7 +314,7 @@ var modelStorage = [
             },
             {
                 "title": "3d Model At Geo Location",
-                "path": "05_3dModels_6_3dModelAtGeoLocation/index.html",
+                "path": "07_3dModels_6_3dModelAtGeoLocation/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -244,7 +330,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Poi At Location",
-                "path": "06_PointOfInterest_1_PoiAtLocation/index.html",
+                "path": "08_PointOfInterest_1_PoiAtLocation/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -255,7 +341,7 @@ var modelStorage = [
             },
             {
                 "title": "Poi With Label",
-                "path": "06_PointOfInterest_2_PoiWithLabel/index.html",
+                "path": "08_PointOfInterest_2_PoiWithLabel/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -266,7 +352,7 @@ var modelStorage = [
             },
             {
                 "title": "Multiple Pois",
-                "path": "06_PointOfInterest_3_MultiplePois/index.html",
+                "path": "08_PointOfInterest_3_MultiplePois/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -277,7 +363,7 @@ var modelStorage = [
             },
             {
                 "title": "Selecting Pois",
-                "path": "06_PointOfInterest_4_SelectingPois/index.html",
+                "path": "08_PointOfInterest_4_SelectingPois/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -293,7 +379,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "From Application Model",
-                "path": "07_ObtainPoiData_1_FromApplicationModel/index.html",
+                "path": "09_ObtainPoiData_1_FromApplicationModel/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -305,7 +391,7 @@ var modelStorage = [
             },
             {
                 "title": "From Local Resource",
-                "path": "07_ObtainPoiData_2_FromLocalResource/index.html",
+                "path": "09_ObtainPoiData_2_FromLocalResource/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -316,7 +402,7 @@ var modelStorage = [
             },
             {
                 "title": "From Webservice",
-                "path": "07_ObtainPoiData_3_FromWebservice/index.html",
+                "path": "09_ObtainPoiData_3_FromWebservice/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -332,7 +418,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Presenting Details",
-                "path": "08_BrowsingPois_1_PresentingDetails/index.html",
+                "path": "10_BrowsingPois_1_PresentingDetails/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -343,7 +429,7 @@ var modelStorage = [
             },
             {
                 "title": "Adding Radar",
-                "path": "08_BrowsingPois_2_AddingRadar/index.html",
+                "path": "10_BrowsingPois_2_AddingRadar/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -354,7 +440,7 @@ var modelStorage = [
             },
             {
                 "title": "Limiting Range",
-                "path": "08_BrowsingPois_3_LimitingRange/index.html",
+                "path": "10_BrowsingPois_3_LimitingRange/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -365,7 +451,7 @@ var modelStorage = [
             },
             {
                 "title": "Reloading Content",
-                "path": "08_BrowsingPois_4_ReloadingContent/index.html",
+                "path": "10_BrowsingPois_4_ReloadingContent/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -376,7 +462,7 @@ var modelStorage = [
             },
             {
                 "title": "Native Detail Screen",
-                "path": "08_BrowsingPois_5_NativeDetailScreen/index.html",
+                "path": "10_BrowsingPois_5_NativeDetailScreen/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -387,7 +473,7 @@ var modelStorage = [
             },
             {
                 "title": "Bonus: Capture Screen",
-                "path": "08_BrowsingPois_6_Bonus-CaptureScreen/index.html",
+                "path": "10_BrowsingPois_6_Bonus-CaptureScreen/index.html",
                 "requiredFeatures": [
                     "geo",
                     "photo_library_screenshot_import"
@@ -404,7 +490,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Simple Video",
-                "path": "09_Video_1_SimpleVideo/index.html",
+                "path": "11_Video_1_SimpleVideo/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -415,7 +501,7 @@ var modelStorage = [
             },
             {
                 "title": "Playback States",
-                "path": "09_Video_2_PlaybackStates/index.html",
+                "path": "11_Video_2_PlaybackStates/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -426,7 +512,7 @@ var modelStorage = [
             },
             {
                 "title": "Snapping Video",
-                "path": "09_Video_3_SnappingVideo/index.html",
+                "path": "11_Video_3_SnappingVideo/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -437,7 +523,7 @@ var modelStorage = [
             },
             {
                 "title": "Bonus: Transparent Video",
-                "path": "09_Video_4_Bonus-TransparentVideo/index.html",
+                "path": "11_Video_4_Bonus-TransparentVideo/index.html",
                 "requiredFeatures": [
                     "image_tracking"
                 ],
@@ -453,7 +539,7 @@ var modelStorage = [
         "samples": [
             {
                 "title": "Front Camera",
-                "path": "10_HardwareControl_1_FrontCamera/index.html",
+                "path": "12_HardwareControl_1_FrontCamera/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -463,7 +549,7 @@ var modelStorage = [
             },
             {
                 "title": "Camera Switching",
-                "path": "10_HardwareControl_2_CameraSwitching/index.html",
+                "path": "12_HardwareControl_2_CameraSwitching/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],
@@ -474,7 +560,7 @@ var modelStorage = [
             },
             {
                 "title": "Camera Control",
-                "path": "10_HardwareControl_3_AdvancedFeatures/index.html",
+                "path": "12_HardwareControl_3_AdvancedFeatures/index.html",
                 "requiredFeatures": [
                     "geo"
                 ],

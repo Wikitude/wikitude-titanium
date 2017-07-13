@@ -321,7 +321,7 @@ ARchitectWindow.prototype.restrictedAPIs = function(requiredFeatures) {
 	
 	var restrictedAPIs = [];	
 	for ( requiredFeature in requiredFeatures ) {		
-		if ( 'image_tracking' == requiredFeatures[requiredFeature] || 'instant_tracking' == requiredFeatures[requiredFeature] ) {
+		if ( 'image_tracking' == requiredFeatures[requiredFeature] || 'instant_tracking' == requiredFeatures[requiredFeature] || 'object_tracking' == requiredFeatures[requiredFeature] ) {
 			restrictedAPIs.push('camera');
 		} else if ( 'geo' == requiredFeatures[requiredFeature] ) {
 			restrictedAPIs.push('camera');
