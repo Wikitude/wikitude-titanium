@@ -174,22 +174,26 @@ ARchitectWindow.prototype.configureWindow = function(window) {
 
 ARchitectWindow.prototype.locationListener = function(arview) {
 	return function(location) {
-	    var locationInformation = {
-	        latitude: location.coords.latitude,
-	        longitude: location.coords.longitude,
-	        accuracy: location.coords.accuracy,
-	        timestamp: location.coords.timestamp,
-	        altitudeAccuracy: location.coords.altitudeAccuracy
-	    };
+        if (location !== void 0 && location.coords !== void 0) {
+            var locationInformation = {
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
+                accuracy: location.coords.accuracy,
+                timestamp: location.coords.timestamp,
+                altitudeAccuracy: location.coords.altitudeAccuracy
+            };
 
-	    // has altitude?
-	    if (location.coords.altitude != 0) {
-	        locationInformation.altitude = location.coords.altitude;
-	    }
+            // has altitude?
+            if (location.coords.altitude != 0) {
+                locationInformation.altitude = location.coords.altitude;
+            }
 
-	    if ((arview !== null)) {
-		    arview.injectLocation(locationInformation);
-	    }
+            if ((arview !== null)) {
+                arview.injectLocation(locationInformation);
+            }
+        } else {
+            console.log("Location received was undefined, check if your GPS is enabled and you have location permissions granted.");
+        }
    };
 };
 
