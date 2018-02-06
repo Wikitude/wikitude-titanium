@@ -565,7 +565,9 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_2_enabled": "true"
+                    "camera_resolution": "auto",
+                    "camera_2_enabled": "true",
+                    "camera_position": "back"
                 }
             }
         ]
