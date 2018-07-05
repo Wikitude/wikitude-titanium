@@ -213,6 +213,26 @@ var modelStorage = [
                 "startupConfiguration": {
                     "camera_position": "back"
                 }
+            },
+            {
+                "title": "Save Instant Target",
+                "path": "05_InstantTracking_5_SaveInstantTarget/index.html",
+                "requiredFeatures": [
+                    "instant_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }
+            },
+            {
+                "title": "Load Instant Target",
+                "path": "05_InstantTracking_6_LoadInstantTarget/index.html",
+                "requiredFeatures": [
+                    "instant_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back"
+                }
             }
         ]
     },
@@ -244,6 +264,17 @@ var modelStorage = [
             {
                 "title": "Animated 3D Augmentations",
                 "path": "06_ObjectTracking_3_Animated3dAugmentations/index.html",
+                "requiredFeatures": [
+                    "object_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_position": "back",
+                    "camera_resolution": "auto"
+                }
+            },
+            {
+                "title": "Extended Object Tracking",
+                "path": "06_ObjectTracking_4_ExtendedObjectTracking/index.html",
                 "requiredFeatures": [
                     "object_tracking"
                 ],
@@ -565,8 +596,8 @@ var modelStorage = [
                     "geo"
                 ],
                 "startupConfiguration": {
-                    "camera_2_enabled": "true",
                     "camera_position": "back",
+                    "camera_2_enabled": "true",
                     "camera_resolution": "auto"
                 }
             }

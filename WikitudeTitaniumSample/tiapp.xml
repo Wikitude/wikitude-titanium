@@ -8,7 +8,7 @@
   <sdk-version>7.0.1.GA</sdk-version>
   <id>com.wikitude.titaniumsample</id>
   <name>ModuleSamples</name>
-  <version>7.2.1</version>
+  <version>8.0.0</version>
   <publisher>Wikitude GmbH</publisher>
   <url>http://</url>
   <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
@@ -53,9 +53,17 @@
   <android>
     <manifest android:installLocation="auto">
       <supports-screens android:anyDensity="true" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_GPS" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-feature android:name="android.hardware.location" android:required="false" />
+      <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+      <uses-feature android:name="android.hardware.sensor.compass" android:required="true" />
       <application>
-        <activity android:name="com.wikitude.architect.BrowserActivity" />
-        <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity" />
+        <meta-data android:name="com.google.ar.core" android:value="optional" />
       </application>
     </manifest>
   </android>

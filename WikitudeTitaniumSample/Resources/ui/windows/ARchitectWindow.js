@@ -232,6 +232,17 @@ ARchitectWindow.prototype.onJSONObjectReceived = function(jsonObject)
         } else if (jsonObject.action === "present_poi_details") {
             var alertMessage = "Poi '" + jsonObject.id + "' selected\nTitle: " + jsonObject.title + "\nDescription: " + jsonObject.description;
             alert(alertMessage);
+        } else if (jsonObject.action === "save_current_instant_target") {
+            var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'SavedAugmentations.json');
+            file.write(JSON.stringify(jsonObject.augmentations));
+            this.callJavaScript("World.saveCurrentInstantTargetToUrl(\"" + Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, "SavedInstantTarget.wto").resolve() + "\");");
+        } else if (jsonObject.action === "load_existing_instant_target") {
+            var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'SavedAugmentations.json');
+            if (!file.exists()) {
+            alert("Could not load instant target, please save it first.");
+            } else {
+                this.callJavaScript("World.loadExistingInstantTargetFromUrl(\"" + Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, "SavedInstantTarget.wto").resolve() + "\", " + file.read() + ");");
+            }
         }
     }
 };
