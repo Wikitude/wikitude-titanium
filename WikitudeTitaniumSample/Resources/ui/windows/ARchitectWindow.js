@@ -234,7 +234,7 @@ ARchitectWindow.prototype.onJSONObjectReceived = function(jsonObject)
             alert(alertMessage);
         } else if (jsonObject.action === "save_current_instant_target") {
             var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'SavedAugmentations.json');
-            file.write(JSON.stringify(jsonObject.augmentations));
+            file.write(jsonObject.augmentations);
             this.callJavaScript("World.saveCurrentInstantTargetToUrl(\"" + Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, "SavedInstantTarget.wto").resolve() + "\");");
         } else if (jsonObject.action === "load_existing_instant_target") {
             var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'SavedAugmentations.json');

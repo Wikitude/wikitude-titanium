@@ -597,7 +597,6 @@ var modelStorage = [
                 ],
                 "startupConfiguration": {
                     "camera_position": "back",
-                    "camera_2_enabled": "true",
                     "camera_resolution": "auto"
                 }
             }
