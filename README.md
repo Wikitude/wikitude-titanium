@@ -12,7 +12,7 @@ Details about functionality and features of the most current version can be foun
 
 **Note: This plugin has hard and software requirements for Android and iOS devices and does not run on a desktop browser. **
 
-The sample application and the code of the sample application carry the Apache 2.0 license. The Wikitude SDK carry a proprietary Wikitude SDK license. 
+The Wikitude Module is under Apache 2.0 license (see below), where the Wikitude SDK library (pre-bundled) itself follows a proprietary license scheme (see [LICENSE.MD](LICENSE.MD) for details).
 
 # LICENSE
 
