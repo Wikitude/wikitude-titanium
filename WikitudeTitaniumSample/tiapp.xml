@@ -5,14 +5,14 @@
     <target device="ipad">true</target>
     <target device="android">true</target>
   </deployment-targets>
-  <sdk-version>7.0.1.GA</sdk-version>
+  <sdk-version>7.4.0.GA</sdk-version>
   <id>com.wikitude.titaniumsample</id>
   <name>Titanium Examples</name>
-  <version>8.1.0</version>
+  <version>8.2.0</version>
   <publisher>Wikitude GmbH</publisher>
   <url>http://</url>
   <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
-  <copyright>2016 Wikitude GmbH</copyright>
+  <copyright>2018 Wikitude GmbH</copyright>
   <icon>appicon.png</icon>
   <persistent-wifi>false</persistent-wifi>
   <prerendered-icon>false</prerendered-icon>
@@ -23,7 +23,8 @@
   <analytics>true</analytics>
   <property name="ti.ui.defaultunit">dp</property>
   <ios>
-    <min-ios-ver>8.3</min-ios-ver>
+    <min-ios-ver>9.0</min-ios-ver>
+    <use-new-build-system>false</use-new-build-system>
     <plist>
       <dict>
         <key>NSCameraUsageDescription</key>
