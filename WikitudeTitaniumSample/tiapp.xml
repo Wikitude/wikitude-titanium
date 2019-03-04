@@ -8,7 +8,7 @@
   <sdk-version>7.4.0.GA</sdk-version>
   <id>com.wikitude.titaniumsample</id>
   <name>Titanium Examples</name>
-  <version>8.2.0</version>
+  <version>8.3.0</version>
   <publisher>Wikitude GmbH</publisher>
   <url>http://</url>
   <description>Wikitude's AR SDK Module, implement your own AR experience in HTML/JavaScript</description>
